@@ -1,0 +1,28 @@
+<mvc:View controllerName="de.enercon.usbee.controller.recordresults.Detail2" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc">
+	<!--title="{i18n>detail2-title} {path: 'pl>Prueflos', type : 'sap.ui.model.odata.type.String', constraints: { isDigitSequence : true }} / {pl>Vornr} {pl>Vorktxt}">-->
+	<Page id="Detail2" navButtonPress="onNavBack" showNavButton="true" backgroundDesign="Transparent"
+		title="{i18n>detail2-title} {path: 'pl>Prueflos', type : 'sap.ui.model.odata.type.String', constraints: { isDigitSequence : true }} / {pl>Vornr} {pl>Vorktxt}">
+		<!--<customHeader>-->
+		<!--<Bar>-->
+		<!--		<contentMiddle>-->
+		<!--			<Text-->
+		<!--				text="{i18n>detail2-title} {path: 'pl>Prueflos', type : 'sap.ui.model.odata.type.String', constraints: { isDigitSequence : true }} / {pl>Vornr} {pl>Vorktxt}"-->
+		<!--				class="TextBold bigLabel_H"></Text>-->
+		<!--		</contentMiddle>-->
+		<!--	</Bar>-->
+		<!--</customHeader>-->
+		<!--title="{i18n>detail1-pl2} {= parseFloat(${pl>Prueflos})} / {i18n>detail2-title} - {pl>Vornr} {pl>Vorktxt}">-->
+		<!--<MessageStrip-->
+		<!--	text="{i18n>detail1-matnr} {path: 'pl>TOPL/Matnr', type : 'sap.ui.model.odata.type.String', constraints: { isDigitSequence : true }} {pl>TOPL/Ktextmat} / {parts:['pl>Prueflos_Key_Modus','pl>Prueflos_Key_Object'], formatter: 'de.enercon.usbee.controller.utils.Formatter.detail1_key_art_header' }"-->
+		<!--	showIcon="false" showCloseButton="false"></MessageStrip>-->
+		<!--<ProgressIndicator percentValue="{ path: 'pl>Results_Entered_P', formatter: 'de.enercon.usbee.controller.utils.Formatter.string_to_float' }"-->
+		<!--	displayValue="{ parts:['pl>Results_Entered_P','pl>Results_Gesamt','pl>Results_Entered'], formatter: 'de.enercon.usbee.controller.utils.Formatter.detail1_percentage_value' }"-->
+		<!--	showValue="true" state="{ path: 'pl>Results_Entered_P', formatter: 'de.enercon.usbee.controller.utils.Formatter.detail1_percentage_color' }"-->
+		<!--	class="sapUiMediumMarginBottom" height="5%"/>-->
+		<!--/////////////////////////////////////////////////////////////////////////////////////-->
+		<!--ProgressIndicator, Messagestrip, Table-->
+		<core:Fragment fragmentName="de.enercon.usbee.view.reuse.MK_Detail2" type="XML"/>
+		<!--/////////////////////////////////////////////////////////////////////////////////////-->
+	</Page>
+</mvc:View>

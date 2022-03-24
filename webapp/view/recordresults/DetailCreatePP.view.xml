@@ -1,0 +1,15 @@
+<mvc:View id="DFPP"  controllerName="de.enercon.usbee.controller.recordresults.DetailCreatePP" xmlns="sap.m" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:c="sap.ui.core" xmlns:semantic="sap.m.semantic">
+	<semantic:DetailPage id="DetailCreatePP" navButtonPress="onNavBack" showNavButton="true" backgroundDesign="Transparent"
+		title="{i18n>detail1-newpp} - {inputdata>/_SLWBEZ_KURZTEXT}: {path: 'inputdata>/_prueflos', type : 'sap.ui.model.odata.type.String', constraints: { isDigitSequence : true }}">
+		<!--/////////////////////////////////////////////////////////////////////////////////////-->
+		<core:Fragment fragmentName="de.enercon.usbee.view.reuse.VG_Detail1PP" type="XML"/>
+		<!--/////////////////////////////////////////////////////////////////////////////////////-->
+		<semantic:customFooterContent>
+			<Button text="{i18n>detail1-newpp}" icon="sap-icon://create" press="onPPCreate" type="Accept"/>
+		</semantic:customFooterContent>
+		<semantic:messagesIndicator>
+			<semantic:MessagesIndicator press="onMessagePopoverPress"/>
+		</semantic:messagesIndicator>
+	</semantic:DetailPage>
+</mvc:View>

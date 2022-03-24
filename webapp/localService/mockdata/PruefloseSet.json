@@ -1,0 +1,115 @@
+[{
+	"Prueflos": "Prueflos 1",
+	"Prueflos_Key_Modus": "S1",
+	"Prueflos_Key_Object": "Prueflos_Key_Object 1",
+	"Sernr": "Sernr 1",
+	"Charg": "Charg 1",
+	"Entstezeit": "PT0H2M39S",
+	"Werk": "Werk 1",
+	"Ersteller": "Ersteller 1",
+	"Matnr": "Matnr 1",
+	"Ersteldat": "/Date(967808263000)/",
+	"Aufnr": "Aufnr 1",
+	"Erstelzeit": "PT6H46M15S",
+	"Aenderer": "Aenderer 1",
+	"Art": "Art 1",
+	"Herkunft": "Herkunft 1",
+	"Stat35": "Stat35 1",
+	"Losmenge": 9.85,
+	"Pastrterm": "/Date(1114256263000)/",
+	"Mengeneinh": "Mengeneinh 1",
+	"Pastrzeit": "PT11H45M0S",
+	"Paendterm": "/Date(1264163863000)/",
+	"Paendzeit": "PT19H56M47S",
+	"Plnty": "Plnty 1",
+	"Plnnr": "Plnnr 1",
+	"Pplverw": "Pplverw 1",
+	"Plnal": "Plnal 1",
+	"Zaehl": "Zaehl 1",
+	"Mjahr": "Mjahr 1",
+	"Mblnr": "Mblnr 1",
+	"Zeile": "Zeile 1",
+	"Bwart": "Bwart 1",
+	"Werkvorg": "Werkvorg 1",
+	"Lagortvorg": "Lagortvorg 1",
+	"Ktextmat": "Ktextmat 1",
+	"StandPl": "StandPl 1",
+	"LockedByUser": "LockedByUser 1",
+	"Masterstring1": "Merknr 1",
+	"Masterstring2": "Vornr 1",
+	"Masterstring3": "Masterstring3 1",
+	"Results_Gesamt": "Results_Gesamt 1",
+	"Results_Entered": "Results_Entered 1",
+	"Results_Entered_P": "Results_Entered_P 1",
+	"__metadata": {
+		"uri": "PruefloseSet(Prueflos='Prueflos%201',Prueflos_Key_Modus='Prueflos_Key_Modus%201',Prueflos_Key_Object='Prueflos_Key_Object%201')",
+		"type": "/WIND/QM_RESULTS_SRV.Prueflose"
+	},
+	"TOVORG": {
+		"__deferred": {
+			"uri": "PruefloseSet(Prueflos='Prueflos%201',Prueflos_Key_Modus='Prueflos_Key_Modus%201',Prueflos_Key_Object='Prueflos_Key_Object%201')/TOVORG"
+		}
+	},
+	"TOSER": {
+		"__deferred": {
+			"uri": "PruefloseSet(Prueflos='Prueflos%201',Prueflos_Key_Modus='Prueflos_Key_Modus%201',Prueflos_Key_Object='Prueflos_Key_Object%201')/TOSER"
+		}
+	}
+}, {
+	"Prueflos": "Prueflos 2",
+	"Prueflos_Key_Modus": "SX",
+	"Prueflos_Key_Object": "Prueflos_Key_Object 1",
+	"Sernr": "Sernr 1",
+	"Charg": "Charg 1",
+	"Entstezeit": "PT0H2M39S",
+	"Werk": "Werk 1",
+	"Ersteller": "Ersteller 1",
+	"Matnr": "Matnr 1",
+	"Ersteldat": "/Date(967815617000)/",
+	"Aufnr": "Aufnr 1",
+	"Erstelzeit": "PT6H46M15S",
+	"Aenderer": "Aenderer 1",
+	"Art": "Art 1",
+	"Herkunft": "Herkunft 1",
+	"Stat35": "Stat35 1",
+	"Losmenge": 9.85,
+	"Pastrterm": "/Date(1114263617000)/",
+	"Mengeneinh": "Mengeneinh 1",
+	"Pastrzeit": "PT11H45M0S",
+	"Paendterm": "/Date(1264171217000)/",
+	"Paendzeit": "PT19H56M47S",
+	"Plnty": "Plnty 1",
+	"Plnnr": "Plnnr 1",
+	"Pplverw": "Pplverw 1",
+	"Plnal": "Plnal 1",
+	"Zaehl": "Zaehl 1",
+	"Mjahr": "Mjahr 1",
+	"Mblnr": "Mblnr 1",
+	"Zeile": "Zeile 1",
+	"Bwart": "Bwart 1",
+	"Werkvorg": "Werkvorg 1",
+	"Lagortvorg": "Lagortvorg 1",
+	"Ktextmat": "Ktextmat 1",
+	"StandPl": "StandPl 1",
+	"LockedByUser": "LockedByUser 1",
+	"Masterstring1": "Merknr 1",
+	"Masterstring2": "Vornr 1",
+	"Masterstring3": "Masterstring3 1",
+	"Results_Gesamt": "Results_Gesamt 1",
+	"Results_Entered": "Results_Entered 1",
+	"Results_Entered_P": "Results_Entered_P 1",
+	"__metadata": {
+		"uri": "PruefloseSet(Prueflos='Prueflos%201',Prueflos_Key_Modus='Prueflos_Key_Modus%201',Prueflos_Key_Object='Prueflos_Key_Object%201')",
+		"type": "/WIND/QM_RESULTS_SRV.Prueflose"
+	},
+	"TOVORG": {
+		"__deferred": {
+			"uri": "PruefloseSet(Prueflos='Prueflos%201',Prueflos_Key_Modus='Prueflos_Key_Modus%201',Prueflos_Key_Object='Prueflos_Key_Object%201')/TOVORG"
+		}
+	},
+	"TOSER": {
+		"__deferred": {
+			"uri": "PruefloseSet(Prueflos='Prueflos%201',Prueflos_Key_Modus='Prueflos_Key_Modus%201',Prueflos_Key_Object='Prueflos_Key_Object%201')/TOSER"
+		}
+	}
+}]

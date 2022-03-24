@@ -1,0 +1,56 @@
+<mvc:View id="md" controllerName="de.enercon.usbee.controller.recordresults.Masterdetail" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+	<Page backgroundDesign="Transparent">
+		<customHeader>
+			<Bar>
+				<contentLeft>
+					<Button icon="sap-icon://nav-back" press="onNavBack"/>
+					<Text text="{ path: 'glo>/_clock1', type: 'sap.ui.model.type.Date', formatOptions: { style: 'full' } }"/>
+					<Label id="oLabelClock" text="{glo>/_clock2}"/>
+				</contentLeft>
+				<contentMiddle>
+					<!--<Title text="{i18n>homePageTitleLong} - {glo>/_AppVersion} - ({glo>/_system})" class="TextBold"/>-->
+					<Title text="{i18n>homePageTitleLong} - {glo>/_AppVersion} - ({GLOSET>/_sysid})" class="TextBold"/>
+				</contentMiddle>
+				<contentRight>
+					<Button icon="sap-icon://pdf-attachment" press="handleDokuPress" class="sapUiSmallMarginBottom" tooltip="{i18n>dokutitles}"/>
+					<Button icon="sap-icon://user-settings" press="handleSettings" class="sapUiSmallMarginBottom" tooltip="{i18n>usersettings}"/>
+					<Button icon="sap-icon://refresh" press="handleReload" class="sapUiSmallMarginBottom" tooltip="{i18n>reload}"/>
+					<!--<ToggleButton icon="sap-icon://synchronize" press="handleAutoreload" class="sapUiSmallMarginBottom" tooltip="{i18n>reloadbutton}"/>			-->
+					<ToggleButton icon="sap-icon://group-2" press="handleHideMaster2" class="sapUiSmallMarginBottom" tooltip="{i18n>hidemaster}"/>
+					<!--<ToggleButton icon="sap-icon://open-command-field" press="handleRapidNav" class="sapUiSmallMarginBottom" tooltip="{i18n>rapidnav}" pressed="true"/>			-->
+					<ToggleButton icon="sap-icon://full-screen" press="handleFullscreen2" class="sapUiSmallMarginBottom" tooltip="{i18n>fullscreen}"
+						visible="{glo>/_desktop}"/>
+					<Button icon="sap-icon://home" press="handleHome" class="sapUiSmallMarginBottom" tooltip="{i18n>home}"/>
+					<Image decorative="false" densityAware="false" press="handleImage3Press" src="{glo>/_imagepath}/en_logo.png" width="8em">
+						<layoutData>
+							<FlexItemData growFactor="1"/>
+						</layoutData>
+					</Image>
+				</contentRight>
+			</Bar>
+		</customHeader>
+		<!--<Page navButtonPress="onNavBack" showNavButton="true" title="{i18n>homePageTitleLong} - {glo>/_AppVersion} - ({glo>/_system})">-->
+		<!--	<headerContent>-->
+		<!--		<Button icon="sap-icon://pdf-attachment" press="handleDokuPress" class="sapUiSmallMarginBottom" tooltip="{i18n>dokutitles}"/>-->
+		<!--		<Button icon="sap-icon://user-settings" press="handleSettings" class="sapUiSmallMarginBottom" tooltip="{i18n>usersettings}"/>-->
+		<!--		<Button icon="sap-icon://refresh" press="handleReload" class="sapUiSmallMarginBottom" tooltip="{i18n>reload}"/>-->
+		<!--<ToggleButton icon="sap-icon://synchronize" press="handleAutoreload" class="sapUiSmallMarginBottom" tooltip="{i18n>reloadbutton}"/>			-->
+		<!--		<ToggleButton icon="sap-icon://group-2" press="handleHideMaster2" class="sapUiSmallMarginBottom" tooltip="{i18n>hidemaster}"/>-->
+		<!--<ToggleButton icon="sap-icon://open-command-field" press="handleRapidNav" class="sapUiSmallMarginBottom" tooltip="{i18n>rapidnav}" pressed="true"/>			-->
+		<!--		<ToggleButton icon="sap-icon://full-screen" press="handleFullscreen2" class="sapUiSmallMarginBottom" tooltip="{i18n>fullscreen}"-->
+		<!--			visible="{glo>/_desktop}"/>-->
+		<!--		<Button icon="sap-icon://home" press="handleHome" class="sapUiSmallMarginBottom" tooltip="{i18n>home}"/>-->
+		<!--		<Image decorative="false" densityAware="false" press="handleImage3Press" src="{glo>/_imagepath}/en_logo.png" width="8em">-->
+		<!--			<layoutData>-->
+		<!--				<FlexItemData growFactor="1"/>-->
+		<!--			</layoutData>-->
+		<!--		</Image>-->
+		<!--	</headerContent>-->
+		<!--<SplitContainer id="Split1" mode="HideMode" afterMasterNavigate="onAfterMasterNavigate" afterDetailNavigate="onAfterDetailNavigate">-->
+		<MessageStrip type="Warning" visible="{GLOSET>/_filterzr}" text="{i18n>filteractive} {i18n>filterzr}" showIcon="true" showCloseButton="false"></MessageStrip>
+		<SplitContainer id="Split1">
+			<masterPages></masterPages>
+			<detailPages></detailPages>
+		</SplitContainer>
+	</Page>
+</mvc:View>

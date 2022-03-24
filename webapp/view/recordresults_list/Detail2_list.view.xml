@@ -1,0 +1,113 @@
+<mvc:View controllerName="de.enercon.usbee.controller.recordresults_list.Detail2_list" xmlns="sap.m" xmlns:l="sap.ui.layout"
+	xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc">
+	<!--title="{i18n>detail2-title} {path: 'pl>Prueflos', type : 'sap.ui.model.odata.type.String', constraints: { isDigitSequence : true }} / {pl>Vornr} {pl>Vorktxt}">-->
+	<Page id="Detail2_list" backgroundDesign="Transparent">
+		<customHeader>
+			<Bar>
+				<contentLeft>
+					<Button icon="sap-icon://nav-back" press="onNavBack"/>
+					<Text text="{ path: 'glo>/_clock1', type: 'sap.ui.model.type.Date', formatOptions: { style: 'full' } }"/>
+					<Label id="oLabelClock" text="{glo>/_clock2}"/>
+				</contentLeft>
+				<contentMiddle>
+					<Title
+						text="{i18n>detail2-title} {path: 'pl>Prueflos', type : 'sap.ui.model.odata.type.String', constraints: { isDigitSequence : true }} / {pl>Vornr} {pl>Vorktxt}"
+						class="TextBold"/>
+				</contentMiddle>
+				<contentRight>
+					<Button icon="sap-icon://pdf-attachment" press="handleDokuPress" class="sapUiSmallMarginBottom" tooltip="{i18n>dokutitles}"/>
+					<Button icon="sap-icon://user-settings" press="handleSettings" class="sapUiSmallMarginBottom" tooltip="{i18n>usersettings}"/>
+					<Button icon="sap-icon://refresh" press="handleReload" class="sapUiSmallMarginBottom" tooltip="{i18n>reload}"/>
+					<ToggleButton icon="sap-icon://full-screen" press="handleFullscreen2" class="sapUiSmallMarginBottom" tooltip="{i18n>fullscreen}"
+						visible="{glo>/_desktop}"/>
+					<Button icon="sap-icon://home" press="handleHome" class="sapUiSmallMarginBottom" tooltip="{i18n>home}"/>
+					<Image decorative="false" densityAware="false" press="handleImage3Press" src="{glo>/_imagepath}/en_logo.png" width="8em">
+						<layoutData>
+							<FlexItemData growFactor="1"/>
+						</layoutData>
+					</Image>
+				</contentRight>
+			</Bar>
+		</customHeader>
+		<!--/////////////////////////////////////////////////////////////////////////////////////-->
+		<MessageStrip type="Warning" visible="{GSETTINGS>/_filterzr}" text="{i18n>filteractive} {i18n>filterzr}" showIcon="true" showCloseButton="false"></MessageStrip>
+		<!--/////////////////////////////////////////////////////////////////////////////////////-->
+		<!--<Page id="Detail2_list" navButtonPress="onNavBack" showNavButton="true" backgroundDesign="Transparent"-->
+		<!--	title="{i18n>detail2-title} {path: 'pl>Prueflos', type : 'sap.ui.model.odata.type.String', constraints: { isDigitSequence : true }} / {pl>Vornr} {pl>Vorktxt}">-->
+		<!--	<headerContent>-->
+		<!--		<Button icon="sap-icon://pdf-attachment" press="handleDokuPress" class="sapUiSmallMarginBottom" tooltip="{i18n>dokutitles}"/>		-->
+		<!--		<Button icon="sap-icon://user-settings" press="handleSettings" class="sapUiSmallMarginBottom" tooltip="{i18n>usersettings}"/>								-->
+		<!--		<Button icon="sap-icon://refresh" press="handleReload" class="sapUiSmallMarginBottom" tooltip="{i18n>reload}"/>-->
+		<!--		<ToggleButton icon="sap-icon://full-screen" press="handleFullscreen2" class="sapUiSmallMarginBottom" tooltip="{i18n>fullscreen}" visible="{glo>/_desktop}"/>-->
+		<!--		<Button icon="sap-icon://home" press="handleHome" class="sapUiSmallMarginBottom" tooltip="{i18n>home}"/>-->
+		<!--		<Image decorative="false" densityAware="false" press="handleImage3Press" src="{glo>/_imagepath}/en_logo.png" width="8em">-->
+		<!--			<layoutData>-->
+		<!--				<FlexItemData growFactor="1"/>-->
+		<!--			</layoutData>-->
+		<!--		</Image>-->
+		<!--	</headerContent>-->
+		<!--/////////////////////////////////////////////////////////////////////////////////////-->
+		<!--<ProgressIndicator percentValue="{ path: 'pl>Results_Entered_P', formatter: 'de.enercon.usbee.controller.utils.Formatter.string_to_float' }"-->
+		<!--	displayValue="{ parts:['pl>Results_Entered_P','pl>Results_Gesamt','pl>Results_Entered'], formatter: 'de.enercon.usbee.controller.utils.Formatter.detail1_percentage_value' }"-->
+		<!--	showValue="true" state="{ path: 'pl>Results_Entered_P', formatter: 'de.enercon.usbee.controller.utils.Formatter.detail1_percentage_color' }"-->
+		<!--	height="3%"/>-->
+		<!--<MessageStrip-->
+		<!--	text="{i18n>detail1-matnr} {path: 'pl>TOPL/Matnr', type : 'sap.ui.model.odata.type.String', constraints: { isDigitSequence : true }} {pl>TOPL/Ktextmat} / {parts:['pl>Prueflos_Key_Modus','pl>Prueflos_Key_Object'], formatter: 'de.enercon.usbee.controller.utils.Formatter.detail1_key_art_header' }"-->
+		<!--	showIcon="false" showCloseButton="false"></MessageStrip>-->
+		<!--<HBox>-->
+		<!--	<items>-->
+		<!--		<c:Icon src="sap-icon://activities" size="3rem"/>-->
+		<!--	</items>-->
+		<!--</HBox>-->
+		<!--<Table id="Merkmale" inset="false" mode="None" noDataText="{i18n>detail2-nomerk}" itemPress="onListItemPress"-->
+		<!--	items="{ path: 'pl>TOMERK', sorter: { path: 'Merknr' } }">-->
+		<!--	<columns>-->
+		<!--		<Column width="5em">-->
+		<!--			<Text text="{i18n>detail3-qmicon}"/>-->
+		<!--		</Column>-->
+		<!--		<Column minScreenWidth="Tablet" demandPopin="true">-->
+		<!--			<Text text="{i18n>detail3-qmicona}"/>-->
+		<!--		</Column>-->
+		<!--		<Column minScreenWidth="Tablet" demandPopin="true">-->
+		<!--			<Text text="{i18n>detail2-merkmal}"/>-->
+		<!--		</Column>-->
+		<!--		<Column minScreenWidth="Tablet" demandPopin="true">-->
+		<!--			<Text text="{i18n>detail2-info}"/>-->
+		<!--		</Column>-->
+		<!--		<Column minScreenWidth="Tablet" demandPopin="true">-->
+		<!--			<Text text="{i18n>detail2-zupruefen}"/>-->
+		<!--		</Column>-->
+		<!--		<Column minScreenWidth="Tablet" demandPopin="true">-->
+		<!--			<Text text="{i18n>detail2-geprueft}"/>-->
+		<!--		</Column>-->
+		<!--	</columns>-->
+		<!--	<items>-->
+		<!--		<ColumnListItem type="Navigation">-->
+		<!--			<cells>-->
+		<!--				<c:Icon src="{ path: 'pl>MBewertung', formatter: 'de.enercon.usbee.controller.utils.Formatter.detail3_icon_mbewertung' }" size="200%"-->
+		<!--					color="{ path: 'pl>MBewertung', formatter: 'de.enercon.usbee.controller.utils.Formatter.detail3_color_mbewertung' }">-->
+		<!--					<c:layoutData>-->
+		<!--						<FlexItemData growFactor="1"/>-->
+		<!--					</c:layoutData>-->
+		<!--				</c:Icon>-->
+		<!--				<c:Icon tooltip="{ path: 'pl>ART_MERKMAL', formatter: 'de.enercon.usbee.controller.utils.Formatter.detail3_icon_artmerkmaltext' }"-->
+		<!--					src="{ path: 'pl>ART_MERKMAL', formatter: 'de.enercon.usbee.controller.utils.Formatter.detail3_icon_artmerkmal' }" size="200%">-->
+		<!--					<c:layoutData>-->
+		<!--						<FlexItemData growFactor="1"/>-->
+		<!--					</c:layoutData>-->
+		<!--				</c:Icon>-->
+		<!--				<ObjectIdentifier title="{pl>Merknr} - {pl>CharDescr}" text="{pl>VORGABEN}"/>-->
+		<!--				<Text text="{pl>Infofield3}"/>-->
+		<!--				<ObjectNumber number="{pl>SOLLSTPUMF}" unit="{pl>SmplUnit}"/>-->
+		<!--				<ObjectNumber number="{pl>ANZWERTG}" unit="{pl>SmplUnit}"/>-->
+		<!--				<Text text="{pl>MBewertung}"/>-->
+		<!--			</cells>-->
+		<!--		</ColumnListItem>-->
+		<!--	</items>-->
+		<!--</Table>-->
+		<!--/////////////////////////////////////////////////////////////////////////////////////-->
+		<!--ProgressIndicator, Messagestrip, Table-->
+		<core:Fragment fragmentName="de.enercon.usbee.view.reuse.MK_Detail2" type="XML"/>
+		<!--/////////////////////////////////////////////////////////////////////////////////////-->
+	</Page>
+</mvc:View>

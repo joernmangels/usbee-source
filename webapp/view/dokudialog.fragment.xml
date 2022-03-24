@@ -1,0 +1,21 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<SelectDialog id="dokuDialog"
+		noDataText="{i18n>nodoku}"
+		title="{i18n>dokutitles}"
+		search="handleSearch"
+		confirm="handleConfirm"
+		cancel="handleClose"
+		items="{
+			path: 'pl>/DokumentationSet'
+		}" >
+		<StandardListItem
+			title="{pl>Filename}"
+			description=""
+			icon="sap-icon://pdf-attachment"
+			iconDensityAware="false"
+			iconInset="false"
+			type="Active" />
+	</SelectDialog>
+</core:FragmentDefinition>

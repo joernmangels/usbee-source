@@ -1,0 +1,13 @@
+{
+	"TileCollection": [{
+		"icon": "sap-icon://approvals",
+		"title": "Prüfergebnisse erfassen",
+		"target": "go_recordresults"
+	}, {
+		"icon": "sap-icon://add-equipment",
+		"title": "Equipment(SerialNr) anlegen"
+	}, {
+		"icon": "sap-icon://inspection",
+		"title": "Prüflos anlegen"
+	}]
+}

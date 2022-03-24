@@ -1,0 +1,42 @@
+<mvc:View controllerName="de.enercon.controller.insplot.Insplot" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:core="sap.ui.core"
+	xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form">
+	<Page title="{i18n>InsplotTitle}" navButtonPress="onNavBack" showNavButton="true">
+		<headerContent>
+			<!--<Button icon="sap-icon://hint" press="onOpenDialog"/>-->
+			<!--<Button text="Screen Mode" press="handleFullscreen" class="sapUiSmallMarginBottom"/>-->
+			<ToggleButton icon="sap-icon://full-screen" press="handleFullscreen" class="sapUiSmallMarginBottom" tooltip="{i18n>fullscreen}"/>
+			<Image decorative="false" densityAware="false" press="handleImage3Press" src="img/en_logo.png" width="8em">
+				<layoutData>
+					<FlexItemData growFactor="1"/>
+				</layoutData>
+			</Image>
+		</headerContent>
+		<content>
+			<f:SimpleForm id="SimpleFormDisplay354" editable="false" layout="ResponsiveGridLayout" columnsM="2">
+				<f:content>
+					<InputListItem label="{i18n>material}">
+						<Select id="selectPID" selectedKey="{inputdata>/_LASTMATNR}" showSecondaryValues="true" items="{ path: 'pl>/MaterialSet', sorter: { path: 'Matnr' } }">
+							<core:ListItem key="{pl>Matnr}" text="{pl>Maktx}" additionalText="{pl>Matnr} {pl>Werks}"/>
+						</Select>
+					</InputListItem>
+					<!--<InputListItem label="{i18n>material}">-->
+					<!--	<Input id="MatnrInput" type="Text" placeholder="{i18n>entersernr}" binding="{/inputdata}" value="{inputdata>/_LASTMATNR}"></Input>-->
+					<!--</InputListItem>-->
+					<InputListItem label="{i18n>serialnummer}">
+						<Input id="SerialInput" type="Text" placeholder="{i18n>entersernr}" binding="{/inputdata}" value="{inputdata>/_LASTSERNR}"></Input>
+					</InputListItem>
+				</f:content>
+			</f:SimpleForm>
+		</content>
+
+		<footer>
+			<Toolbar>
+				<!--<Button icon="sap-icon://message-popup" text="{/messagesLength}" type="Emphasized" press="handleMessagePopoverPress"/>-->
+				<Button icon="sap-icon://alert" text="{=${message>/}.length}" visible="{=${message>/}.length > 0}" type="Emphasized"
+					press="onMessagePopoverPress"></Button>
+				<ToolbarSpacer/>
+				<Button type="Accept" icon="sap-icon://save" text="{i18n>detail2-save}" press="onSave"/>
+			</Toolbar>
+		</footer>
+	</Page>
+</mvc:View>

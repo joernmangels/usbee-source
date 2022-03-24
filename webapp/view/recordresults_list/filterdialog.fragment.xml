@@ -1,0 +1,20 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+  <ViewSettingsDialog confirm="onConfirm">
+    <!--<sortItems>-->
+    <!--  <ViewSettingsItem selected="true" key="Age" text="Age"/>-->
+    <!--  <ViewSettingsItem key="City" text="City"/>-->
+    <!--</sortItems>-->
+    <!--<groupItems>-->
+    <!--  <ViewSettingsItem key="City" text="City"/>-->
+    <!--</groupItems>-->
+    <filterItems>
+      <ViewSettingsFilterItem key="StandPL" text="Bearbeitungsstand Prüflose" multiSelect="true">
+        <items>
+          <ViewSettingsItem key="StandPl___EQ___N" text="Nicht bearbeitete PLs"/>
+          <ViewSettingsItem key="StandPl___EQ___T" text="Teilweise bearbeitete PLs"/>
+          <ViewSettingsItem key="StandPl___EQ___V" text="Vollständig bearbeitete PLs"/>
+        </items>
+      </ViewSettingsFilterItem>
+    </filterItems>
+  </ViewSettingsDialog>
+</core:FragmentDefinition>

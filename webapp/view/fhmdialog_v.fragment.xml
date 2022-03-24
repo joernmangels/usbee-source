@@ -1,0 +1,63 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<TableSelectDialog id="fhmDialog" noDataText="{i18n>no-fhm}" search="handleSearch" confirm="handleConfirm" cancel="handleClose"
+		items="{pl>TOFHM_V}">
+		<ColumnListItem>
+			<cells>
+				<ObjectIdentifier title="{pl>Lfdnr}" text="{ path: 'pl>Fhmar', formatter: 'de.enercon.usbee.controller.utils.Formatter.fhmar_to_text' }"/>
+				<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+				<core:Icon size="350%" src="{ path: 'pl>Mimetype', formatter: 'de.enercon.usbee.controller.utils.Formatter.fhm_mimetype' }">
+					<core:layoutData>
+						<FlexItemData growFactor="1"/>
+					</core:layoutData>
+				</core:Icon>
+				<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+				<!--<Text text="{pl>Filename}"/>-->
+				<Text text="{parts:['pl>Filename','pl>Mimetype'], formatter: 'de.enercon.usbee.controller.utils.Formatter.fhm_mimetype_text' }"/>
+				<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+				<!--<Text text="{ path: 'pl>Fhmar', formatter: 'de.enercon.usbee.controller.utils.Formatter.fhmar_to_text' }"/>-->
+				<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+				<ObjectIdentifier title="{pl>Fhktx}" text="{pl>Fhmnr}"/>
+				<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+				<!--<Text text="{pl>Merknr}"/>-->
+				<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+				<!--<Text text="{pl>Filename}"/>-->
+				<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+				<!--<core:Icon src="{parts:['pl>Bewertung','pl>Attribut'], formatter: 'de.enercon.usbee.controller.utils.Formatter.detail3_icon_result_neu' }"-->
+				<!--	size="350%" color="{ path: 'pl>Bewertung', formatter: 'de.enercon.usbee.controller.utils.Formatter.detailL_color_icon' }">-->
+				<!--<Text text="{Width} x {Depth} x {Height} {DimUnit}"/>-->
+				<!--<ObjectNumber number="{WeightMeasure}" unit="{WeightUnit}"-->
+				<!--	state="{ path: 'WeightMeasure', formatter: 'sap.m.sample.TableSelectDialog.Formatter.weightState' }"/>-->
+				<!--<ObjectNumber-->
+				<!--	number="{ parts:[{path:'Price'},{path:'CurrencyCode'}], type: 'sap.ui.model.type.Currency', formatOptions: {showMeasure: false} }"-->
+				<!--	unit="{CurrencyCode}"/>-->
+			</cells>
+		</ColumnListItem>
+		<columns>
+			<Column width="8em" minScreenWidth="Tablet" demandPopin="true">
+				<header>
+					<Text text="{i18n>fhm-head3}"/>
+				</header>
+			</Column>
+			<Column width="4em" minScreenWidth="Tablet" demandPopin="true">
+				<header>
+					<Text text="{i18n>fhm-head2}"/>
+				</header>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true">
+				<header>
+					<Text text=""/>
+				</header>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true">
+				<header>
+					<Text text="{i18n>fhm-head1}"/>
+				</header>
+			</Column>
+			<!--<Column minScreenWidth="Tablet" demandPopin="true">-->
+			<!--	<header>-->
+			<!--		<Text text="{i18n>detail2-merkmal}"/>-->
+			<!--	</header>-->
+			<!--</Column>-->
+		</columns>
+	</TableSelectDialog>
+</core:FragmentDefinition>

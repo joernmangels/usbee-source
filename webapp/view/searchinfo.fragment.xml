@@ -1,0 +1,44 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<!--<Popover-->
+	<!--	title="{18n>searchinfo}"-->
+	<!--	class="sapUiContentPadding"-->
+	<!--	placement="Bottom">-->
+	<!--<footer>-->
+	<!--	<Toolbar>-->
+	<!--		<ToolbarSpacer/>-->
+	<!--		<Button-->
+	<!--			id="email"-->
+	<!--			text="Email"-->
+	<!--			press="handleEmailPress" />-->
+	<!--	</Toolbar>-->
+	<!--</footer>-->
+	<!--<Image src="{ProductPicUrl}" width="15em" densityAware="false" />-->
+	<!--</Popover>-->
+	<Popover showHeader="false" contentWidth="340px" contentHeight="400px" placement="Bottom">
+		<NavContainer id="navCon">
+			<Page id="master" title="{i18n>searchinfo}">
+				<List id="list">
+					<!--	items="{/ProductCollection}" >-->
+					<StandardListItem title="{i18n>s1-title}" description="{i18n>s1-descr}" type="Active" icon="sap-icon://sys-find" press="onNavToSearchInfo"
+						iconDensityAware="false" iconInset="false"/>
+					<StandardListItem title="{i18n>s2-title}" description="{i18n>s1-descr}" type="Active" icon="sap-icon://bar-code" press="onNavToBarcodeInfo"
+						iconDensityAware="false" iconInset="false"/>
+				</List>
+			</Page>
+			<Page id="search" showNavButton="true" navButtonPress="onNavBackSearch" title="{i18n>s1-descr}">
+				<Text text="{i18n>s1-text1}" class="sapUiSmallMargin TextBold"></Text>
+				<Text text="{i18n>s1-text2}" class="sapUiSmallMargin TextBold"></Text>
+				<Text text="{i18n>s1-text3}" class="sapUiSmallMargin TextBold"></Text>
+				<Text text="{i18n>s1-text4}" class="sapUiSmallMargin TextBold"></Text>
+			</Page>
+			<Page id="barcode" showNavButton="true" navButtonPress="onNavBackSearch" title="{i18n>s2-descr}">
+				<Text text="{i18n>s2-text1}" class="sapUiSmallMargin TextBold"></Text>
+				<Text text="{i18n>s2-text2}" class="sapUiSmallMargin TextBold"></Text>
+				<Text text="{i18n>s2-text3}" class="sapUiSmallMargin TextBold size0"></Text>
+				<Text text="{i18n>s2-text4}" class="sapUiSmallMargin TextBold size0"></Text>
+				<Text text="{i18n>s2-text5}" class="sapUiSmallMargin TextBold size0"></Text>
+				<Text text="{i18n>s2-text6}" class="sapUiSmallMargin TextBold"></Text>
+			</Page>
+		</NavContainer>
+	</Popover>
+</core:FragmentDefinition>

@@ -1,0 +1,84 @@
+<mvc:View controllerName="de.enercon.usbee.controller.recordresults.Detail1" xmlns="sap.m" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.m.semantic">
+	<!--title="{i18n>detail1-title} {path: 'pl>Prueflos', type : 'sap.ui.model.odata.type.String', constraints: { isDigitSequence : true }}">-->
+	<semantic:DetailPage id="Detail1" navButtonPress="onNavBack" showNavButton="false" backgroundDesign="Transparent"
+		title="{i18n>detail1-title} {path: 'pl>Prueflos', type : 'sap.ui.model.odata.type.String', constraints: { isDigitSequence : true }}">
+		<!--/////////////////////////////////////////////////////////////////////////////////////-->
+		<!--<Page id="Detail1" navButtonPress="onNavBack" showNavButton="false" backgroundDesign="Transparent"-->
+		<!--	title="{i18n>detail1-title} {path: 'pl>Prueflos', type : 'sap.ui.model.odata.type.String', constraints: { isDigitSequence : true }}">-->
+		<!--/////////////////////////////////////////////////////////////////////////////////////-->
+		<!--<customHeader>-->
+		<!--	<Bar>-->
+		<!--		<contentMiddle>-->
+		<!--			<Text text="{i18n>detail1-title} {path: 'pl>Prueflos', type : 'sap.ui.model.odata.type.String', constraints: { isDigitSequence : true }}" class="TextBold bigLabel_H"></Text>-->
+		<!--		</contentMiddle>-->
+		<!--	</Bar>-->
+		<!--</customHeader>-->
+		<!--<MessageStrip text="{i18n>detail1-matnr} {= parseFloat(${pl>Matnr})} {pl>Ktextmat} / {i18n>detail1-sernr} {pl>Sernr} / {i18n>detail1-aufnr} {pl>Aufnr}"-->
+		<!--	MessageStrip text="{ path: 'pl>Prueflos_Key_Modus,pl>Prueflos_Key_Object', formatter:-->
+		<!--	'de.enercon.usbee.controller.utils.Formatter.key_art_header' }" showIcon="false" showCloseButton="false" class="sapUiMediumMarginBottom">-->
+		<!--</MessageStrip>-->
+		<!--percentage="{parts: ['vbaktuell>/AktuellSet/gesamt_heute','mc_tag>/SettingsSet/vb1_targetvaluep'], formatter: 'de.mangels.controller.Formatter.percentage_pv_heute' }"-->
+		<!--<MessageStrip-->
+		<!--	text="{i18n>detail1-matnr} {path: 'pl>Matnr', type : 'sap.ui.model.odata.type.String', constraints: { isDigitSequence : true }} {pl>Ktextmat} / {parts:['pl>Prueflos_Key_Modus','pl>Prueflos_Key_Object'], formatter: 'de.enercon.usbee.controller.utils.Formatter.detail1_key_art_header' }"-->
+		<!--	showIcon="false" showCloseButton="false"></MessageStrip>-->
+		<!--<ProgressIndicator percentValue="{ path: 'pl>Results_Entered_P', formatter: 'de.enercon.usbee.controller.utils.Formatter.string_to_float' }"-->
+		<!--	displayValue="{ parts:['pl>Results_Entered_P','pl>Results_Gesamt','pl>Results_Entered'], formatter: 'de.enercon.usbee.controller.utils.Formatter.detail1_percentage_value' }"-->
+		<!--	showValue="true" state="{ path: 'pl>Results_Entered_P', formatter: 'de.enercon.usbee.controller.utils.Formatter.detail1_percentage_color' }"-->
+		<!--	class="sapUiMediumMarginBottom" height="5%"/>-->
+		<!--<ProgressIndicator percentValue="{ path: 'pl>Results_Entered_P', formatter: 'de.enercon.usbee.controller.utils.Formatter.string_to_float' }"-->
+		<!--	displayValue="{ parts:['pl>Results_Entered_P','pl>Results_Gesamt','pl>Results_Entered'], formatter: 'de.enercon.usbee.controller.utils.Formatter.detail1_percentage_value' }"-->
+		<!--	showValue="true" state="{ path: 'pl>Results_Entered_P', formatter: 'de.enercon.usbee.controller.utils.Formatter.detail1_percentage_color' }"-->
+		<!--	height="3%"/>-->
+		<!--<MessageStrip-->
+		<!--	text="{i18n>detail1-matnr} {path: 'pl>Matnr', type : 'sap.ui.model.odata.type.String', constraints: { isDigitSequence : true }} {pl>Ktextmat} / {parts:['pl>Prueflos_Key_Modus','pl>Prueflos_Key_Object'], formatter: 'de.enercon.usbee.controller.utils.Formatter.detail1_key_art_header' }"-->
+		<!--	showIcon="false" showCloseButton="false"></MessageStrip>-->
+		<!--<IconTabBar id="iconTabBar" select="onQuickFilter" expandable="false" applyContentPadding="false" backgroundDesign="Translucent">-->
+		<!--	<items>-->
+		<!--		<IconTabFilter key="alle" icon="sap-icon://multiselect-all" iconColor="Positive" count="{zahlen>/_alle}" design="Horizontal"-->
+		<!--			text="{i18n>detail1-alleVorgaenge}"/>-->
+		<!--		<IconTabSeparator/>-->
+		<!--		<IconTabFilter key="nichterfasst" icon="sap-icon://document" iconColor="Negative" count="{zahlen>/_nichterfasst}" design="Horizontal"-->
+		<!--			text="{i18n>detail1-nichterfasst}"/>-->
+		<!--		<IconTabSeparator/>-->
+		<!--		<IconTabFilter key="teilweise" icon="sap-icon://edit" iconColor="Critical" count="{zahlen>/_teilweise}" design="Horizontal"-->
+		<!--			text="{i18n>detail1-teilweise}"/>-->
+		<!--		<IconTabFilter key="vollstaendig" icon="sap-icon://complete" iconColor="Positive" count="{zahlen>/_vollstaendig}" design="Horizontal"-->
+		<!--			text="{i18n>detail1-vollstaendig}"/>-->
+		<!--		<IconTabSeparator/>-->
+		<!--	</items>-->
+		<!--	<content>-->
+		<!--		<List id="vorgaengeList" items="{pl>TOVORG}" growing="true" growingThreshold="10" busyIndicatorDelay="100" enableBusyIndicator="true"-->
+		<!--			noDataText="{i18n>detail1-novorg}" updateFinished="onUpdateFinished">-->
+		<!--			<items>-->
+		<!--<StandardListItem title="{pl>Vornr} - {pl>Vorktxt}"-->
+		<!--	icon="{ path: 'pl>StandVg', formatter: 'de.enercon.usbee.controller.utils.Formatter.mastericon' }" iconDensityAware="false" iconInset="true"-->
+		<!--	type="Navigation" press="onListItemPressed"/>-->
+		<!--				<InputListItem label="{pl>Vornr} - {pl>Vorktxt}" type="Navigation" press="onListItemPressed">-->
+		<!--					<Button text="{i18n>detail2-Mtext}" icon="sap-icon://request" press="onTextPress"-->
+		<!--						visible="{ path: 'pl>Langtext', formatter: 'de.enercon.usbee.controller.utils.Formatter.detail3_visible_langtext' }"/>-->
+		<!--				</InputListItem>-->
+		<!--			</items>-->
+		<!--		</List>-->
+		<!--	</content>-->
+		<!--</IconTabBar>-->
+		<!--/////////////////////////////////////////////////////////////////////////////////////-->
+		<!--ProgressIndigator Messagestrip, IconTabBar-->
+		<core:Fragment fragmentName="de.enercon.usbee.view.reuse.VG_Detail1" type="XML"/>
+		<!--/////////////////////////////////////////////////////////////////////////////////////-->
+		<!--</Page>-->
+		<!--/////////////////////////////////////////////////////////////////////////////////////-->
+		<semantic:customFooterContent>
+			<Label text="{i18n>detail1-ppl}:" visible="{= ${pl>SLWBEZ} === '' ? false : true }"/>
+			<Text text="{pl>SLWBEZ_KURZTEXT}" visible="{= ${pl>SLWBEZ} === '' ? false : true }"/>
+			<Button text="{i18n>detail1-newpp}" icon="sap-icon://create" press="onPPCreate" type="Accept"
+				visible="{= ${pl>SLWBEZ} === '' || ${pl>SLWBEZ} === 'ZPV' ? false : true }"/>
+			<!--/////////////////////////////////////////////////////////////////////////////////////-->						
+			<Button text="{i18n>detail2-info}" icon="sap-icon://warning2" press="onPPInfoZBV" type="Accept"
+				visible="{= ${pl>SLWBEZ} === 'ZPV' ? true : false }"/>				
+		</semantic:customFooterContent>
+		<semantic:messagesIndicator>
+			<semantic:MessagesIndicator press="onMessagePopoverPress"/>
+		</semantic:messagesIndicator>
+	</semantic:DetailPage>
+</mvc:View>

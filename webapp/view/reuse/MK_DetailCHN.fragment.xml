@@ -1,0 +1,88 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Table id="idresuTableN" fixedLayout="false" inset="false" items="{pl>TORESU}">
+		<columns>
+			<Column>
+				<Text text="{pl>Headline1}"/>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true">
+				<Text text="{pl>Headline2}"/>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true">
+				<Text text="{pl>Headline3}"/>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true">
+				<Text text="{pl>Headline4}"/>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true">
+				<Text text="{pl>Headline5}"/>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true" visible="{= ${pl>SelSet2} === '' ? false : true }">
+				<Text text="{pl>Headline8}"/>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true">
+				<Text text="{pl>Headline6}"/>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true">
+				<Text text="{pl>Headline7}"/>
+			</Column>
+		</columns>
+		<items>
+			<!--<ColumnListItem vAlign="Middle" visible="{= ${pl>visible} === 'X'}">-->
+			<ColumnListItem vAlign="Middle" visible="{pl>visible}">
+				<cells>
+					<FlexBox direction="Column" alignItems="Start">
+						<items>
+							<Button icon="sap-icon://sys-add" press="onLineAdd" type="Transparent"
+								enabled="{parts:['pl>Pruefdatum','pl>Scope','pl>ScopeInd','pl>SOLLSTPUMF','pl>ANZWERTG', 'pl>Prueflos_Key_Modus'], formatter: 'de.enercon.usbee.controller.utils.Formatter.button_addline_MK' }"/>
+							<Button icon="sap-icon://sys-minus" press="onLineDel" type="Transparent" visible="{pl>LINE_ADDED}"/>
+							<!--visible="{parts:['pl>Pruefdatum','pl>Scope','pl>ScopeInd','pl>SOLLSTPUMF','pl>ANZWERTG'], formatter: 'de.enercon.usbee.controller.utils.Formatter.button_delline_MK' }"/>-->
+						</items>
+					</FlexBox>
+					<!--		/////////////////////////////////////////////////////////////////////////////////////////////-->
+					<core:Icon
+						src="{parts:['pl>Messwert','pl>Attribut', 'TOLS>/_TOL_UNTEN', 'TOLS>/_TOL_OBEN' ], formatter: 'de.enercon.usbee.controller.utils.Formatter.detail3_icon_result_N' }"
+						size="350%"
+						color="{parts:['pl>Messwert','pl>Attribut', 'TOLS>/_TOL_UNTEN', 'TOLS>/_TOL_OBEN' ], formatter: 'de.enercon.usbee.controller.utils.Formatter.detail3_color_result_N' }">
+						<core:layoutData>
+							<FlexItemData growFactor="1"/>
+						</core:layoutData>
+					</core:Icon>
+					<!--		/////////////////////////////////////////////////////////////////////////////////////////////-->
+					<SegmentedButton selectedKey="{pl>Attribut}" enabled="{= ${pl>Pruefdatum} !== '' ? true : false }" selectionChange="onValidChange">
+						<items>
+							<SegmentedButtonItem icon="sap-icon://accept" tooltip="{i18n>detailN-valid}" key="G"/>
+							<SegmentedButtonItem icon="sap-icon://cancel-maintenance" tooltip="{i18n>detailN-invalidY}" key="Y"
+								visible="{= ${pl>ESTUKZ} !== '*' ? true : false }"/>
+							<SegmentedButtonItem icon="sap-icon://sys-cancel-2" tooltip="{i18n>detailN-invalidS}" key="/"/>
+						</items>
+					</SegmentedButton>
+					<!--        /////////////////////////////////////////////////////////////////////////////////////////////-->
+					<ObjectNumber number="{pl>Charge}" state="None"/>
+					<!--/////////////////////////////////////////////////////////////////////////////////////////////-->
+					<Input value="{path: 'pl>Messwert', type : '.typeMesswert'}" placeholder="{i18n>detail1-eingabem}"
+						editable="{= ${pl>Pruefdatum} !== '' ? false : true }"/>
+					<!--<Input value="{pl>Messwert}" type="Number" placeholder="{i18n>detail1-eingabem}"-->
+					<!--	editable="{= ${pl>Pruefdatum} !== '' ? false : true }" />-->
+					<!--liveChange="handleLiveChangeMesswert"-->
+					<!--<MaskInput mask="-999999" placeholderSymbol="_" placeholder="Enter a six digit number"/>	-->
+					<!--<Input value="{path: 'pl>Messwert', type : 'Number', constraints:{minimum:-999}}" placeholder="{i18n>detail1-eingabem}"-->
+					<!--	   editable="{= ${pl>Pruefdatum} !== '' ? false : true }"/>					-->
+					<!--<Input value="{pl>Messwert}" type="Number" min="0" inputmode="numeric" pattern="[0-9]*" placeholder="{i18n>detail1-eingabem}"-->
+					<!--	editable="{= ${pl>Pruefdatum} !== '' ? false : true }"/>-->
+					<!--		/////////////////////////////////////////////////////////////////////////////////////////////-->
+					<Select id="selectPIDS2L" selectedKey="{pl>Auswahlmenge2}" showSecondaryValues="false" enabled="{= ${pl>Pruefdatum} !== '' ? false : true }"
+						autoAdjustWidth="true" items="{ path: 'pl>TOCATRME', sorter: { path: 'Bewertung2' } }" visible="{= ${pl>SelSet2} === '' ? false : true }">
+						<core:ListItem key="{pl>Key_Qual}" text="{pl>Bewertung1}" additionalText="{pl>Bewertung2}"/>
+					</Select>
+					<!--		/////////////////////////////////////////////////////////////////////////////////////////////-->
+					<Input value="{ path: 'pl>Pb_text', type : 'sap.ui.model.type.String', constraints : { minLength: 0, maxLength: 40}}"
+						change="onBemerkungChange" editable="{= ${pl>Pruefdatum} !== '' ? false : true }" placeholder="{i18n>detail1-eingabeb}"
+						valueLiveUpdate="true"/>
+					<Input value="{ path: 'pl>Zi_text', type : 'sap.ui.model.type.String', constraints : { minLength: 0, maxLength: 18}}"
+						editable="{= ${pl>Pruefdatum} !== '' ? false : true }" placeholder="{i18n>detail1-eingabez}" valueLiveUpdate="true"/>
+					<!--		/////////////////////////////////////////////////////////////////////////////////////////////-->
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+</core:FragmentDefinition>

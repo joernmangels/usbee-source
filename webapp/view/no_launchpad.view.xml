@@ -1,0 +1,17 @@
+<mvc:View controllerName="de.enercon.usbee.controller.home_tilemenu" height="100%" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Page enableScrolling="false" showHeader="false" backgroundDesign="Transparent">
+		<FlexBox direction="Column" alignItems="Center">
+			<items>
+				<core:Icon src="sap-icon://sys-cancel-2" class="size5"></core:Icon>
+				<Text text="{i18n>no_lpd}" class="bigLabel TextBold"></Text>
+			</items>
+		</FlexBox>
+		<FlexBox direction="Column" alignItems="Center">
+			<items>
+				<BusyIndicator size="10em"/>
+			</items>
+		</FlexBox>
+		<footer></footer>
+	</Page>
+</mvc:View>

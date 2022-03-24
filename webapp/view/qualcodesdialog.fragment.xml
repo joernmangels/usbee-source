@@ -1,0 +1,58 @@
+<!--<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">-->
+<!--	<SelectDialog id="qcDialog" noDataText="{i18n>nodoku}" title="{i18n>dokutitles}" search="handleSearch" confirm="handleConfirm"-->
+<!--		cancel="handleClose" items="{ path: 'pl>TOBEWERTE' }">-->
+<!--		<StandardListItem class="cssGreen1" -->
+<!--		    title="{pl>Bewertung1}" description="{pl>Langtext}"-->
+<!--			icon="{ path: 'pl>Key_Qual', formatter: 'de.enercon.usbee.controller.utils.Formatter.detail3_icon_mbewertung' }" iconDensityAware="false"-->
+<!--			iconInset="false" type="Active"-->
+<!--			visible="{= ${pl>Bewertung_AR} === 'A' ? true : false }"/>-->
+<!--	</SelectDialog>-->
+<!--</core:FragmentDefinition>-->
+<!--<Select selectedKey="{pl>Bewertung}" showSecondaryValues="true" enabled="{= ${pl>Pruefdatum} !== '' ? false : true }" autoAdjustWidth="true"-->
+<!--	items="{pl>TOBEWERTE}">-->
+<!--	<items>-->
+<!--		<core:ListItem icon="{ path: 'pl>Key_Qual', formatter: 'de.enercon.usbee.controller.utils.Formatter.detail3_icon_mbewertung' }"-->
+<!--			key="{pl>Key_Qual}" text="{pl>Bewertung1}" additionalText="{pl>Langtext}"/>-->
+<!--	</items>-->
+<!--</Select>-->
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<TableSelectDialog id="qcDialog"
+		title="{path: 'pl>Prueflos', type : 'sap.ui.model.odata.type.String', constraints: { isDigitSequence : true }} / {pl>Vornr} / {pl>Pruefpunkt} / {pl>Merknr} - {i18n>detailL-bewertung}"
+		search="handleSearch" confirm="handleConfirm" cancel="handleClose" items="{ path: 'pl>TOBEWERTE' }"
+		contentHeight="100%" contentWidth="100%">
+		<!--contentHeight="50%" contentWidth="50%">-->
+		<ColumnListItem>
+			<cells>
+				<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+				<core:Icon size="350%" src="{ path: 'pl>Key_Qual', formatter: 'de.enercon.usbee.controller.utils.Formatter.detail3_icon_mbewertung' }"
+					color="{ path: 'pl>Key_Qual', formatter: 'de.enercon.usbee.controller.utils.Formatter.detail3_color_mbewertung' }">
+					<core:layoutData>
+						<FlexItemData growFactor="1"/>
+					</core:layoutData>
+				</core:Icon>
+				<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+				<Title text="{pl>Bewertung1}" class="bigLabel_H sapUiSmallMarginBegin"/>
+				<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+				<ObjectIdentifier title="{pl>Langtext}" class="bigLabel2"/>
+				<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+			</cells>
+		</ColumnListItem>
+		<columns>
+			<Column width="4em" minScreenWidth="Tablet" demandPopin="true">
+				<header>
+					<Text text=""/>
+				</header>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true">
+				<header>
+					<Text text="{i18n>qualcode-c1}"/>
+				</header>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true">
+				<header>
+					<Text text="{i18n>detail2-Mtext}"/>
+				</header>
+			</Column>
+		</columns>
+	</TableSelectDialog>
+</core:FragmentDefinition>

@@ -1,0 +1,570 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema Namespace="/WIND/QM_RESULTS_SRV" xml:lang="de" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+			<EntityType Name="Prueflose" sap:content-version="1">
+				<Key><PropertyRef Name="Prueflos"/><PropertyRef Name="Prueflos_Key_Modus"/><PropertyRef Name="Prueflos_Key_Object"/></Key><Property Name="Prueflos" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Prüflos" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Prueflos_Key_Modus" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Prueflos Key Modus"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Prueflos_Key_Object" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Prueflos Key Object"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Objnr" Type="Edm.String" Nullable="false" MaxLength="22" sap:unicode="false" sap:label="Objnr" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Stsma" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Stsma" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Sernr" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Serialnummer" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Charg" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Charge" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Entstezeit" Type="Edm.Time" Precision="0" sap:unicode="false" sap:label="Uhrzeit" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Werk" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Werk" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Ersteller" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Erstellt von"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Matnr" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Ersteldat" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Erstelldatum" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Aufnr" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Aufnr" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Ebeln" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Ebeln" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Ebelp" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Ebelp" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Ls_vbeln" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="LS_VBELN" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Ls_posnr" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="LS_POSNR" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Erstelzeit" Type="Edm.Time" Precision="0" sap:unicode="false" sap:label="Uhrzeit" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Aenderer" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Geändert von"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Art" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Prüfart" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Herkunft" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="PLosherkunft"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Losmenge" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:unicode="false" sap:label="Prüflosmenge"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Pastrterm" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Starttermin" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Mengeneinh" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="BasismengEinh."
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Pastrzeit" Type="Edm.Time" Nullable="false" Precision="0" sap:unicode="false" sap:label="Uhrzeit" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Paendterm" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Endtermin" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Paendzeit" Type="Edm.Time" Nullable="false" Precision="0" sap:unicode="false" sap:label="Uhrzeit" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Plnty" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Plantyp" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Plnnr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Plangruppe" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Pplverw" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Verwendung" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Plnal" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="PlnGrZähler" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Zaehl" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Zähler" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Mjahr" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="MatBelegjahr" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Mblnr" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Materialbeleg" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Zeile" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Position Matbel"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Bwart" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Bewegungsart" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Werkvorg" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Werk Bestand"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Lagortvorg" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="LOrt Bestand"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Ktextmat" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Objektkurztext"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="StandPl" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Bearbeitungsstand"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"/><Property Name="LockedByUser" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="Gesperrt durch"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"/><Property Name="Masterstring1" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="Masterstring1"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"/><Property Name="Masterstring2" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="Masterstring2"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"/><Property Name="Masterstring3" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="Masterstring3"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"/><Property Name="Masterstring4" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="Masterstring4"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"/><Property Name="Alter_Minuten" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:label="Alter_Minuten" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Scanner_Eingabe" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Scanner_Eingabe" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="SLWBEZ" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="SLWBEZ" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="SLWBEZ_KURZTEXT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="SLWBEZ_KURZTEXT" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MK_A" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="MK_A" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MK_R" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="MK_R" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MK_O" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="MK_O" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MK_G" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="MK_G" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MK_P" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="MK_P" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Maxlines" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:label="MAXLINES" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><NavigationProperty Name="TOVORG" Relationship="/WIND/QM_RESULTS_SRV.Assoc_Prueflos_PrueflosVorgaenge"
+					FromRole="FromRole_Assoc_Prueflos_PrueflosVorgaenge" ToRole="ToRole_Assoc_Prueflos_PrueflosVorgaenge"/><NavigationProperty Name="TOSER" Relationship="/WIND/QM_RESULTS_SRV.Assoc_Serialnummer_Prueflos"
+					FromRole="ToRole_Assoc_Serialnummer_Prueflos" ToRole="FromRole_Assoc_Serialnummer_Prueflos"/><NavigationProperty Name="TOFHM_P" Relationship="/WIND/QM_RESULTS_SRV.Assoc_Prueflos_FHM" FromRole="FromRole_Assoc_Prueflos_FHM"
+					ToRole="ToRole_Assoc_Prueflos_FHM"/><NavigationProperty Name="TOVORGS" Relationship="/WIND/QM_RESULTS_SRV.Assoc_Prueflos_PrueflosVorgaengeS"
+					FromRole="FromRole_Assoc_Prueflos_PrueflosVorgaengeS" ToRole="ToRole_Assoc_Prueflos_PrueflosVorgaengeS"/><NavigationProperty Name="TOPPP" Relationship="/WIND/QM_RESULTS_SRV.Assoc_Prueflos_PruefPunkt" FromRole="FromRole_Assoc_Prueflos_PruefPunkt"
+					ToRole="ToRole_Assoc_Prueflos_PruefPunkt"/></EntityType>
+			<EntityType Name="PrueflosVorgaenge" sap:content-version="1">
+				<Key><PropertyRef Name="Prueflos"/><PropertyRef Name="Prueflos_Key_Modus"/><PropertyRef Name="Prueflos_Key_Object"/><PropertyRef Name="Vornr"/><PropertyRef Name="Pruefpunkt"/></Key><Property Name="Prueflos" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Prüflos" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Prueflos_Key_Modus" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Prueflos Key Modus"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Prueflos_Key_Object" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Prueflos Key Object"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Vornr" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Vorgang" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Pruefpunkt" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Pruefpunkt"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Aufpl" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Plannr. Vorgang"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Vorglfnr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="KnotenNr" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Plnty" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Plantyp" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Plnnr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Plangruppe" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Plnal" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="PlnGrZähler" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Aplfl" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="Folge" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Plnfl" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="Folge" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Werks" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Werk" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Sumnr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Summenknoten" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Vorsteus" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="SteuSchlüssel"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Ktsch" Type="Edm.String" Nullable="false" MaxLength="7" sap:unicode="false" sap:label="Vorlagenschl." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Vorktxt" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Kurztext" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Prplatz" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Arbeitsplatz" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Prplatzwrk" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Werk" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Prplatztxt" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Kurztext" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Arbid" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Arbeitspl." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Pdest" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Drucker" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Objty" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Objekttyp" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Sprache" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Sprache" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Zaehl" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Zähler" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Vplty" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Ref. Plantyp" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Vplnr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Ref. PlanGr." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Vplal" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Ref. PlnGrZ." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Vplfl" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="Ref. Folge" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Vplnkn" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Knoten" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Pplnkn" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Knoten" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Erfsicht" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Erfassungssicht"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Subsys" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="QDE-System" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Lar01" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="Leistungsart" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Lar02" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="Leistungsart" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Lar03" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="Leistungsart" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="StandPl" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Bearbeitungsstand"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"/><Property Name="Lar04" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="Leistungsart" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Lar05" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="Leistungsart" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Lar06" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="Leistungsart" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Rueck" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Rückmeldung" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Rmzhl" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Zähler" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Kzrueckmld" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Kz.Rückmeld."
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="StandVg" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Bearbeitungsstand"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"/><Property Name="Anzahl_QUAL" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Anzahl_QUAL"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MK_A" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="MK_A" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Anzahl_QUAN" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Anzahl_QUAN"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MK_R" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="MK_R" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Langtext" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Langtext" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MK_O" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="MK_O" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MK_G" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="MK_G" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="SLWBEZ" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="SLWBEZ" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MK_P" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="MK_P" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="SLWBEZ_KURZTEXT" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="SLWBEZ_KURZTEXT" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="SLWBEZ_TYPE" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="SLWBEZ_TYPE" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="SLWBEZ_SELECT" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="SLWBEZ_SELECT" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="PP_New" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="PP_NEW" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Langtext_exist" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="LANGTEXT_EXIST" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="FHM_exist" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="FHM_EXIST" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><NavigationProperty Name="TOPL" Relationship="/WIND/QM_RESULTS_SRV.Assoc_Prueflos_PrueflosVorgaenge"
+					FromRole="ToRole_Assoc_Prueflos_PrueflosVorgaenge" ToRole="FromRole_Assoc_Prueflos_PrueflosVorgaenge"/><NavigationProperty Name="TOMERK" Relationship="/WIND/QM_RESULTS_SRV.Assoc_PrueflosVorgaenge_PruefMerkmal"
+					FromRole="FromRole_Assoc_PrueflosVorgaenge_PruefMerkmal" ToRole="ToRole_Assoc_PrueflosVorgaenge_PruefMerkmal"/><NavigationProperty Name="TOPPC" Relationship="/WIND/QM_RESULTS_SRV.Assoc_PrueflosVorgaenge_PruefPunkt_C"
+					FromRole="FromRole_Assoc_PrueflosVorgaenge_PruefPunkt_C" ToRole="ToRole_Assoc_PrueflosVorgaenge_PruefPunkt_C"/><NavigationProperty Name="TOFHM_V" Relationship="/WIND/QM_RESULTS_SRV.Assoc_PrueflosVorgaenge_FHM"
+					FromRole="FromRole_Assoc_PrueflosVorgaenge_FHM" ToRole="ToRole_Assoc_PrueflosVorgaenge_FHM"/><NavigationProperty Name="TOPP" Relationship="/WIND/QM_RESULTS_SRV.Assoc_PrueflosVorgaenge_PruefPunkt"
+					FromRole="FromRole_Assoc_PrueflosVorgaenge_PruefPunkt" ToRole="ToRole_Assoc_PrueflosVorgaenge_PruefPunkt"/></EntityType>
+			<EntityType Name="Serialnummer" sap:content-version="1">
+				<Key><PropertyRef Name="Matnr"/><PropertyRef Name="Sernr"/></Key><Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Material" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Sernr" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Serialnummer" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Prueflos" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Prüflos" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><NavigationProperty Name="TOPL" Relationship="/WIND/QM_RESULTS_SRV.Assoc_Serialnummer_Prueflos"
+					FromRole="FromRole_Assoc_Serialnummer_Prueflos" ToRole="ToRole_Assoc_Serialnummer_Prueflos"/></EntityType>
+			<EntityType Name="PruefMerkmale" sap:content-version="1">
+				<Key><PropertyRef Name="Prueflos"/><PropertyRef Name="Prueflos_Key_Modus"/><PropertyRef Name="Prueflos_Key_Object"/><PropertyRef Name="Vornr"/><PropertyRef Name="Pruefpunkt"/><PropertyRef Name="Merknr"/></Key><Property Name="Prueflos" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Prüflos" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Prueflos_Key_Modus" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Prueflos Key Modus"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Prueflos_Key_Object" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Prueflos Key Object"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Vornr" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Vorgang" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Pruefpunkt" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Pruefpunkt"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Merknr" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Merkmals-Nr." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Method" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Prüfmethode" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MethodTxt" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="kurztext" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Vmethod" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="Version" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Pmethod" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Werk" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Lfdnr" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Lfdnr" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Status" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Vorgabenstatus"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CharDescr" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Kurztext" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CharType" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Merkmalstyp" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ConfirmNo" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Rückmeldenr"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Obligatory" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Rückmeldepfl."
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="SingleRes" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Einzelergebnisse"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="SampleRes" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Probenergebnisse"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CharRes" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Merkmalsergebnisse"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Samples" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Teilstichproben"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="SamplesNo" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="TeilstProben"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Scope" Type="Edm.String" Nullable="false" MaxLength="7" sap:unicode="false" sap:label="Probenumfang" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ScopeInd" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Prüfumfang" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="DocuRequ" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="ErgebnisseDoku."
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Serialrequ" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Kz. Serial.Nr."
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ESTUKZ" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="ESTUKZ" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="InspPoint" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Mit Prüfpunkten"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Grid" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Prüfhäufigkeit" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MstrChar" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Stammmerkmal"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="VmstrChar" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="Version" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="PmstrChar" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Werk Prüfmerk"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="SmplQuant" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="Fak. StichprEh"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="SmplUnit" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Mengeneh Los"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="SmplUnitt" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Text Maßeinheit"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="SmplUnitc" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="ISO-Code" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="PhysSmpl" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="Teilprobe" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ChWgtCod" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Merkmalsgewicht"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ChWgtFac" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Gewichtungsfaktor"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ChWgtTxt" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Merkmalsgewicht"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Infofield1" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Infofeld 1"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Infofield2" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Infofeld 2"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Infofield3" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Infofeld 3"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="DecPlaces" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Nachkommastellen"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MeasUnit" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="interne Maßeinheit"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MeasUnitt" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Text Maßeinheit"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MeasUnitc" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="ISO-Code" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="TargetVal" Type="Edm.String" Nullable="false" MaxLength="22" sap:unicode="false" sap:label="Sollwert" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="UpTolLmt" Type="Edm.String" Nullable="false" MaxLength="22" sap:unicode="false" sap:label="Obere Toleranzgrenze"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="LwTolLmt" Type="Edm.String" Nullable="false" MaxLength="22" sap:unicode="false" sap:label="Toleranzgrenze unten"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="UpLmt1" Type="Edm.String" Nullable="false" MaxLength="22" sap:unicode="false" sap:label="Grenze 1 oben"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="LwLmt1" Type="Edm.String" Nullable="false" MaxLength="22" sap:unicode="false" sap:label="Grenze 1 unten"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="UpLmt2" Type="Edm.String" Nullable="false" MaxLength="22" sap:unicode="false" sap:label="Grenze 2 oben"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="LwLmt2" Type="Edm.String" Nullable="false" MaxLength="22" sap:unicode="false" sap:label="Grenze 2 unten"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="UpPlsLmt" Type="Edm.String" Nullable="false" MaxLength="22" sap:unicode="false" sap:label="Plausigrenze oben"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="LwPlsLmt" Type="Edm.String" Nullable="false" MaxLength="22" sap:unicode="false" sap:label="Plausigrenze unten"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="UpCtrl1" Type="Edm.String" Nullable="false" MaxLength="22" sap:unicode="false" sap:label="EG 1 oben" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="LwCtrl1" Type="Edm.String" Nullable="false" MaxLength="22" sap:unicode="false" sap:label="EG 1 unten" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="UpCtrl2" Type="Edm.String" Nullable="false" MaxLength="22" sap:unicode="false" sap:label="EG 2 oben" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="LwCtrl2" Type="Edm.String" Nullable="false" MaxLength="22" sap:unicode="false" sap:label="EG 2 unten" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CcNo" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Regelkarte im QM"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CcType" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Regelkartenart"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CcTypeT" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Regelkartenart"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="SelSet1" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Auswahlmenge" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="PselSet1" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Werk" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CatType1" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Katalogart" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="SelSet2" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Auswahlmenge" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="PselSet2" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Werk" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CatType2" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Katalogart" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="SelSet3" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Auswahlmenge" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="PselSet3" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Werk" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CatType3" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Katalogart" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="SelSet4" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Auswahlmenge" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="PselSet4" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Werk" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CatType4" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Katalogart" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="SelSet5" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Auswahlmenge" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="PselSet5" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Werk" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CatType5" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Katalogart" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ValnType" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Bewertg Probe"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ART_MERKMAL" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Qual oder Quan"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="StandMK" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Bearbeitungsstand"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="SOLLSTPUMF" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Zu Prüfen" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ANZWERTG" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Geprüft" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="VORGABEN" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Vorgaben" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MBewertung" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="mbewertung"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Merknr_up" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Merknr_up" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Merknr_down" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Merknr_down"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Merknr_first" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Merknr_first"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Merknr_last" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Merknr_last"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Anzahl_fotos" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Anzahl_fotos"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Langtext" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Langtext" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Headline1" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="headline1" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Headline2" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="headline2" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Headline3" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="headline3" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Headline4" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="headline4" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Headline5" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="headline5" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Headline6" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="headline6" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Headline7" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="headline7" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Headline8" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="headline8" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Headline9" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="headline9" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Headline10" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="headline10" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><NavigationProperty Name="TOVORG" Relationship="/WIND/QM_RESULTS_SRV.Assoc_PrueflosVorgaenge_PruefMerkmal"
+					FromRole="ToRole_Assoc_PrueflosVorgaenge_PruefMerkmal" ToRole="FromRole_Assoc_PrueflosVorgaenge_PruefMerkmal"/><NavigationProperty Name="TOFOTO" Relationship="/WIND/QM_RESULTS_SRV.Assoc_PruefMerkmal_Fotos" FromRole="FromRole_Assoc_PruefMerkmal_Fotos"
+					ToRole="ToRole_Assoc_PruefMerkmal_Fotos"/><NavigationProperty Name="TOCATRM" Relationship="/WIND/QM_RESULTS_SRV.Assoc_PruefMerkmal_PruefErgCatRM"
+					FromRole="FromRole_Assoc_PruefMerkmal_PruefErgCatRM" ToRole="ToRole_Assoc_PruefMerkmal_PruefErgCatRM"/><NavigationProperty Name="TORESU" Relationship="/WIND/QM_RESULTS_SRV.Assoc_PruefMerkmal_PruefErgebnisse"
+					FromRole="FromRole_Assoc_PruefMerkmal_PruefErgebnisse" ToRole="ToRole_Assoc_PruefMerkmal_PruefErgebnisse"/><NavigationProperty Name="TOFHM_M" Relationship="/WIND/QM_RESULTS_SRV.Assoc_PruefMerkmal_FHM" FromRole="FromRole_Assoc_PruefMerkmal_FHM"
+					ToRole="ToRole_Assoc_PruefMerkmal_FHM"/><NavigationProperty Name="TOPLM" Relationship="/WIND/QM_RESULTS_SRV.Assoc_PruefMerkmal_Prueflos"
+					FromRole="FromRole_Assoc_PruefMerkmal_Prueflos" ToRole="ToRole_Assoc_PruefMerkmal_Prueflos"/><NavigationProperty Name="TOBEWERT" Relationship="/WIND/QM_RESULTS_SRV.Assoc_PruefMerkmal_PruefErgBewertung"
+					FromRole="FromRole_Assoc_PruefMerkmal_PruefErgBewertung" ToRole="ToRole_Assoc_PruefMerkmal_PruefErgBewertung"/></EntityType>
+			<EntityType Name="PruefErgebnisse" sap:content-version="1">
+				<Key><PropertyRef Name="Prueflos"/><PropertyRef Name="Prueflos_Key_Modus"/><PropertyRef Name="Prueflos_Key_Object"/><PropertyRef Name="Vornr"/><PropertyRef Name="Pruefpunkt"/><PropertyRef Name="Merknr"/><PropertyRef Name="Lfdnr"/></Key><Property Name="Prueflos" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Prüflos" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Prueflos_Key_Modus" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Prueflos Key Modus"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Prueflos_Key_Object" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Prueflos Key Object"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Vornr" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Vorgang" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Pruefpunkt" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Pruefpunkt"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Merknr" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Merkmals-Nr." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Lfdnr" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Nummer" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Messwert" Type="Edm.String" Nullable="false" MaxLength="22" sap:unicode="false" sap:label="Messwert" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Attribut" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Attribut" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Serialnr" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Serialnr" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Charge" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Charge" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Pb_text" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Pb_text" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Zi_text" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Zi_text" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Art_merkmal" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Art_merkmal"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Bewertung" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Bewertung" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Pruefer" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Pruefer" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Pruefdatum" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Pruefdatum"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Pruefzeit" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Pruefzeit" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Auswahlmenge2" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Auswahlmenge2" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="visible" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Visible" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Scope" Type="Edm.String" Nullable="false" MaxLength="7" sap:unicode="false" sap:label="Probenumfang" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ScopeInd" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Prüfumfang" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="SOLLSTPUMF" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Zu Prüfen" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ANZWERTG" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Geprüft" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ESTUKZ" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="ESTUKZ" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ANZKLASEH" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:label="ANZKLASEH" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="RES_NO" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="RES_NO" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><NavigationProperty Name="TOCATRME" Relationship="/WIND/QM_RESULTS_SRV.Assoc_PruefErgebnisse_PruefErgCatRM"
+					FromRole="FromRole_Assoc_PruefErgebnisse_PruefErgCatRM" ToRole="ToRole_Assoc_PruefErgebnisse_PruefErgCatRM"/><NavigationProperty Name="TOMERKMALE" Relationship="/WIND/QM_RESULTS_SRV.Assoc_PruefMerkmal_PruefErgebnisse"
+					FromRole="ToRole_Assoc_PruefMerkmal_PruefErgebnisse" ToRole="FromRole_Assoc_PruefMerkmal_PruefErgebnisse"/><NavigationProperty Name="TOBEWERTE" Relationship="/WIND/QM_RESULTS_SRV.Assoc_PruefErgebnisse_PruefErgBewertung"
+					FromRole="FromRole_Assoc_PruefErgebnisse_PruefErgBewertung" ToRole="ToRole_Assoc_PruefErgebnisse_PruefErgBewertung"/></EntityType>
+			<EntityType Name="PruefErgBewertung" sap:content-version="1">
+				<Key><PropertyRef Name="Prueflos"/><PropertyRef Name="Prueflos_Key_Modus"/><PropertyRef Name="Prueflos_Key_Object"/><PropertyRef Name="Vornr"/><PropertyRef Name="Pruefpunkt"/><PropertyRef Name="Merknr"/><PropertyRef Name="Lfdnr"/><PropertyRef Name="Key_Qual"/></Key><Property Name="Prueflos" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Prüflos" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Prueflos_Key_Modus" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Prueflos Key Modus"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Prueflos_Key_Object" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Prueflos Key Object"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Vornr" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Vorgang" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Pruefpunkt" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Pruefpunkt"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Merknr" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Merkmals-Nr." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Lfdnr" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Nummer" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Bewertung1" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Bewertung1"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Bewertung2" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:label="Bewertung2"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Bewertung_AR" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Bewertung_AR"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Key_Qual" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Key_Qual" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="PruefMerkmaleFotos" m:HasStream="true" sap:content-version="1">
+				<Key><PropertyRef Name="Prueflos"/><PropertyRef Name="Prueflos_Key_Modus"/><PropertyRef Name="Prueflos_Key_Object"/><PropertyRef Name="Vornr"/><PropertyRef Name="Pruefpunkt"/><PropertyRef Name="Merknr"/><PropertyRef Name="Filename"/></Key><Property Name="Prueflos" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Prueflos_Key_Modus" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Prueflos_Key_Object" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Vornr" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Pruefpunkt" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Merknr" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Filename" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Mimetype" Type="Edm.String" Nullable="false" MaxLength="100" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="PruefErgCatRM" sap:content-version="1">
+				<Key><PropertyRef Name="Prueflos"/><PropertyRef Name="Prueflos_Key_Modus"/><PropertyRef Name="Prueflos_Key_Object"/><PropertyRef Name="Vornr"/><PropertyRef Name="Pruefpunkt"/><PropertyRef Name="Merknr"/><PropertyRef Name="Lfdnr"/><PropertyRef Name="Key_Qual"/></Key><Property Name="Prueflos" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Prüflos" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Prueflos_Key_Modus" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Prueflos Key Modus"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Prueflos_Key_Object" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Prueflos Key Object"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Vornr" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Vorgang" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Pruefpunkt" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Pruefpunkt"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Merknr" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Merkmals-Nr." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Lfdnr" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Nummer" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Bewertung1" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Bewertung1"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Bewertung2" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:label="Bewertung2"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Key_Qual" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Key_Qual" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="Dokumentation" m:HasStream="true" sap:content-version="1">
+				<Key><PropertyRef Name="Lfdnr"/></Key><Property Name="Lfdnr" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Filename" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/><Property Name="Mimetype" Type="Edm.String" Nullable="false" MaxLength="100" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="DOKAR" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="DOKNR" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="DOKTL" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="DOKVR" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="Fertigungshilfsmittel" m:HasStream="true" sap:content-version="1">
+				<Key><PropertyRef Name="Prueflos"/><PropertyRef Name="Prueflos_Key_Modus"/><PropertyRef Name="Prueflos_Key_Object"/><PropertyRef Name="Vornr"/><PropertyRef Name="Pruefpunkt"/><PropertyRef Name="Merknr"/><PropertyRef Name="Lfdnr"/></Key><Property Name="Prueflos" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Prueflos" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Prueflos_Key_Modus" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Prueflos_Key_Modus"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Prueflos_Key_Object" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Prueflos_Key_Object"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Vornr" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Vornr" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Pruefpunkt" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Pruefpunkt" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Merknr" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Merknr" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Lfdnr" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Lfdnr" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Mimetype" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Mimetype" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Filename" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Filename" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Plnty" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Plnty" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Plnnr" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Plnnr" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Pzlfh" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="FHM PosZähler" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Zaehl" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Zähler" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Datuv" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Gültig ab" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Datui" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Angelegt am" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Useri" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Angelegt von" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Datuc" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Geändert am" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Userc" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Geändert von" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Objty" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Objekttyp" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Objid" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Objekt-Id" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Objct" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Objekt" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Plnal" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="PlnGrZähler" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Plnfl" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="Folge" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Plnkn" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Knoten" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Psnfh" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Position" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Steuf" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Steuerschlüssel"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Mgeinh" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Einheit" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Fhmar" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Art FHM" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Fhmnr" Type="Edm.String" Nullable="false" MaxLength="33" sap:unicode="false" sap:label="FertHilfsmittel"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Fhwrk" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Werk" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Material" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Sfhnr" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="FertHilfsm." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Dokar" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Dokumentart" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Doknr" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:label="Dokument" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Doktl" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Teildokument" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Dokvr" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Dokumentversion"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Equnr" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Equipment" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Eqwpl" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Wartungsplan" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Eqwtx" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="WPlantext" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Eqpnt" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Meßpunkt" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Eqptx" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Bezeichnung" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Atnam" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Merkmal" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Msehi" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="int. Maßeinheit"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Fhktx" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Bezeichnung" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Baseh" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Basiseinheit" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Meins" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Basis-ME" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="TileMenu" sap:content-version="1">
+				<Key><PropertyRef Name="Title"/></Key><Property Name="Icon" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Icon" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Type" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Type" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Number" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Number" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Numberunit" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="NumberUnit" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Title" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Title" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Info" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Info" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Infostate" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Infostate" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Target" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Target" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="Material" sap:content-version="1">
+				<Key><PropertyRef Name="Werks"/><PropertyRef Name="Matnr"/></Key><Property Name="Werks" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Werk" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Material" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Maktx" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Bezeichnung" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="Barcode" sap:content-version="1">
+				<Key><PropertyRef Name="Scanner_Eingabe"/><PropertyRef Name="Lfdnr"/></Key><Property Name="Scanner_Eingabe" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Scanner_Eingabe" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false"/><Property Name="Lfdnr" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="LFDNR" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/><Property Name="Prueflos" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Prueflos" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Werks" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="werks" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Matnr" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="matnr" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Sernr" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Sernr" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Charg" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="charg" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Ersteller" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="ERSTELLER" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Ersteldat" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="ERSTELDAT" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Maktx" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="maktx" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Herktxt" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="HERKTXT" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Arttxt" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="arttxt" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Success" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="success" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="PruefPunkte" sap:content-version="1">
+				<Key><PropertyRef Name="Prueflos"/><PropertyRef Name="Prueflos_Key_Modus"/><PropertyRef Name="Prueflos_Key_Object"/><PropertyRef Name="Vornr"/><PropertyRef Name="Pruefpunkt"/><PropertyRef Name="Lfdnr"/></Key><Property Name="Prueflos" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Prueflos" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Prueflos_Key_Modus" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Prueflos_Key_Modus"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Prueflos_Key_Object" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Prueflos_Key_Object"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Vornr" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Vorgang" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Pruefpunkt" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Pruefpunkt" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Lfdnr" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Nummer" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Bewertung1" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Bewertung1" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Bewertung2" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Bewertung2" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Bewertung_AR" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Bewertung_AR" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Key_Qual" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Key_Qual" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<Association Name="Assoc_Serialnummer_Prueflos" sap:content-version="1"><End Type="/WIND/QM_RESULTS_SRV.Serialnummer" Multiplicity="1" Role="FromRole_Assoc_Serialnummer_Prueflos"/><End Type="/WIND/QM_RESULTS_SRV.Prueflose" Multiplicity="0..1" Role="ToRole_Assoc_Serialnummer_Prueflos"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_Assoc_Serialnummer_Prueflos"><PropertyRef Name="Matnr"/><PropertyRef Name="Sernr"/></Principal>
+					<Dependent Role="ToRole_Assoc_Serialnummer_Prueflos"><PropertyRef Name="Prueflos"/><PropertyRef Name="Prueflos"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="Assoc_Prueflos_FHM" sap:content-version="1"><End Type="/WIND/QM_RESULTS_SRV.Prueflose" Multiplicity="1" Role="FromRole_Assoc_Prueflos_FHM"/><End Type="/WIND/QM_RESULTS_SRV.Fertigungshilfsmittel" Multiplicity="*" Role="ToRole_Assoc_Prueflos_FHM"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_Assoc_Prueflos_FHM"><PropertyRef Name="Prueflos"/><PropertyRef Name="Prueflos_Key_Modus"/><PropertyRef Name="Prueflos_Key_Object"/></Principal>
+					<Dependent Role="ToRole_Assoc_Prueflos_FHM"><PropertyRef Name="Prueflos"/><PropertyRef Name="Prueflos_Key_Modus"/><PropertyRef Name="Prueflos_Key_Object"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="Assoc_Prueflos_PrueflosVorgaengeS" sap:content-version="1"><End Type="/WIND/QM_RESULTS_SRV.Prueflose" Multiplicity="1" Role="FromRole_Assoc_Prueflos_PrueflosVorgaengeS"/><End Type="/WIND/QM_RESULTS_SRV.PrueflosVorgaenge" Multiplicity="*" Role="ToRole_Assoc_Prueflos_PrueflosVorgaengeS"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_Assoc_Prueflos_PrueflosVorgaengeS"><PropertyRef Name="Prueflos_Key_Modus"/><PropertyRef Name="Prueflos"/><PropertyRef Name="Prueflos_Key_Object"/></Principal>
+					<Dependent Role="ToRole_Assoc_Prueflos_PrueflosVorgaengeS"><PropertyRef Name="Prueflos_Key_Modus"/><PropertyRef Name="Prueflos"/><PropertyRef Name="Prueflos_Key_Object"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="Assoc_Prueflos_PruefPunkt" sap:content-version="1"><End Type="/WIND/QM_RESULTS_SRV.Prueflose" Multiplicity="1" Role="FromRole_Assoc_Prueflos_PruefPunkt"/><End Type="/WIND/QM_RESULTS_SRV.PruefPunkte" Multiplicity="*" Role="ToRole_Assoc_Prueflos_PruefPunkt"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_Assoc_Prueflos_PruefPunkt"><PropertyRef Name="Prueflos_Key_Object"/><PropertyRef Name="Prueflos"/><PropertyRef Name="Prueflos_Key_Modus"/></Principal>
+					<Dependent Role="ToRole_Assoc_Prueflos_PruefPunkt"><PropertyRef Name="Prueflos_Key_Object"/><PropertyRef Name="Pruefpunkt"/><PropertyRef Name="Prueflos_Key_Modus"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="Assoc_Prueflos_PrueflosVorgaenge" sap:content-version="1"><End Type="/WIND/QM_RESULTS_SRV.Prueflose" Multiplicity="1" Role="FromRole_Assoc_Prueflos_PrueflosVorgaenge"/><End Type="/WIND/QM_RESULTS_SRV.PrueflosVorgaenge" Multiplicity="*" Role="ToRole_Assoc_Prueflos_PrueflosVorgaenge"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_Assoc_Prueflos_PrueflosVorgaenge"><PropertyRef Name="Prueflos_Key_Object"/><PropertyRef Name="Prueflos_Key_Modus"/><PropertyRef Name="Prueflos"/></Principal>
+					<Dependent Role="ToRole_Assoc_Prueflos_PrueflosVorgaenge"><PropertyRef Name="Prueflos_Key_Object"/><PropertyRef Name="Prueflos_Key_Modus"/><PropertyRef Name="Prueflos"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="Assoc_PruefMerkmal_Fotos" sap:content-version="1"><End Type="/WIND/QM_RESULTS_SRV.PruefMerkmale" Multiplicity="1" Role="FromRole_Assoc_PruefMerkmal_Fotos"/><End Type="/WIND/QM_RESULTS_SRV.PruefMerkmaleFotos" Multiplicity="*" Role="ToRole_Assoc_PruefMerkmal_Fotos"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_Assoc_PruefMerkmal_Fotos"><PropertyRef Name="Prueflos"/><PropertyRef Name="Vornr"/><PropertyRef Name="Merknr"/><PropertyRef Name="Prueflos_Key_Modus"/><PropertyRef Name="Prueflos_Key_Object"/><PropertyRef Name="Pruefpunkt"/></Principal>
+					<Dependent Role="ToRole_Assoc_PruefMerkmal_Fotos"><PropertyRef Name="Prueflos"/><PropertyRef Name="Vornr"/><PropertyRef Name="Merknr"/><PropertyRef Name="Prueflos_Key_Modus"/><PropertyRef Name="Prueflos_Key_Object"/><PropertyRef Name="Pruefpunkt"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="Assoc_PruefMerkmal_PruefErgCatRM" sap:content-version="1"><End Type="/WIND/QM_RESULTS_SRV.PruefMerkmale" Multiplicity="*" Role="FromRole_Assoc_PruefMerkmal_PruefErgCatRM"/><End Type="/WIND/QM_RESULTS_SRV.PruefErgCatRM" Multiplicity="*" Role="ToRole_Assoc_PruefMerkmal_PruefErgCatRM"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_Assoc_PruefMerkmal_PruefErgCatRM"><PropertyRef Name="Pruefpunkt"/><PropertyRef Name="Prueflos_Key_Object"/><PropertyRef Name="Prueflos_Key_Modus"/><PropertyRef Name="Merknr"/><PropertyRef Name="Vornr"/><PropertyRef Name="Prueflos"/></Principal>
+					<Dependent Role="ToRole_Assoc_PruefMerkmal_PruefErgCatRM"><PropertyRef Name="Pruefpunkt"/><PropertyRef Name="Prueflos_Key_Object"/><PropertyRef Name="Prueflos_Key_Modus"/><PropertyRef Name="Merknr"/><PropertyRef Name="Vornr"/><PropertyRef Name="Prueflos"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="Assoc_PruefMerkmal_PruefErgebnisse" sap:content-version="1"><End Type="/WIND/QM_RESULTS_SRV.PruefMerkmale" Multiplicity="1" Role="FromRole_Assoc_PruefMerkmal_PruefErgebnisse"/><End Type="/WIND/QM_RESULTS_SRV.PruefErgebnisse" Multiplicity="*" Role="ToRole_Assoc_PruefMerkmal_PruefErgebnisse"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_Assoc_PruefMerkmal_PruefErgebnisse"><PropertyRef Name="Pruefpunkt"/><PropertyRef Name="Prueflos_Key_Modus"/><PropertyRef Name="Prueflos_Key_Object"/><PropertyRef Name="Merknr"/><PropertyRef Name="Vornr"/><PropertyRef Name="Prueflos"/></Principal>
+					<Dependent Role="ToRole_Assoc_PruefMerkmal_PruefErgebnisse"><PropertyRef Name="Pruefpunkt"/><PropertyRef Name="Prueflos_Key_Modus"/><PropertyRef Name="Prueflos_Key_Object"/><PropertyRef Name="Merknr"/><PropertyRef Name="Vornr"/><PropertyRef Name="Prueflos"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="Assoc_PruefMerkmal_FHM" sap:content-version="1"><End Type="/WIND/QM_RESULTS_SRV.PruefMerkmale" Multiplicity="1" Role="FromRole_Assoc_PruefMerkmal_FHM"/><End Type="/WIND/QM_RESULTS_SRV.Fertigungshilfsmittel" Multiplicity="*" Role="ToRole_Assoc_PruefMerkmal_FHM"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_Assoc_PruefMerkmal_FHM"><PropertyRef Name="Prueflos_Key_Modus"/><PropertyRef Name="Prueflos_Key_Object"/><PropertyRef Name="Merknr"/><PropertyRef Name="Vornr"/><PropertyRef Name="Prueflos"/><PropertyRef Name="Pruefpunkt"/></Principal>
+					<Dependent Role="ToRole_Assoc_PruefMerkmal_FHM"><PropertyRef Name="Prueflos_Key_Modus"/><PropertyRef Name="Prueflos_Key_Object"/><PropertyRef Name="Merknr"/><PropertyRef Name="Vornr"/><PropertyRef Name="Prueflos"/><PropertyRef Name="Pruefpunkt"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="Assoc_PruefMerkmal_Prueflos" sap:content-version="1"><End Type="/WIND/QM_RESULTS_SRV.PruefMerkmale" Multiplicity="*" Role="FromRole_Assoc_PruefMerkmal_Prueflos"/><End Type="/WIND/QM_RESULTS_SRV.Prueflose" Multiplicity="1" Role="ToRole_Assoc_PruefMerkmal_Prueflos"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_Assoc_PruefMerkmal_Prueflos"><PropertyRef Name="Pruefpunkt"/><PropertyRef Name="Merknr"/><PropertyRef Name="Vornr"/><PropertyRef Name="Prueflos"/><PropertyRef Name="Prueflos_Key_Modus"/><PropertyRef Name="Prueflos_Key_Object"/></Principal>
+					<Dependent Role="ToRole_Assoc_PruefMerkmal_Prueflos"><PropertyRef Name="Masterstring3"/><PropertyRef Name="Masterstring1"/><PropertyRef Name="Masterstring2"/><PropertyRef Name="Prueflos"/><PropertyRef Name="Prueflos_Key_Modus"/><PropertyRef Name="Prueflos_Key_Object"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="Assoc_PruefMerkmal_PruefErgBewertung" sap:content-version="1"><End Type="/WIND/QM_RESULTS_SRV.PruefMerkmale" Multiplicity="*" Role="FromRole_Assoc_PruefMerkmal_PruefErgBewertung"/><End Type="/WIND/QM_RESULTS_SRV.PruefErgBewertung" Multiplicity="*" Role="ToRole_Assoc_PruefMerkmal_PruefErgBewertung"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_Assoc_PruefMerkmal_PruefErgBewertung"><PropertyRef Name="Prueflos_Key_Object"/><PropertyRef Name="Prueflos_Key_Modus"/><PropertyRef Name="Prueflos"/><PropertyRef Name="Vornr"/><PropertyRef Name="Merknr"/><PropertyRef Name="Pruefpunkt"/></Principal>
+					<Dependent Role="ToRole_Assoc_PruefMerkmal_PruefErgBewertung"><PropertyRef Name="Prueflos_Key_Object"/><PropertyRef Name="Prueflos_Key_Modus"/><PropertyRef Name="Prueflos"/><PropertyRef Name="Vornr"/><PropertyRef Name="Merknr"/><PropertyRef Name="Pruefpunkt"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="Assoc_PrueflosVorgaenge_PruefMerkmal" sap:content-version="1"><End Type="/WIND/QM_RESULTS_SRV.PrueflosVorgaenge" Multiplicity="1" Role="FromRole_Assoc_PrueflosVorgaenge_PruefMerkmal"/><End Type="/WIND/QM_RESULTS_SRV.PruefMerkmale" Multiplicity="*" Role="ToRole_Assoc_PrueflosVorgaenge_PruefMerkmal"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_Assoc_PrueflosVorgaenge_PruefMerkmal"><PropertyRef Name="Pruefpunkt"/><PropertyRef Name="Prueflos_Key_Object"/><PropertyRef Name="Prueflos_Key_Modus"/><PropertyRef Name="Vornr"/><PropertyRef Name="Prueflos"/></Principal>
+					<Dependent Role="ToRole_Assoc_PrueflosVorgaenge_PruefMerkmal"><PropertyRef Name="Pruefpunkt"/><PropertyRef Name="Prueflos_Key_Object"/><PropertyRef Name="Prueflos_Key_Modus"/><PropertyRef Name="Vornr"/><PropertyRef Name="Prueflos"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="Assoc_PrueflosVorgaenge_PruefPunkt_C" sap:content-version="1"><End Type="/WIND/QM_RESULTS_SRV.PrueflosVorgaenge" Multiplicity="1" Role="FromRole_Assoc_PrueflosVorgaenge_PruefPunkt_C"/><End Type="/WIND/QM_RESULTS_SRV.PruefPunkte" Multiplicity="*" Role="ToRole_Assoc_PrueflosVorgaenge_PruefPunkt_C"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_Assoc_PrueflosVorgaenge_PruefPunkt_C"><PropertyRef Name="Pruefpunkt"/><PropertyRef Name="Prueflos_Key_Object"/><PropertyRef Name="Prueflos_Key_Modus"/><PropertyRef Name="Vornr"/><PropertyRef Name="Prueflos"/></Principal>
+					<Dependent Role="ToRole_Assoc_PrueflosVorgaenge_PruefPunkt_C"><PropertyRef Name="Pruefpunkt"/><PropertyRef Name="Prueflos_Key_Object"/><PropertyRef Name="Prueflos_Key_Modus"/><PropertyRef Name="Vornr"/><PropertyRef Name="Prueflos"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="Assoc_PrueflosVorgaenge_FHM" sap:content-version="1"><End Type="/WIND/QM_RESULTS_SRV.PrueflosVorgaenge" Multiplicity="1" Role="FromRole_Assoc_PrueflosVorgaenge_FHM"/><End Type="/WIND/QM_RESULTS_SRV.Fertigungshilfsmittel" Multiplicity="*" Role="ToRole_Assoc_PrueflosVorgaenge_FHM"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_Assoc_PrueflosVorgaenge_FHM"><PropertyRef Name="Prueflos_Key_Modus"/><PropertyRef Name="Vornr"/><PropertyRef Name="Prueflos"/><PropertyRef Name="Prueflos_Key_Object"/><PropertyRef Name="Pruefpunkt"/></Principal>
+					<Dependent Role="ToRole_Assoc_PrueflosVorgaenge_FHM"><PropertyRef Name="Prueflos_Key_Modus"/><PropertyRef Name="Vornr"/><PropertyRef Name="Prueflos"/><PropertyRef Name="Prueflos_Key_Object"/><PropertyRef Name="Pruefpunkt"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="Assoc_PrueflosVorgaenge_PruefPunkt" sap:content-version="1"><End Type="/WIND/QM_RESULTS_SRV.PrueflosVorgaenge" Multiplicity="1" Role="FromRole_Assoc_PrueflosVorgaenge_PruefPunkt"/><End Type="/WIND/QM_RESULTS_SRV.PruefPunkte" Multiplicity="*" Role="ToRole_Assoc_PrueflosVorgaenge_PruefPunkt"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_Assoc_PrueflosVorgaenge_PruefPunkt"><PropertyRef Name="Vornr"/><PropertyRef Name="Prueflos"/><PropertyRef Name="Prueflos_Key_Modus"/><PropertyRef Name="Prueflos_Key_Object"/><PropertyRef Name="Pruefpunkt"/></Principal>
+					<Dependent Role="ToRole_Assoc_PrueflosVorgaenge_PruefPunkt"><PropertyRef Name="Vornr"/><PropertyRef Name="Prueflos"/><PropertyRef Name="Prueflos_Key_Modus"/><PropertyRef Name="Prueflos_Key_Object"/><PropertyRef Name="Pruefpunkt"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="Assoc_PruefErgebnisse_PruefErgCatRM" sap:content-version="1"><End Type="/WIND/QM_RESULTS_SRV.PruefErgebnisse" Multiplicity="*" Role="FromRole_Assoc_PruefErgebnisse_PruefErgCatRM"/><End Type="/WIND/QM_RESULTS_SRV.PruefErgCatRM" Multiplicity="*" Role="ToRole_Assoc_PruefErgebnisse_PruefErgCatRM"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_Assoc_PruefErgebnisse_PruefErgCatRM"><PropertyRef Name="Merknr"/><PropertyRef Name="Vornr"/><PropertyRef Name="Prueflos"/><PropertyRef Name="Prueflos_Key_Modus"/><PropertyRef Name="Prueflos_Key_Object"/><PropertyRef Name="Pruefpunkt"/><PropertyRef Name="Lfdnr"/></Principal>
+					<Dependent Role="ToRole_Assoc_PruefErgebnisse_PruefErgCatRM"><PropertyRef Name="Merknr"/><PropertyRef Name="Vornr"/><PropertyRef Name="Prueflos"/><PropertyRef Name="Prueflos_Key_Modus"/><PropertyRef Name="Prueflos_Key_Object"/><PropertyRef Name="Pruefpunkt"/><PropertyRef Name="Lfdnr"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="Assoc_PruefErgebnisse_PruefErgBewertung" sap:content-version="1"><End Type="/WIND/QM_RESULTS_SRV.PruefErgebnisse" Multiplicity="*" Role="FromRole_Assoc_PruefErgebnisse_PruefErgBewertung"/><End Type="/WIND/QM_RESULTS_SRV.PruefErgBewertung" Multiplicity="*" Role="ToRole_Assoc_PruefErgebnisse_PruefErgBewertung"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_Assoc_PruefErgebnisse_PruefErgBewertung"><PropertyRef Name="Lfdnr"/><PropertyRef Name="Pruefpunkt"/><PropertyRef Name="Merknr"/><PropertyRef Name="Vornr"/><PropertyRef Name="Prueflos"/><PropertyRef Name="Prueflos_Key_Modus"/><PropertyRef Name="Prueflos_Key_Object"/></Principal>
+					<Dependent Role="ToRole_Assoc_PruefErgebnisse_PruefErgBewertung"><PropertyRef Name="Lfdnr"/><PropertyRef Name="Pruefpunkt"/><PropertyRef Name="Merknr"/><PropertyRef Name="Vornr"/><PropertyRef Name="Prueflos"/><PropertyRef Name="Prueflos_Key_Modus"/><PropertyRef Name="Prueflos_Key_Object"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<EntityContainer Name="/WIND/QM_RESULTS_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="PruefloseSet" EntityType="/WIND/QM_RESULTS_SRV.Prueflose" sap:updatable="false" sap:deletable="false"
+				sap:content-version="1"/><EntitySet Name="PrueflosVorgaengeSet" EntityType="/WIND/QM_RESULTS_SRV.PrueflosVorgaenge" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:requires-filter="true" sap:content-version="1"/><EntitySet Name="SerialnummerSet" EntityType="/WIND/QM_RESULTS_SRV.Serialnummer" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:content-version="1"/><EntitySet Name="PruefMerkmaleSet" EntityType="/WIND/QM_RESULTS_SRV.PruefMerkmale" sap:creatable="false" sap:deletable="false"
+				sap:pageable="false" sap:requires-filter="true" sap:content-version="1"/><EntitySet Name="PruefErgebnisseSet" EntityType="/WIND/QM_RESULTS_SRV.PruefErgebnisse" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="PruefErgBewertungSet" EntityType="/WIND/QM_RESULTS_SRV.PruefErgBewertung" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="PruefMerkmaleFotosSet" EntityType="/WIND/QM_RESULTS_SRV.PruefMerkmaleFotos" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="PruefErgCatRMSet" EntityType="/WIND/QM_RESULTS_SRV.PruefErgCatRM" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="DokumentationSet" EntityType="/WIND/QM_RESULTS_SRV.Dokumentation" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="FertigungshilfsmittelSet" EntityType="/WIND/QM_RESULTS_SRV.Fertigungshilfsmittel" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="TileMenuSet" EntityType="/WIND/QM_RESULTS_SRV.TileMenu" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:content-version="1"/><EntitySet Name="MaterialSet" EntityType="/WIND/QM_RESULTS_SRV.Material" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:content-version="1"/><EntitySet Name="BarcodeSet" EntityType="/WIND/QM_RESULTS_SRV.Barcode" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:requires-filter="true" sap:content-version="1"/><EntitySet Name="PruefPunkteSet" EntityType="/WIND/QM_RESULTS_SRV.PruefPunkte" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+				<AssociationSet Name="Assoc_PruefMerkmal_PrueflosSet" Association="/WIND/QM_RESULTS_SRV.Assoc_PruefMerkmal_Prueflos" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="PruefMerkmaleSet" Role="FromRole_Assoc_PruefMerkmal_Prueflos"/><End EntitySet="PruefloseSet" Role="ToRole_Assoc_PruefMerkmal_Prueflos"/></AssociationSet>
+				<AssociationSet Name="Assoc_Prueflos_FHMSet" Association="/WIND/QM_RESULTS_SRV.Assoc_Prueflos_FHM" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="PruefloseSet" Role="FromRole_Assoc_Prueflos_FHM"/><End EntitySet="FertigungshilfsmittelSet" Role="ToRole_Assoc_Prueflos_FHM"/></AssociationSet>
+				<AssociationSet Name="Assoc_PrueflosVorgaenge_PruefPunkt_CSet" Association="/WIND/QM_RESULTS_SRV.Assoc_PrueflosVorgaenge_PruefPunkt_C"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="PrueflosVorgaengeSet" Role="FromRole_Assoc_PrueflosVorgaenge_PruefPunkt_C"/><End EntitySet="PruefPunkteSet" Role="ToRole_Assoc_PrueflosVorgaenge_PruefPunkt_C"/></AssociationSet>
+				<AssociationSet Name="Assoc_PrueflosVorgaenge_PruefPunktSet" Association="/WIND/QM_RESULTS_SRV.Assoc_PrueflosVorgaenge_PruefPunkt"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="PrueflosVorgaengeSet" Role="FromRole_Assoc_PrueflosVorgaenge_PruefPunkt"/><End EntitySet="PruefPunkteSet" Role="ToRole_Assoc_PrueflosVorgaenge_PruefPunkt"/></AssociationSet>
+				<AssociationSet Name="Assoc_PrueflosVorgaenge_PruefMerkmalSet" Association="/WIND/QM_RESULTS_SRV.Assoc_PrueflosVorgaenge_PruefMerkmal"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="PrueflosVorgaengeSet" Role="FromRole_Assoc_PrueflosVorgaenge_PruefMerkmal"/><End EntitySet="PruefMerkmaleSet" Role="ToRole_Assoc_PrueflosVorgaenge_PruefMerkmal"/></AssociationSet>
+				<AssociationSet Name="Assoc_Prueflos_PrueflosVorgaengeSet" Association="/WIND/QM_RESULTS_SRV.Assoc_Prueflos_PrueflosVorgaenge"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="PruefloseSet" Role="FromRole_Assoc_Prueflos_PrueflosVorgaenge"/><End EntitySet="PrueflosVorgaengeSet" Role="ToRole_Assoc_Prueflos_PrueflosVorgaenge"/></AssociationSet>
+				<AssociationSet Name="Assoc_PrueflosVorgaenge_FHMSet" Association="/WIND/QM_RESULTS_SRV.Assoc_PrueflosVorgaenge_FHM" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="PrueflosVorgaengeSet" Role="FromRole_Assoc_PrueflosVorgaenge_FHM"/><End EntitySet="FertigungshilfsmittelSet" Role="ToRole_Assoc_PrueflosVorgaenge_FHM"/></AssociationSet>
+				<AssociationSet Name="Assoc_PruefMerkmal_PruefErgBewertung_Ass" Association="/WIND/QM_RESULTS_SRV.Assoc_PruefMerkmal_PruefErgBewertung"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="PruefMerkmaleSet" Role="FromRole_Assoc_PruefMerkmal_PruefErgBewertung"/><End EntitySet="PruefErgBewertungSet" Role="ToRole_Assoc_PruefMerkmal_PruefErgBewertung"/></AssociationSet>
+				<AssociationSet Name="Assoc_PruefMerkmal_FHMSet" Association="/WIND/QM_RESULTS_SRV.Assoc_PruefMerkmal_FHM" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="PruefMerkmaleSet" Role="FromRole_Assoc_PruefMerkmal_FHM"/><End EntitySet="FertigungshilfsmittelSet" Role="ToRole_Assoc_PruefMerkmal_FHM"/></AssociationSet>
+				<AssociationSet Name="Assoc_PruefMerkmal_PruefErgCatRMSet" Association="/WIND/QM_RESULTS_SRV.Assoc_PruefMerkmal_PruefErgCatRM"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="PruefMerkmaleSet" Role="FromRole_Assoc_PruefMerkmal_PruefErgCatRM"/><End EntitySet="PruefErgCatRMSet" Role="ToRole_Assoc_PruefMerkmal_PruefErgCatRM"/></AssociationSet>
+				<AssociationSet Name="Assoc_PruefMerkmal_PruefErgebnisseSet" Association="/WIND/QM_RESULTS_SRV.Assoc_PruefMerkmal_PruefErgebnisse"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="PruefMerkmaleSet" Role="FromRole_Assoc_PruefMerkmal_PruefErgebnisse"/><End EntitySet="PruefErgebnisseSet" Role="ToRole_Assoc_PruefMerkmal_PruefErgebnisse"/></AssociationSet>
+				<AssociationSet Name="Assoc_PruefErgebnisse_PruefErgBewertuSet" Association="/WIND/QM_RESULTS_SRV.Assoc_PruefErgebnisse_PruefErgBewertung"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="PruefErgebnisseSet" Role="FromRole_Assoc_PruefErgebnisse_PruefErgBewertung"/><End EntitySet="PruefErgBewertungSet" Role="ToRole_Assoc_PruefErgebnisse_PruefErgBewertung"/></AssociationSet>
+				<AssociationSet Name="Assoc_PruefErgebnisse_PruefErgCatRMSet" Association="/WIND/QM_RESULTS_SRV.Assoc_PruefErgebnisse_PruefErgCatRM"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="PruefErgebnisseSet" Role="FromRole_Assoc_PruefErgebnisse_PruefErgCatRM"/><End EntitySet="PruefErgCatRMSet" Role="ToRole_Assoc_PruefErgebnisse_PruefErgCatRM"/></AssociationSet>
+				<AssociationSet Name="Assoc_Prueflos_PruefPunktSet" Association="/WIND/QM_RESULTS_SRV.Assoc_Prueflos_PruefPunkt" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="PruefloseSet" Role="FromRole_Assoc_Prueflos_PruefPunkt"/><End EntitySet="PruefPunkteSet" Role="ToRole_Assoc_Prueflos_PruefPunkt"/></AssociationSet>
+				<AssociationSet Name="Assoc_Prueflos_PrueflosVorgaengeSSet" Association="/WIND/QM_RESULTS_SRV.Assoc_Prueflos_PrueflosVorgaengeS"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="PruefloseSet" Role="FromRole_Assoc_Prueflos_PrueflosVorgaengeS"/><End EntitySet="PrueflosVorgaengeSet" Role="ToRole_Assoc_Prueflos_PrueflosVorgaengeS"/></AssociationSet>
+				<AssociationSet Name="Assoc_PruefMerkmal_FotosSet" Association="/WIND/QM_RESULTS_SRV.Assoc_PruefMerkmal_Fotos" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="PruefMerkmaleSet" Role="FromRole_Assoc_PruefMerkmal_Fotos"/><End EntitySet="PruefMerkmaleFotosSet" Role="ToRole_Assoc_PruefMerkmal_Fotos"/></AssociationSet>
+				<AssociationSet Name="Assoc_Serialnummer_PrueflosSet" Association="/WIND/QM_RESULTS_SRV.Assoc_Serialnummer_Prueflos" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="SerialnummerSet" Role="FromRole_Assoc_Serialnummer_Prueflos"/><End EntitySet="PruefloseSet" Role="ToRole_Assoc_Serialnummer_Prueflos"/></AssociationSet>
+			</EntityContainer><atom:link rel="self" href="http://srv-sapngd.enercon.de:8001/sap/opu/odata/WIND/QM_RESULTS_SRV/$metadata"
+				xmlns:atom="http://www.w3.org/2005/Atom"/><atom:link rel="latest-version" href="http://srv-sapngd.enercon.de:8001/sap/opu/odata/WIND/QM_RESULTS_SRV/$metadata"
+				xmlns:atom="http://www.w3.org/2005/Atom"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

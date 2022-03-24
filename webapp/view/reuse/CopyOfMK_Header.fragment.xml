@@ -1,0 +1,40 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<MessageStrip
+	    visible="{= ${pl>TOVORG/SLWBEZ} === '' ? true : false }"
+		text="{i18n>detail1-matnr} {path: 'pl>TOPLM/Matnr', type : 'sap.ui.model.odata.type.String', constraints: { isDigitSequence : true }} {pl>TOPLM/Ktextmat} / {parts:['pl>TOPLM/Prueflos_Key_Modus','pl>TOPLM/Prueflos_Key_Object'], formatter: 'de.enercon.usbee.controller.utils.Formatter.detail1_key_art_header' }"
+		showIcon="false" showCloseButton="false"></MessageStrip>
+	<MessageStrip
+	    visible="{= ${pl>TOVORG/SLWBEZ} === '' ? false : true }"
+		text="{i18n>detail1-matnr} {path: 'pl>TOPLM/Matnr', type : 'sap.ui.model.odata.type.String', constraints: { isDigitSequence : true }} {pl>TOPLM/Ktextmat} / {parts:['pl>TOPLM/Prueflos_Key_Modus','pl>TOPLM/Prueflos_Key_Object'], formatter: 'de.enercon.usbee.controller.utils.Formatter.detail1_key_art_header' } - {pl>TOVORG/SLWBEZ_KURZTEXT} - {pl>TOVORG/Pruefpunkt}"
+		showIcon="false" showCloseButton="false"></MessageStrip>
+	<!--/////////////////////////////////////////////////////////////////////////////////////-->
+	<!--<ObjectHeader id="oh1" responsive="true"-->
+	<!--	intro="{i18n>detail1-pl} {path: 'pl>Prueflos', type : 'sap.ui.model.odata.type.String', constraints: { isDigitSequence : true }} / {i18n>detail1-vornr} {pl>TOVORG/Vornr} {pl>TOVORG/Vorktxt}      {pl>Info1} {pl>Info2} {pl>Info3}"-->
+	<!--	title="{i18n>detail2-merkmal} {pl>Merknr} - {pl>CharDescr}">-->
+	<ObjectHeader id="oh1" responsive="true"
+		intro="{parts:['i18n>detail1-pl','pl>Prueflos','i18n>detail1-vornr','pl>TOVORG/Vornr','pl>TOVORG/Vorktxt','i18n>detail2-info','pl>Infofield1','pl>Infofield2','pl>Infofield3'], formatter: 'de.enercon.usbee.controller.utils.Formatter.header_intro_line' }"
+		title="{i18n>detail2-merkmal} {pl>Merknr} - {pl>CharDescr}">
+		<attributes>
+			<!--<ObjectAttribute title="{i18n>detail1-muss}" -->
+			<!--	text="{path: 'pl>Obligatory', formatter: 'de.enercon.usbee.controller.utils.Formatter.X_to_text' }"/>-->
+			<ObjectAttribute title="{i18n>detail1-muss}" text="{i18n>detail1-ja}" visible="{= ${pl>Obligatory} === 'X' ? true : false }"/>
+			<ObjectAttribute title="{i18n>detail1-muss}" text="{i18n>detail1-nein}" visible="{= ${pl>Obligatory} === 'X' ? false : true }"/>
+			<ObjectAttribute title="{i18n>detail1-vorgaben}" text="{pl>VORGABEN}"/>
+			<!--<ObjectAttribute title="{i18n>detail2-info}" text="{pl>Infofield3}" visible="{= ${pl>Infofield3} !== ''}"/>-->
+			<!--<ObjectAttribute title="{i18n>detail2-info}" text="{pl>Info1} {pl>Info2} {pl>Info3}"/>-->
+		</attributes>
+		<statuses>
+			<ObjectStatus text="{i18n>detail2-zupruefen} >= {pl>SOLLSTPUMF} {pl>SmplUnit}" state="Success"
+				visible="{= ${pl>ScopeInd} === '>' ? true : false }"/>
+			<ObjectStatus text="{i18n>detail2-zupruefen} = {pl>SOLLSTPUMF} {pl>SmplUnit}" state="Success"
+				visible="{= ${pl>ScopeInd} === '=' ? true : false }"/>
+			<ObjectStatus text="{i18n>detail2-geprueft} {pl>ANZWERTG} {pl>SmplUnit}"
+				state="{parts:['pl>ANZWERTG','pl>SOLLSTPUMF'], formatter: 'de.enercon.usbee.controller.utils.Formatter.detail3_color_object_header' }"/>
+		</statuses>
+	</ObjectHeader>
+	<!--<ObjectHeader id="oh2" responsive="true" titleActive="false">-->
+	<!--	<attributes>-->
+	<!--	</attributes>-->
+	<!--</ObjectHeader>-->
+	<!--/////////////////////////////////////////////////////////////////////////////////////-->
+</core:FragmentDefinition>

@@ -1,0 +1,131 @@
+[{
+	"Matnr": "Prueflos 1",
+	"Sernr": "Prueflos 1",
+	"Prueflos": "Prueflos 1",
+	"__metadata": {
+		"uri": "SerialnummerSet(Matnr='Prueflos%201',Sernr='Prueflos%201')",
+		"type": "/WIND/QM_RESULTS_SRV.Serialnummer"
+	},
+	"TOPL": {
+		"__deferred": {
+			"uri": "SerialnummerSet(Matnr='Prueflos%201',Sernr='Prueflos%201')/TOPL"
+		}
+	}
+}, {
+	"Matnr": "Prueflos 2",
+	"Sernr": "Prueflos 2",
+	"Prueflos": "Prueflos 2",
+	"__metadata": {
+		"uri": "SerialnummerSet(Matnr='Prueflos%202',Sernr='Prueflos%202')",
+		"type": "/WIND/QM_RESULTS_SRV.Serialnummer"
+	},
+	"TOPL": {
+		"__deferred": {
+			"uri": "SerialnummerSet(Matnr='Prueflos%202',Sernr='Prueflos%202')/TOPL"
+		}
+	}
+}, {
+	"Matnr": "Prueflos 3",
+	"Sernr": "Prueflos 3",
+	"Prueflos": "Prueflos 3",
+	"__metadata": {
+		"uri": "SerialnummerSet(Matnr='Prueflos%203',Sernr='Prueflos%203')",
+		"type": "/WIND/QM_RESULTS_SRV.Serialnummer"
+	},
+	"TOPL": {
+		"__deferred": {
+			"uri": "SerialnummerSet(Matnr='Prueflos%203',Sernr='Prueflos%203')/TOPL"
+		}
+	}
+}, {
+	"Matnr": "Prueflos 4",
+	"Sernr": "Prueflos 4",
+	"Prueflos": "Prueflos 4",
+	"__metadata": {
+		"uri": "SerialnummerSet(Matnr='Prueflos%204',Sernr='Prueflos%204')",
+		"type": "/WIND/QM_RESULTS_SRV.Serialnummer"
+	},
+	"TOPL": {
+		"__deferred": {
+			"uri": "SerialnummerSet(Matnr='Prueflos%204',Sernr='Prueflos%204')/TOPL"
+		}
+	}
+}, {
+	"Matnr": "Prueflos 5",
+	"Sernr": "Prueflos 5",
+	"Prueflos": "Prueflos 5",
+	"__metadata": {
+		"uri": "SerialnummerSet(Matnr='Prueflos%205',Sernr='Prueflos%205')",
+		"type": "/WIND/QM_RESULTS_SRV.Serialnummer"
+	},
+	"TOPL": {
+		"__deferred": {
+			"uri": "SerialnummerSet(Matnr='Prueflos%205',Sernr='Prueflos%205')/TOPL"
+		}
+	}
+}, {
+	"Matnr": "Prueflos 6",
+	"Sernr": "Prueflos 6",
+	"Prueflos": "Prueflos 6",
+	"__metadata": {
+		"uri": "SerialnummerSet(Matnr='Prueflos%206',Sernr='Prueflos%206')",
+		"type": "/WIND/QM_RESULTS_SRV.Serialnummer"
+	},
+	"TOPL": {
+		"__deferred": {
+			"uri": "SerialnummerSet(Matnr='Prueflos%206',Sernr='Prueflos%206')/TOPL"
+		}
+	}
+}, {
+	"Matnr": "Prueflos 7",
+	"Sernr": "Prueflos 7",
+	"Prueflos": "Prueflos 7",
+	"__metadata": {
+		"uri": "SerialnummerSet(Matnr='Prueflos%207',Sernr='Prueflos%207')",
+		"type": "/WIND/QM_RESULTS_SRV.Serialnummer"
+	},
+	"TOPL": {
+		"__deferred": {
+			"uri": "SerialnummerSet(Matnr='Prueflos%207',Sernr='Prueflos%207')/TOPL"
+		}
+	}
+}, {
+	"Matnr": "Prueflos 8",
+	"Sernr": "Prueflos 8",
+	"Prueflos": "Prueflos 8",
+	"__metadata": {
+		"uri": "SerialnummerSet(Matnr='Prueflos%208',Sernr='Prueflos%208')",
+		"type": "/WIND/QM_RESULTS_SRV.Serialnummer"
+	},
+	"TOPL": {
+		"__deferred": {
+			"uri": "SerialnummerSet(Matnr='Prueflos%208',Sernr='Prueflos%208')/TOPL"
+		}
+	}
+}, {
+	"Matnr": "Prueflos 9",
+	"Sernr": "Prueflos 9",
+	"Prueflos": "Prueflos 9",
+	"__metadata": {
+		"uri": "SerialnummerSet(Matnr='Prueflos%209',Sernr='Prueflos%209')",
+		"type": "/WIND/QM_RESULTS_SRV.Serialnummer"
+	},
+	"TOPL": {
+		"__deferred": {
+			"uri": "SerialnummerSet(Matnr='Prueflos%209',Sernr='Prueflos%209')/TOPL"
+		}
+	}
+}, {
+	"Matnr": "Prueflos 10",
+	"Sernr": "Prueflos 10",
+	"Prueflos": "Prueflos 10",
+	"__metadata": {
+		"uri": "SerialnummerSet(Matnr='Prueflos%2010',Sernr='Prueflos%2010')",
+		"type": "/WIND/QM_RESULTS_SRV.Serialnummer"
+	},
+	"TOPL": {
+		"__deferred": {
+			"uri": "SerialnummerSet(Matnr='Prueflos%2010',Sernr='Prueflos%2010')/TOPL"
+		}
+	}
+}]

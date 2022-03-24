@@ -1,0 +1,81 @@
+[{
+	"Werks": "Werks 1",
+	"Matnr": "Matnr 1",
+	"Maktx": "Maktx 1",
+	"__metadata": {
+		"uri": "MaterialSet(Werks='Werks%201',Matnr='Matnr%201')",
+		"type": "/WIND/QM_RESULTS_SRV.Material"
+	}
+}, {
+	"Werks": "Werks 2",
+	"Matnr": "Matnr 2",
+	"Maktx": "Maktx 2",
+	"__metadata": {
+		"uri": "MaterialSet(Werks='Werks%202',Matnr='Matnr%202')",
+		"type": "/WIND/QM_RESULTS_SRV.Material"
+	}
+}, {
+	"Werks": "Werks 3",
+	"Matnr": "Matnr 3",
+	"Maktx": "Maktx 3",
+	"__metadata": {
+		"uri": "MaterialSet(Werks='Werks%203',Matnr='Matnr%203')",
+		"type": "/WIND/QM_RESULTS_SRV.Material"
+	}
+}, {
+	"Werks": "Werks 4",
+	"Matnr": "Matnr 4",
+	"Maktx": "Maktx 4",
+	"__metadata": {
+		"uri": "MaterialSet(Werks='Werks%204',Matnr='Matnr%204')",
+		"type": "/WIND/QM_RESULTS_SRV.Material"
+	}
+}, {
+	"Werks": "Werks 5",
+	"Matnr": "Matnr 5",
+	"Maktx": "Maktx 5",
+	"__metadata": {
+		"uri": "MaterialSet(Werks='Werks%205',Matnr='Matnr%205')",
+		"type": "/WIND/QM_RESULTS_SRV.Material"
+	}
+}, {
+	"Werks": "Werks 6",
+	"Matnr": "Matnr 6",
+	"Maktx": "Maktx 6",
+	"__metadata": {
+		"uri": "MaterialSet(Werks='Werks%206',Matnr='Matnr%206')",
+		"type": "/WIND/QM_RESULTS_SRV.Material"
+	}
+}, {
+	"Werks": "Werks 7",
+	"Matnr": "Matnr 7",
+	"Maktx": "Maktx 7",
+	"__metadata": {
+		"uri": "MaterialSet(Werks='Werks%207',Matnr='Matnr%207')",
+		"type": "/WIND/QM_RESULTS_SRV.Material"
+	}
+}, {
+	"Werks": "Werks 8",
+	"Matnr": "Matnr 8",
+	"Maktx": "Maktx 8",
+	"__metadata": {
+		"uri": "MaterialSet(Werks='Werks%208',Matnr='Matnr%208')",
+		"type": "/WIND/QM_RESULTS_SRV.Material"
+	}
+}, {
+	"Werks": "Werks 9",
+	"Matnr": "Matnr 9",
+	"Maktx": "Maktx 9",
+	"__metadata": {
+		"uri": "MaterialSet(Werks='Werks%209',Matnr='Matnr%209')",
+		"type": "/WIND/QM_RESULTS_SRV.Material"
+	}
+}, {
+	"Werks": "Werks 10",
+	"Matnr": "Matnr 10",
+	"Maktx": "Maktx 10",
+	"__metadata": {
+		"uri": "MaterialSet(Werks='Werks%2010',Matnr='Matnr%2010')",
+		"type": "/WIND/QM_RESULTS_SRV.Material"
+	}
+}]

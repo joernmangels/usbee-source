@@ -1,0 +1,157 @@
+<mvc:View controllerName="de.enercon.usbee.controller.recordresults.DetailS1N" xmlns="sap.m" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:c="sap.ui.core" xmlns:semantic="sap.m.semantic">
+	<semantic:DetailPage id="Detail3" navButtonPress="onNavBack" showNavButton="true"
+		title="{i18n>detailN-title} {path: 'pl>Prueflos', type : 'sap.ui.model.odata.type.String', constraints: { isDigitSequence : true }} / {pl>Vornr} / {pl>Merknr}">
+		<MessageStrip
+			text="{i18n>detail1-matnr} {path: 'pl>TOPLM/Matnr', type : 'sap.ui.model.odata.type.String', constraints: { isDigitSequence : true }} {pl>TOPLM/Ktextmat} / {parts:['pl>TOPLM/Prueflos_Key_Modus','pl>TOPLM/Prueflos_Key_Object'], formatter: 'de.enercon.usbee.controller.utils.Formatter.detail1_key_art_header' }"
+			showIcon="false" showCloseButton="false"></MessageStrip>
+		<!--/////////////////////////////////////////////////////////////////////////////////////fullScreenOptimized="true"-->
+		<ObjectHeader id="oh1" responsive="true"
+			intro="{i18n>detail1-pl} {path: 'pl>Prueflos', type : 'sap.ui.model.odata.type.String', constraints: { isDigitSequence : true }} / {i18n>detail1-vornr} {pl>TOVORG/Vornr} {pl>TOVORG/Vorktxt}"
+			title="{i18n>detail2-merkmal} {pl>Merknr} - {pl>CharDescr}">
+			<attributes>
+				<!--<ObjectAttribute title="{i18n>detail2-info}" text="{pl>Infofield3}" visible="{= ${pl>Infofield3} !== ''}"/>-->
+				<!--<ObjectAttribute title="{i18n>detail1-pl}" text="{path: 'pl>Prueflos', type : 'sap.ui.model.odata.type.String', constraints: { isDigitSequence : true }}"/>-->
+				<!--<ObjectAttribute title="{i18n>detail1-vornr}" text="{pl>TOVORG/Vornr}"/>-->
+				<ObjectAttribute title="{i18n>detail1-muss}"
+					text="{path: 'pl>Obligatory', formatter: 'de.enercon.usbee.controller.utils.Formatter.X_to_text' }"/>
+				<ObjectAttribute title="{i18n>detail1-vorgaben}" text="{pl>VORGABEN}"/>
+			</attributes>
+			<statuses>
+				<ObjectStatus text="{i18n>detail2-zupruefen} {pl>SOLLSTPUMF} {pl>SmplUnit}" state="Success"/>
+				<ObjectStatus text="{i18n>detail2-geprueft} {pl>ANZWERTG} {pl>SmplUnit}"
+					state="{parts:['pl>ANZWERTG','pl>SOLLSTPUMF'], formatter: 'de.enercon.usbee.controller.utils.Formatter.detail3_color_object_header' }"/>
+			</statuses>
+		</ObjectHeader>
+		<!--/////////////////////////////////////////////////////////////////////////////////////-->
+		<Panel expandable="true" expanded="{global>/_navpanel_expanded}" headerText="{i18n>detail2-optionen}">
+			<content>
+				<FlexBox alignItems="Start" justifyContent="End">
+					<items>
+						<!--<VBox>-->
+						<!--<f:SimpleForm id="form" editable="true">-->
+						<!--	<f:content>-->
+						<!--<Label text="AutoSave" labelFor="SW1"/>-->
+						<!--</VBox>-->
+						<!--<MessageStrip type="Warning" text="AutoSave" showIcon="false" showCloseButton="false" class="sapUiSmallMarginEnd">-->
+						<!--	<layoutData>-->
+						<!--		<FlexItemData growFactor="1"/>-->
+						<!--	</layoutData>-->
+						<!--</MessageStrip>-->
+						<!--<Switch id="SW1" name="AutoSave" tooltip="Automatisch speichern beim Merkmalswechsel" state="{global>/_autosave}" enabled="true"-->
+						<!--	class="sapUiLargeMarginEnd">-->
+						<!--	<layoutData>-->
+						<!--		<FlexItemData growFactor="1"/>-->
+						<!--	</layoutData>-->
+						<!--</Switch>-->
+						<!--	</f:content>-->
+						<!--</f:SimpleForm>-->
+						<!--<Text text="{i18n>detail2-info} {pl>Infofield3}" visible="{= ${pl>Infofield3} !== ''}"/>-->
+						<Button text="{pl>Merknr_first}" tooltip="{i18n>detail2-ttfirst}" icon="sap-icon://navigation-up-arrow" press="onMerknrFirst"
+							class="sapUiSmallMarginEnd" visible="{= ${pl>Merknr_first} !== ${pl>Merknr} &amp;&amp; ${pl>Merknr_first} !== ${pl>Merknr_down} }"/>
+						<Button text="{pl>Merknr_down}" tooltip="{i18n>detail2-ttpriv}" icon="sap-icon://navigation-left-arrow" press="onMerknrDown"
+							class="sapUiSmallMarginEnd" visible="{= ${pl>Merknr_down} !== ''}"/>
+						<Button text="{pl>Merknr_up}" tooltip="{i18n>detail2-ttnext}" icon="sap-icon://navigation-right-arrow" press="onMerknrUp"
+							class="sapUiSmallMarginEnd" visible="{= ${pl>Merknr_up} !== ''}"/>
+						<Button text="{pl>Merknr_last}" tooltip="{i18n>detail2-ttlast}" icon="sap-icon://navigation-down-arrow" press="onMerknrLast"
+							class="sapUiLargeMarginEnd" visible="{= ${pl>Merknr_last} !== ${pl>Merknr} &amp;&amp; ${pl>Merknr_last} !== ${pl>Merknr_up} }"/>
+						<Button type="{ path: 'pl>Anzahl_fotos', formatter: 'de.enercon.usbee.controller.utils.Formatter.detail3_color_fotobutton' }"
+							text="{i18n>detail2-fotos} ( {pl>Anzahl_fotos} )" icon="sap-icon://camera" press="onFotoPress"/>
+					</items>
+				</FlexBox>
+			</content>
+		</Panel>
+		<!--<ObjectHeader-->
+		<!--	title="{i18n>detail1-pl} {path: 'pl>Prueflos', type : 'sap.ui.model.odata.type.String', constraints: { isDigitSequence : true }} / {i18n>detail1-vornr} {pl>TOVORG/Vornr} {pl>TOVORG/Vorktxt} / {i18n>detail2-merkmal} {pl>Merknr}">-->
+		<!--	<statuses>-->
+		<!--		<ObjectStatus text="{i18n>detail2-zupruefen} {pl>SOLLSTPUMF} {pl>SmplUnit}" state="Success"/>-->
+		<!--		<ObjectStatus text="{i18n>detail2-geprueft} {pl>ANZWERTG} {pl>SmplUnit}"-->
+		<!--			state="{parts:['pl>ANZWERTG','pl>SOLLSTPUMF'], formatter: 'de.enercon.usbee.controller.utils.Formatter.detail3_color_object_header' }"/>-->
+		<!--	</statuses>-->
+		<!--	<attributes>-->
+		<!--		<ObjectAttribute text="{pl>CharDescr}"/>-->
+		<!--		<ObjectAttribute text="{pl>Infofield3}"/>-->
+		<!--		<ObjectAttribute text="{pl>VORGABEN}"/>-->
+		<!--	</attributes>-->
+		<!--</ObjectHeader>-->
+		<!--<FlexBox alignItems="Start" justifyContent="End">-->
+		<!--	<items>-->
+		<!--		<Button type="Accept" text="{i18n>detail2-fotos}" icon="sap-icon://camera" press="onFotoPress" ariaLabelledBy="editButtonLabel"/>-->
+		<!--	</items>-->
+		<!--</FlexBox>-->
+		<Table id="idresuTableN" fixedLayout="false" inset="false" items="{pl>TORESU}">
+			<columns>
+				<Column>
+					<Text text="{i18n>detailL-copy}"/>
+				</Column>
+				<Column minScreenWidth="Tablet" demandPopin="true">
+					<Text text="{i18n>detailL-qmicon}"/>
+				</Column>
+				<Column minScreenWidth="Tablet" demandPopin="true">
+					<Text text="{i18n>detailL-valid}"/>
+				</Column>
+				<Column minScreenWidth="Tablet" demandPopin="true">
+					<Text text="{i18n>detailN-sernr}"/>
+				</Column>
+				<Column minScreenWidth="Tablet" demandPopin="true">
+					<Text text="{i18n>detailN-messwert}"/>
+				</Column>
+				<Column minScreenWidth="Tablet" demandPopin="true">
+					<Text text="{i18n>detailN-pb_text}"/>
+				</Column>
+				<Column minScreenWidth="Tablet" demandPopin="true">
+					<Text text="{i18n>detailN-zi_text}"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem vAlign="Middle" visible="{= ${pl>visible} === 'X'}">
+					<cells>
+						<FlexBox direction="Column" alignItems="Start">
+							<items>
+								<Button icon="sap-icon://sys-add" press="onLineAdd" type="Transparent"/>
+								<Button icon="sap-icon://sys-minus" press="onLineDel" type="Transparent"/>
+							</items>
+						</FlexBox>
+						<!--/////////////////////////////////////////////////////////////////////////////////////////////-->
+						<core:Icon
+							src="{parts:['pl>Messwert','pl>Attribut_valid', 'TOLS>/_TOL_UNTEN', 'TOLS>/_TOL_OBEN' ], formatter: 'de.enercon.usbee.controller.utils.Formatter.detail3_icon_result_N' }"
+							size="350%"
+							color="{parts:['pl>Messwert','pl>Attribut_valid', 'TOLS>/_TOL_UNTEN', 'TOLS>/_TOL_OBEN' ], formatter: 'de.enercon.usbee.controller.utils.Formatter.detail3_color_result_N' }">
+							<core:layoutData>
+								<FlexItemData growFactor="1"/>
+							</core:layoutData>
+						</core:Icon>
+						<!--/////////////////////////////////////////////////////////////////////////////////////////////-->
+						<CheckBox text="" selected="{pl>Attribut_valid}"/>
+						/////////////////////////////////////////////////////////////////////////////////////////////
+						<ObjectNumber number="{pl>Serialnr}" state="None"/>
+						<!--/////////////////////////////////////////////////////////////////////////////////////////////-->
+						<Input value="{path: 'pl>Messwert', type : 'sap.ui.model.type.String', constraints : { minLength: 0, maxLength: 13, search: '^[0-9]*$' }}"
+							type="Text"/>
+						<!--<Input value="{pl>Messwert}"/>-->
+						<!--		/////////////////////////////////////////////////////////////////////////////////////////////-->
+						<!--<Input id="idMess" type="Text" valueLiveUpdate="true" placeholder="{i18n>detail1-eingabem}"-->
+						<!--	value="{path: 'pl>Messwert', type : 'sap.ui.model.type.String', constraints : { minLength: 0, maxLength: 13, search: '^[0-9]*$' }}"/>-->
+						<!--<Input value="{pl>Messwert}"/>-->
+						<!--<Input id="idMess" value="{pl>Messwert}" type="Number" valueLiveUpdate="true" placeholder="{i18n>detail1-eingabem}"/>-->
+						<!--<Input value="{pl>Pb_text}" placeholder="{i18n>detail1-eingabeb}"/>-->
+						<!--<Input value="{pl>Zi_text}" placeholder="{i18n>detail1-eingabez}"/>-->
+						<!--<Input-->
+						<!--	value="{path: 'pl>Messwert', type : 'sap.ui.model.type.String', constraints : { minLength: 0, maxLength: 13, search: '/^\d+(,|\.)\d+$/g' }}"-->
+						<!--	type="{Text}"/>-->
+						<!--/////////////////////////////////////////////////////////////////////////////////////////////-->
+						<Input value="{pl>Pb_text}"/>
+						<Input value="{pl>Zi_text}"/>
+						<!--/////////////////////////////////////////////////////////////////////////////////////////////-->
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+		<semantic:customFooterContent>
+			<Button type="Accept" icon="sap-icon://save" text="{i18n>detail2-save}" press="onSave" visible="{=${message>/}.length === 0}"/>
+		</semantic:customFooterContent>
+		<semantic:messagesIndicator>
+			<semantic:MessagesIndicator press="onMessagePopoverPress"/>
+		</semantic:messagesIndicator>
+	</semantic:DetailPage>
+</mvc:View>

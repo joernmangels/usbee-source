@@ -1,0 +1,72 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Table id="KidresuTableL" fixedLayout="false" inset="false" items="{pl>TORESU}" visible="{= ${pl>ESTUKZ} === '*' ? true : false }">
+		<columns>
+			<!--Status-->
+			<Column minScreenWidth="Tablet" demandPopin="true">
+				<Text text="{pl>Headline2}"/>
+			</Column>
+			<!--SerialNr Charge-->
+			<Column minScreenWidth="Tablet" demandPopin="true">
+				<Text text="{pl>Headline4}" visible="{= ${pl>Prueflos_Key_Modus} === 'S1' ? true : false }"/>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true">
+				<Text text="{pl>Headline4}" visible="{= ${pl>Prueflos_Key_Modus} === 'SX' ? true : false }"/>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true">
+				<Text text="{pl>Headline4}" visible="{= ${pl>Prueflos_Key_Modus} === 'CH' ? true : false }"/>
+			</Column>
+			<!--Bewertung-->
+			<Column minScreenWidth="Tablet" demandPopin="true">
+				<Text text="{pl>Headline5}"/>
+			</Column>
+			<!--StepInput-->
+			<Column minScreenWidth="Tablet" demandPopin="true">
+				<Text text="{i18n>detail2-anzahl}"/>
+			</Column>
+			<!--Bemwrkung-->
+			<Column minScreenWidth="Tablet" demandPopin="true">
+				<Text text="{pl>Headline6}"/>
+			</Column>
+			<!--Zusatzinfo-->
+			<Column minScreenWidth="Tablet" demandPopin="true">
+				<Text text="{pl>Headline7}"/>
+			</Column>
+		</columns>
+		<items>
+			<!--<ColumnListItem vAlign="Middle" visible="{= ${pl>visible} === 'X'}">-->
+			<ColumnListItem vAlign="Middle" visible="{pl>visible}">				
+				<cells>
+					<!--/////////////////////////////////////////////////////////////////////////////////////////////-->
+					<core:Icon src="{parts:['pl>Bewertung','pl>Attribut'], formatter: 'de.enercon.usbee.controller.utils.Formatter.detail3_icon_result_neu' }"
+						size="350%" color="{ path: 'pl>Bewertung', formatter: 'de.enercon.usbee.controller.utils.Formatter.detailL_color_icon' }">
+						<core:layoutData>
+							<FlexItemData growFactor="1"/>
+						</core:layoutData>
+					</core:Icon>
+					<!--/////////////////////////////////////////////////////////////////////////////////////////////-->
+					<ObjectNumber number="{pl>Serialnr}" state="None" visible="{= ${pl>Prueflos_Key_Modus} === 'S1' ? true : false }"/>
+					<Input value="{path: 'pl>Serialnr', type : 'sap.ui.model.type.String', constraints : { minLength: 1, maxLength: 18 }}" type="{Text}"
+						valueLiveUpdate="true" id="KSernrInput" placeholder="{i18n>detail1-eingabe}" visible="{= ${pl>Prueflos_Key_Modus} === 'SX' ? true : false }"/>
+					<ObjectNumber number="{pl>Charge}" state="None" visible="{= ${pl>Prueflos_Key_Modus} === 'CH' ? true : false }"/>
+					<!--		/////////////////////////////////////////////////////////////////////////////////////////////-->
+					<Select id="KselectPIDS1L" selectedKey="{pl>Bewertung}" showSecondaryValues="false" enabled="false" autoAdjustWidth="true"
+						items="{ path: 'pl>TOBEWERTE', sorter: { path: 'Bewertung2' } }">
+						<core:ListItem key="{pl>Key_Qual}" text="{pl>Bewertung1}" additionalText="{pl>Bewertung2}"/>
+						<core:Item key="{pl>Key_Qual}" text="{pl>Bewertung1}"/>
+					</Select>
+					<!--/////////////////////////////////////////////////////////////////////////////////////////////-->
+					<!--<StepInput value="{pl>ANZKLASEH}" width="120px" min="0" change="onStepInputChange"-->
+					<!--	max="{ path: 'pl>Scope', formatter: 'de.enercon.usbee.controller.utils.Formatter.string_to_float' }" step="1"/>-->
+					<StepInput value="{pl>ANZKLASEH}" width="120px" min="0" change="onStepInputChange"
+						max="{parts:['pl>ScopeInd','pl>Scope'], formatter: 'de.enercon.usbee.controller.utils.Formatter.stepinput_scope' }" step="1"/>
+					<!--/////////////////////////////////////////////////////////////////////////////////////////////-->
+					<Input value="{ path: 'pl>Pb_text', type : 'sap.ui.model.type.String', constraints : { minLength: 0, maxLength: 40}}" change="onBemerkungChange"
+						placeholder="{i18n>detail1-eingabeb}" valueLiveUpdate="true"/>
+					<Input value="{ path: 'pl>Zi_text', type : 'sap.ui.model.type.String', constraints : { minLength: 0, maxLength: 18}}"
+						placeholder="{i18n>detail1-eingabez}" valueLiveUpdate="true"/>
+					<!--/////////////////////////////////////////////////////////////////////////////////////////////-->
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+</core:FragmentDefinition>

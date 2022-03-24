@@ -1,0 +1,87 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<!--<ProgressIndicator percentValue="{ path: 'pl>Results_Entered_P', formatter: 'de.enercon.usbee.controller.utils.Formatter.string_to_float' }"-->
+	<!--	displayValue="{ parts:['pl>Results_Entered_P','pl>Results_Gesamt','pl>Results_Entered'], formatter: 'de.enercon.usbee.controller.utils.Formatter.detail1_percentage_value' }"-->
+	<!--	showValue="true" state="{ path: 'pl>Results_Entered_P', formatter: 'de.enercon.usbee.controller.utils.Formatter.detail1_percentage_color' }"-->
+	<!--	height="3%"/>-->
+	<ProgressIndicator percentValue="{ path: 'pl>MK_P', formatter: 'de.enercon.usbee.controller.utils.Formatter.string_to_float' }"
+		displayValue="{ parts:['pl>MK_A','pl>MK_R','pl>MK_O'], formatter: 'de.enercon.usbee.controller.utils.Formatter.progress_value' }"
+		showValue="true" height="20px"
+		state="{ parts:['pl>MK_A','pl>MK_R','pl>MK_O','pl>MK_G','pl>REC_SERNR', 'pl>Prueflos_Key_Modus', 'pl>Pruefpunkt'], formatter: 'de.enercon.usbee.controller.utils.Formatter.progress_color' }"
+		tooltip="{ parts:['pl>MK_A','pl>MK_R','pl>MK_O'], formatter: 'de.enercon.usbee.controller.utils.Formatter.progress_value' }"/>
+	<MessageStrip visible="{= ${pl>SLWBEZ} === '' ? true : false }"
+		text="{i18n>detail1-matnr} {path: 'pl>TOPL/Matnr', type : 'sap.ui.model.odata.type.String', constraints: { isDigitSequence : true }} {pl>TOPL/Ktextmat} / {parts:['pl>Prueflos_Key_Modus','pl>Prueflos_Key_Object'], formatter: 'de.enercon.usbee.controller.utils.Formatter.detail1_key_art_header' }"
+		showIcon="false" showCloseButton="false"></MessageStrip>
+	<MessageStrip visible="{= ${pl>SLWBEZ} === '' ? false : true }"
+		text="{i18n>detail1-matnr} {path: 'pl>TOPL/Matnr', type : 'sap.ui.model.odata.type.String', constraints: { isDigitSequence : true }} {pl>TOPL/Ktextmat} / {parts:['pl>Prueflos_Key_Modus','pl>Prueflos_Key_Object'], formatter: 'de.enercon.usbee.controller.utils.Formatter.detail1_key_art_header' } - {pl>SLWBEZ_KURZTEXT} - {pl>Pruefpunkt}"
+		showIcon="false" showCloseButton="false"></MessageStrip>
+	<!--<HBox>-->
+	<!--	<items>-->
+	<!--		<c:Icon src="sap-icon://activities" size="3rem"/>-->
+	<!--	</items>-->
+	<!--</HBox>-->
+	<Table id="Merkmale" inset="false" mode="None" noDataText="{i18n>detail2-nomerk}" itemPress="onListItemPress"
+		items="{ path: 'pl>TOMERK', sorter: { path: 'Merknr' } }">
+		<columns>
+			<Column width="6em">
+				<Text text="{i18n>detail3-qmicon}"/>
+			</Column>
+			<Column width="5em">
+				<Text text="{i18n>detail3-qmicona}"/>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true">
+				<Text text="{i18n>detail2-Mtext}"/>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true">
+				<Text text="{i18n>detail2-fotos}"/>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true">
+				<Text text="{i18n>detail2-merkmal}"/>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true">
+				<Text text="{i18n>detail2-info}"/>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true">
+				<Text text="{i18n>detail2-zupruefen}"/>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true">
+				<Text text="{i18n>detail2-geprueft}"/>
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem type="Navigation" visible="{ parts: ['pl>MBewertung', 'pl>Status', 'gsettings>/_filterzr'], formatter: 'de.enercon.usbee.controller.utils.Formatter.detail2_visible_zr' }">
+				<cells>
+					<core:Icon src="{ path: 'pl>MBewertung', formatter: 'de.enercon.usbee.controller.utils.Formatter.detail3_icon_mbewertung' }" size="200%"
+						color="{ parts: ['pl>MBewertung', 'pl>Obligatory', 'pl>REC_SERNR', 'pl>Prueflos_Key_Modus', 'pl>Pruefpunkt'], formatter: 'de.enercon.usbee.controller.utils.Formatter.detail3_color_mbewertung' }">
+						<core:layoutData>
+							<FlexItemData growFactor="1"/>
+						</core:layoutData>
+					</core:Icon>
+					<!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+					<core:Icon tooltip="{ path: 'pl>ART_MERKMAL', formatter: 'de.enercon.usbee.controller.utils.Formatter.detail3_icon_artmerkmaltext' }"
+						src="{ path: 'pl>ART_MERKMAL', formatter: 'de.enercon.usbee.controller.utils.Formatter.detail3_icon_artmerkmal' }" size="200%">
+						<core:layoutData>
+							<FlexItemData growFactor="1"/>
+						</core:layoutData>
+					</core:Icon>
+					<!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+					<Button visible="{ path: 'pl>Langtext', formatter: 'de.enercon.usbee.controller.utils.Formatter.detail3_visible_langtext' }"
+						class="sapUiSmallMarginEnd" text="{i18n>detail2-Mtext}" icon="sap-icon://request" press="onTextPress"/>
+					<!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+					<Button type="{ path: 'pl>Anzahl_fotos', formatter: 'de.enercon.usbee.controller.utils.Formatter.detail3_color_fotobutton' }"
+						text="( {pl>Anzahl_fotos} )" icon="sap-icon://camera" press="onFotoPress"/>
+					<!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+					<ObjectIdentifier title="{pl>Merknr} - {pl>CharDescr}" text="{pl>VORGABEN}"/>
+					<!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+					<Text text="{pl>Infofield3}"/>
+					<!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+					<ObjectNumber number="{pl>SOLLSTPUMF}" unit="{pl>SmplUnit}"/>
+					<!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+					<ObjectNumber number="{pl>ANZWERTG}" unit="{pl>SmplUnit}"/>
+					<!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+					<Text text="{pl>MBewertung}"/>
+					<!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+</core:FragmentDefinition>

@@ -1,0 +1,203 @@
+.myAppDemoWT .myCustomButton.sapMBtn {
+    margin-right: 0.125rem
+}
+
+html[dir="rtl"] .myAppDemoWT .myCustomButton.sapMBtn {
+    margin-left: 0.125rem;
+    margin-right: 0
+}
+
+.size0 {
+    font-size: 1.1rem;
+}
+
+.size1 {
+    font-size: 1.5rem;
+}
+
+.size2 {
+    font-size: 2.5rem;
+}
+
+.size3 {
+    font-size: 5rem;
+}
+
+.size4 {
+    font-size: 7.5rem;
+}
+
+.size5 {
+    font-size: 10rem;
+}
+
+.myAppDemoWT .myCustomText {
+    font-weight: bold;
+}
+
+.centerborder {
+    margin: auto;
+    width: 60%;
+    border: 2px solid green;
+    padding: 10px;
+}
+
+.center {
+    margin: auto;
+    width: 30%;
+    padding: 10px;
+}
+
+.vorglist {
+    font-size: 20px !important;
+}
+
+.vorglist_15 {
+    font-size: 15px !important;
+}
+
+.bigLabel {
+    font-size: 30px;
+}
+
+.bigLabel2 {
+    font-size: 15px;
+}
+
+.bigLabel_H {
+    font-size: 20px;
+}
+
+.TextBold {
+    font-weight: bold;
+}
+.subheader {
+  height: 200%;   /* length values */
+}
+
+.blue {
+  background: blue;
+}
+
+/*Correspond to state:None*/
+.sapMPIBarNeutral {
+/*       background:#4169E1 !important;*/
+/*       background:#0092D1; */
+  background:#BDBABA;
+}
+
+.cssGreen1 .sapUiIcon{
+	color:green !important;
+}
+
+.cssRed1 .sapUiIcon{
+	color:red !important;
+}
+
+
+.cssGreen2 .sapMSltPicker-CTX .sapMSelectList .sapMSelectListRow .sapMSelectListFirstCell  {
+	color:red !important;
+}
+
+.titleOnTouch:active:after {
+    content:attr(title);
+    /* turn into and style block */
+    display: inline-block;
+    padding: 5px;
+    border: 1px solid #ccc;
+    background: #333;
+    width: max-content;
+    /* position the block */
+    position: relative;
+    top: 10%;
+    left: 6px;
+    /* style text */
+    font-size: smaller;
+    color: #fff;
+}
+
+/*Correspond to state:Error*/
+
+/*
+.sapMPIBarNegative{
+       background:#DC143C !important;
+}
+*/
+/*Correspond to state:Warning*/
+/*
+.sapMPIBarCritical {
+       background:#FFA500 !important;
+}
+*/
+/*Correspond to state:Success*/
+/*
+.sapMPIBarPositive {
+       background:#2E8B57 !important;
+}
+*/
+
+.spaceRadio {
+  padding-top: 1px;
+  padding-right: 0px;
+  padding-bottom: 1px;
+  padding-left: 0px;
+}
+
+@font-face {
+    font-family: 'icomoon';
+    src: url('fonts/icomoon.eot?lpr7fa');
+    src: url('fonts/icomoon.eot?lpr7fa#iefix') format('embedded-opentype'), url('fonts/icomoon.ttf?lpr7fa') format('truetype'), url('fonts/icomoon.woff?lpr7fa') format('woff'), url('fonts/icomoon.svg?lpr7fa#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'saptnt';
+    src: url('fonts/SAP-icons-TNT.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'sapbusiness';
+    src: url('fonts/BusinessSuiteInAppSymbols.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-sad:before {
+    content: "\e9e5";
+}
+
+.icon-formel:before {
+    content: "\ea6f";
+}
+
+.icon-formel2:before {
+    content: "\e04b";
+}
+
+.icon-sad2:before {
+    content: "\e087";
+}
+
+.icon-smile:before {
+    content: "\e08b";
+}
+
+

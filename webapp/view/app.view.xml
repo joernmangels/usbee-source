@@ -1,0 +1,6 @@
+<mvc:View controllerName="de.enercon.usbee.controller.app" displayBlock="true" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+	<App class="cApp" id="idAppControl" backgroundImage="{global_pic>/_IPATH}" backgroundOpacity="0.4" homeIcon="favicon.ico"/>
+	<!--backgroundImage="image/enercon_background.png"-->
+	<!--backgroundImage="img/Enercon_Background.jpg"-->
+	<!-- pages will be filled automatically via routing -->
+</mvc:View>

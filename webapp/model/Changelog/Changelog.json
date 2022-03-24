@@ -1,0 +1,170 @@
+{
+	"Changelog": [{
+		"version": "0.0.1",
+		"features": "Initiales Release für Betatest",
+		"release": "05.12.2017"
+	}, {
+		"version": "0.0.2",
+		"features": "Sperrkonzept und Autoreload",
+		"release": "16.01.2018"
+	}, {
+		"version": "0.0.3",
+		"features": "CacheHandling(Cachebuster)",
+		"release": "23.01.2018"
+	}, {
+		"version": "0.0.4",
+		"features": "SerialNr/Prüflos anlegen / Dynamisches TileMenü(/ENERCON/QM030)",
+		"release": "20.02.2018"
+	}, {
+		"version": "0.0.5",
+		"features": "Start ReDesign bump to USBee",
+		"release": "10.04.2018"
+	}, {
+		"version": "0.0.6",
+		"features": "Release USBEE for tests (ENQ)",
+		"release": "11.09.2018"
+	}, {
+		"version": "0.0.7",
+		"features": "Bugfix",
+		"release": "19.09.2018"
+	}, {
+		"version": "0.0.8",
+		"features": "Photo-Upload / Icons InspCharOverview",
+		"release": "27.09.2018"
+	},
+	{
+		"version": "0.0.9",
+		"features": "Duration Insplot, NavigationButtons for InspChars",
+		"release": "04.10.2018"
+	},
+	{
+		"version": "0.1.0",
+		"features": "Bugfixes",
+		"release": "08.10.2018"
+	},
+	{
+		"version": "0.1.1",
+		"features": "Wait for saving before nav back",
+		"release": "18.10.2018"
+	},
+	{
+		"version": "0.1.2",
+		"features": "Fix handling saved results",
+		"release": "01.11.2018"
+	},
+	{
+		"version": "0.1.3",
+		"features": "New Feature in Header Jump over Operations if OP=1",
+		"release": "07.11.2018"
+	},
+	{
+		"version": "0.1.4",
+		"features": "Fixes for rendering in tablets",
+		"release": "08.11.2018"
+	},
+	{
+		"version": "0.1.5",
+		"features": "Bugfix, Search for Ebeln, Aufnr, Deliv.",
+		"release": "20.11.2018"
+	},
+	{
+		"version": "0.1.6",
+		"features": "Bugfix UI5-Version.",
+		"release": "29.11.2018"
+	},
+	{
+		"version": "0.1.7",
+		"features": "More Bugfixes",
+		"release": "05.12.2018"
+	},
+	{
+		"version": "0.1.8",
+		"features": "Transation english",
+		"release": "05.12.2018"
+	},
+	{
+		"version": "0.1.9",
+		"features": "No split qual/quan insp. chars, New Tile for app-handling",
+		"release": "08.01.2019"
+	},
+	{
+		"version": "0.2.0",
+		"features": "Display longtext oper and chars",
+		"release": "31.01.2019"
+	},
+	{
+		"version": "0.2.1",
+		"features": "Bugfixes, No recording result for formula chars ans sum chars",
+		"release": "05.02.2019"
+	},
+	{
+		"version": "0.2.2",
+		"features": "Barcode",
+		"release": "16.04.2019"
+	},
+	{
+		"version": "0.3.0",
+		"features": "Support for Inspection Points",
+		"release": "06.08.2019"
+	},
+	{
+		"version": "0.3.1",
+		"features": "Bugfixes",
+		"release": "20.08.2019"
+	},
+	{
+		"version": "0.4.0",
+		"features": "Support for Production resources/tools, Usersettings",
+		"release": "02.12.2019"
+	},
+	{
+		"version": "0.4.1",
+		"features": "Bugfix Upload Fotos",
+		"release": "14.01.2020"
+	},
+	{
+		"version": "0.4.2",
+		"features": "App available over LPD only, AccessUserLog, Bugfixes",
+		"release": "17.03.2020"
+	},
+	{
+		"version": "0.4.3",
+		"features": "Date and Time, Translations SV,PT,PL,TR,FR",
+		"release": "09.06.2020"
+	},
+	{
+		"version": "0.4.4",
+		"features": "Bugfixes",
+		"release": "23.06.2020"
+	},
+	{
+		"version": "0.4.5",
+		"features": "Longtext, Qual-Codes,Bugfixes",
+		"release": "07.07.2020"
+	},
+	{
+		"version": "0.4.6",
+		"features": "New Input for Qual-Codes,Bugfixes",
+		"release": "31.07.2020"
+	},
+	{
+		"version": "0.4.7",
+		"features": "Bugfix SYSID Backend",
+		"release": "06.10.2020"
+	},
+	{
+		"version": "0.4.8",
+		"features": "Bugfixes",
+		"release": "31.10.2020"
+	},
+	{
+		"version": "0.4.9",
+		"features": "Bugfix Autoreload, Filter Operations against QM035",
+		"release": "26.01.2021"
+	},
+	{
+		"version": "0.5.0",
+		"features": "Bugfixes, Insp.Point Operations",
+		"release": "01.03.2021"
+	}]
+}

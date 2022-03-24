@@ -1,0 +1,90 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<!--<Bar visible="{= ${pl>SLWBEZ} === '' ? false : true }">-->
+	<!--	<contentMiddle>-->
+	<!--		<Label text="{i18n>detail1-ppl}:"/>-->
+	<!--		<Text text="{pl>SLWBEZ_KURZTEXT}"/>-->
+	<!--		<Button text="{i18n>detail1-newpp}" icon="sap-icon://create" press="onPPCreate" type="Accept"/>-->
+	<!--	</contentMiddle>-->
+	<!--</Bar>-->
+	<ProgressIndicator percentValue="{ path: 'pl>Results_Entered_P', formatter: 'de.enercon.usbee.controller.utils.Formatter.string_to_float' }"
+		displayValue="{ parts:['pl>Results_Entered_P','pl>Results_Gesamt','pl>Results_Entered'], formatter: 'de.enercon.usbee.controller.utils.Formatter.detail1_percentage_value' }"
+		showValue="true" state="{ path: 'pl>Results_Entered_P', formatter: 'de.enercon.usbee.controller.utils.Formatter.detail1_percentage_color' }"
+		height="3%"/>
+	<MessageStrip visible="{= ${pl>SLWBEZ} === '' ? true : false }"
+		text="{i18n>detail1-matnr} {path: 'pl>Matnr', type : 'sap.ui.model.odata.type.String', constraints: { isDigitSequence : true }} {pl>Ktextmat} / {parts:['pl>Prueflos_Key_Modus','pl>Prueflos_Key_Object'], formatter: 'de.enercon.usbee.controller.utils.Formatter.detail1_key_art_header' }"
+		showIcon="false" showCloseButton="false"></MessageStrip>
+	<MessageStrip visible="{= ${pl>SLWBEZ} === '' ? false : true }"
+		text="{i18n>detail1-matnr} {path: 'pl>Matnr', type : 'sap.ui.model.odata.type.String', constraints: { isDigitSequence : true }} {pl>Ktextmat} / {parts:['pl>Prueflos_Key_Modus','pl>Prueflos_Key_Object'], formatter: 'de.enercon.usbee.controller.utils.Formatter.detail1_key_art_header' } - {pl>SLWBEZ_KURZTEXT}"
+		showIcon="false" showCloseButton="false"></MessageStrip>
+	<IconTabBar id="iconTabBar" select="onQuickFilter" expandable="false" applyContentPadding="false" backgroundDesign="Translucent">
+		<items>
+			<IconTabFilter key="alle" icon="sap-icon://multiselect-all" iconColor="Positive" count="{zahlen>/_alle}" design="Horizontal"
+				text="{i18n>detail1-alleVorgaenge}"/>
+			<IconTabSeparator/>
+			<IconTabFilter key="nichterfasst" icon="sap-icon://document" iconColor="Negative" count="{zahlen>/_nichterfasst}" design="Horizontal"
+				text="{i18n>detail1-nichterfasst}"/>
+			<IconTabSeparator/>
+			<IconTabFilter key="teilweise" icon="sap-icon://edit" iconColor="Critical" count="{zahlen>/_teilweise}" design="Horizontal"
+				text="{i18n>detail1-teilweise}"/>
+			<IconTabFilter key="vollstaendig" icon="sap-icon://complete" iconColor="Positive" count="{zahlen>/_vollstaendig}" design="Horizontal"
+				text="{i18n>detail1-vollstaendig}"/>
+			<IconTabSeparator/>
+		</items>
+		<content>
+			<List id="vorgaengeList" items="{pl>TOVORG}" growing="true" growingThreshold="10" busyIndicatorDelay="100" enableBusyIndicator="true"
+				noDataText="{i18n>detail1-novorg}" updateFinished="onUpdateFinished">
+				<items>
+					<!--<InputListItem label="{pl>Vornr} - {pl>Vorktxt}" type="Navigation" press="onListItemPressed">-->
+					<!--	<Button text="{i18n>detail2-Mtext}" icon="sap-icon://request" press="onTextPress"-->
+					<!--		visible="{ path: 'pl>Langtext', formatter: 'de.enercon.usbee.controller.utils.Formatter.detail3_visible_langtext' }"/>-->
+					<!--</InputListItem>-->
+					<!--<Select id="selectPIDS1L" selectedKey="{pl>Bewertung}" showSecondaryValues="false" enabled="{= ${pl>Pruefdatum} !== '' ? false : true }"-->
+					<!--	autoAdjustWidth="true" items="{ path: 'pl>TOBEWERTE', sorter: { path: 'Bewertung2' } }">-->
+					<!--	<core:ListItem key="{pl>Key_Qual}" text="{pl>Bewertung1}" additionalText="{pl>Bewertung2}"/>-->
+					<!--<core:Item key="{pl>Key_Qual}" text="{pl>Bewertung1}"/>-->
+					<!--</Select>-->
+					<!-- **************************************************************************************************************************************** -->
+					<!--<InputListItem-->
+					<!--	label="{parts:['pl>Vornr','pl>Vorktxt','pl>Pruefpunkt'], formatter: 'de.enercon.usbee.controller.utils.Formatter.vorgang_table_line' }"-->
+					<!--	type="Navigation" press="onListItemPressed">-->
+					<!-- **************************************************************************************************************************************** -->
+					<InputListItem label="{pl>Vornr} - {pl>Vorktxt}" type="Navigation" press="onListItemPressed">
+						<!-- **************************************************************************************************************************************** -->
+						<!-- **************************************************************************************************************************************** -->
+						<!-- PP als Input in Zeile -->
+						<!--<Input placeholder="{i18n>detail1-ppl}" width="30%" value="{pl>Pruefpunkt}" visible="{= ${pl>SLWBEZ_SELECT} === true ? false : true }"-->
+						<!--	editable="{ {parts:['pl>Pruefpunkt','pl>SLWBEZ_KZNEW'], formatter: 'de.enercon.usbee.controller.utils.Formatter.inputPP1_vorgang' }"-->
+						<!--	type="{ path: 'pl>SLWBEZ_TYPE', formatter: 'de.enercon.usbee.controller.utils.Formatter.typePP1_vorgang' }" />-->
+						<!-- **************************************************************************************************************************************** -->
+						<!-- Katalogauswahl (Serial oder Radius -->
+						<!--<Select id="selectPP1" selectedKey="{pl>Pruefpunkt}" showSecondaryValues="false" autoAdjustWidth="true" visible="{pl>SLWBEZ_SELECT}"-->
+						<!--	enabled="{parts:['pl>Pruefpunkt','pl>SLWBEZ_SELECT','pl>SLWBEZ_KZNEW'], formatter: 'de.enercon.usbee.controller.utils.Formatter.selectPP1_vorgang' }"-->
+						<!--	items="{ path: 'pl>TOPP', sorter: { path: 'Bewertung2' } }">-->
+						<!--	<core:ListItem key="{pl>Key_Qual}" text="{pl>Bewertung1}" additionalText="{pl>Bewertung2}"/>-->
+						<!--</Select>-->
+						<!-- **************************************************************************************************************************************** -->
+						<!--<Text text="{pl>SLWBEZ_KURZTEXT}"/>-->
+						<!-- **************************************************************************************************************************************** -->
+						<!--visible="{parts:['pl>SLWBEZ','pl>SLWBEZ_SELECT'], formatter: 'de.enercon.usbee.controller.utils.Formatter.inputPP1_vorgang' }"-->
+						<Text text="{i18n>detail1-ppd}" class="sapUiResponsiveMargin" visible="{= ${pl>SLWBEZ} === '' ? false : true }"/>
+						<Input id="pp" placeholder="{i18n>detail1-ppl}" width="30%" value="{pl>Pruefpunkt}" 
+						    visible="{= ${pl>SLWBEZ} === '' ? false : true }"
+						    editable="false" type="Text"
+							class="sapUiSmallMarginEnd"/>
+						<!--editable="false" type="{ path: 'pl>SLWBEZ_TYPE', formatter: 'de.enercon.usbee.controller.utils.Formatter.typePP1_vorgang' }" class="sapUiSmallMarginEnd"/>-->
+						<!-- **************************************************************************************************************************************** -->
+						<!-- Katalogauswahl (Serial oder Radius -->
+						<!--<Select id="selectPP1" selectedKey="{pl>Pruefpunkt}" showSecondaryValues="false" autoAdjustWidth="true" visible="{pl>SLWBEZ_SELECT}"-->
+						<!--	enabled="false" items="{ path: 'pl>TOPP', sorter: { path: 'Bewertung2' } }" class="sapUiSmallMarginEnd">-->
+						<!--	<core:ListItem key="{pl>Key_Qual}" text="{pl>Bewertung1}" additionalText="{pl>Bewertung2}"/>-->
+						<!--</Select>-->
+						<!-- **************************************************************************************************************************************** -->
+						<!-- **************************************************************************************************************************************** -->
+						<Button text="{i18n>detail2-Mtext}" icon="sap-icon://request" press="onTextPress"
+							visible="{ path: 'pl>Langtext', formatter: 'de.enercon.usbee.controller.utils.Formatter.detail3_visible_langtext' }"/>
+					</InputListItem>
+				</items>
+			</List>
+		</content>
+	</IconTabBar>
+</core:FragmentDefinition>

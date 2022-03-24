@@ -1,0 +1,93 @@
+<mvc:View controllerName="de.enercon.usbee.controller.barcode.Barcode" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:core="sap.ui.core"
+	xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form">
+	<Page title="{i18n>BarcodeTitle}" navButtonPress="onNavBack" showNavButton="true" backgroundDesign="Transparent">
+		<headerContent>
+			<ToggleButton icon="sap-icon://full-screen" press="handleFullscreen" class="sapUiSmallMarginBottom" tooltip="{i18n>fullscreen}"/>
+			<Image decorative="false" densityAware="false" press="handleImage3Press" src="{glo>/_imagepath}/en_logo.png" width="8em">
+				<layoutData>
+					<FlexItemData growFactor="1"/>
+				</layoutData>
+			</Image>
+		</headerContent>
+		<content>
+			<VBox class="sapUiSmallMargin">
+				<l:HorizontalLayout class="sapUiContentPadding">
+					<Button text="{i18n>barcode-start}" icon="sap-icon://bar-code" press="onBarcode" ariaLabelledBy="editButtonLabel" width="200px"/>
+					<Input id="Scan" binding="{/inputdata}" change="onScanFieldChange" type="Text" valueLiveUpdate="true" value="{inputdata>/_INPUT}"
+						placeholder="{i18n>barcode-eingabe}" width="300px"/>
+				</l:HorizontalLayout>
+				<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+				<!--<f:SimpleForm id="SimpleFormChange480_12120" editable="true" layout="ResponsiveGridLayout" title="{i18n>BarcodeTitle}" labelSpanXL="8"-->
+				<!--	labelSpanL="8" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0"-->
+				<!--	columnsXL="2" columnsL="2" columnsM="2" singleContainerFullSize="false" backgroundDesign="Solid">-->
+				<!--	<Button text="{i18n>barcode-start}" icon="sap-icon://bar-code" press="onBarcode" ariaLabelledBy="editButtonLabel">-->
+				<!--		<layoutData>-->
+				<!--			<l:GridData span="L2 M2"/>-->
+				<!--		</layoutData>-->
+				<!--	</Button>-->
+				<!--	<Input id="Scan" change="onScanFieldChange" type="Text" valueLiveUpdate="true" value="{pl>Scanner_Eingabe}"-->
+				<!--		placeholder="{i18n>barcode-eingabe}"/>-->
+				<!--</f:SimpleForm>-->
+			</VBox>
+			<Table id="foundPLs" mode="None" fixedLayout="false" inset="false" items="{ path: 'pl>/BarcodeSet', sorter: { path: 'Lfdnr' }}" itemPress="onTablePress">
+				<columns>
+					<Column>
+						<Text text="{i18n>detail1-pl}"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true">
+						<Text text="{i18n>barcode-herk}"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true">
+						<Text text="{i18n>barcode-part}"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true">
+						<Text text="{i18n>barcode-werk}"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true">
+						<Text text="{i18n>barcode-mat}"/>
+					</Column>
+					<!--<Column minScreenWidth="Tablet" demandPopin="true" visible="{ path: 'pl>Sernr', formatter: 'de.enercon.usbee.controller.utils.Formatter.barcode_cs_string' }">-->
+					<!--	<Text text="{i18n>barcode-ser}"/>-->
+					<!--</Column>-->
+					<!--<Column minScreenWidth="Tablet" demandPopin="true" visible="{ path: 'pl>Charg', formatter: 'de.enercon.usbee.controller.utils.Formatter.barcode_cs_string' }">-->
+					<!--	<Text text="{i18n>barcode-cha}"/>-->
+					<!--</Column>-->
+					<Column minScreenWidth="Tablet" demandPopin="true">
+						<Text text="{i18n>barcode-ser}"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true">
+						<Text text="{i18n>barcode-cha}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem vAlign="Middle" type="Navigation">
+						<cells>
+							<ObjectNumber number="{pl>Prueflos}" state="Success"/>
+							<Text text="{pl>Herktxt}"/>
+							<Text text="{pl>Arttxt}"/>
+							<Text text="{pl>Werks}"/>
+							<Text text="{pl>Matnr}"/>
+							<Text text="{pl>Sernr}"/>
+							<Text text="{pl>Charg}"/>
+							<!--<Text text="{pl>Sernr}" visible="{= ${pl>Sernr} === '' ? false : true }"/>-->
+							<!--<Text text="{pl>Charg}" visible="{= ${pl>Charg} === '' ? false : true }"/>-->
+							<!--<Text text="{pl>Sernr}" visible="{ path: 'pl>Sernr', formatter: 'de.enercon.usbee.controller.utils.Formatter.barcode_cs_string' }"/>-->
+							<!--<Text text="{pl>Charg}" visible="{ path: 'pl>Charg', formatter: 'de.enercon.usbee.controller.utils.Formatter.barcode_cs_string' }"/>							-->
+							<!--		/////////////////////////////////////////////////////////////////////////////////////////////-->
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+		<!--<footer>-->
+			<!--<Toolbar>-->
+			<!--<Button icon="sap-icon://message-popup" text="{/messagesLength}" type="Emphasized" press="handleMessagePopoverPress"/>-->
+			<!--	<Button icon="sap-icon://alert" text="{=${message>/}.length}" visible="{=${message>/}.length > 0}" type="Emphasized"-->
+			<!--		press="onMessagePopoverPress"></Button>-->
+			<!--	<ToolbarSpacer/>-->
+			<!--	<Button type="Accept" icon="sap-icon://open-command-field" text="{i18n>barcode-weiter}" press="onBarcodeWeiter"-->
+			<!--		visible="{ path: 'pl>Success', formatter: 'de.enercon.usbee.controller.utils.Formatter.barcode_weiter' }"/>-->
+			<!--</Toolbar>-->
+		<!--</footer>-->
+	</Page>
+</mvc:View>

@@ -1,0 +1,67 @@
+[{
+	"Icon": "sap-icon://add-activity",
+	"Number": "10",
+	"Numberunit": "ST",
+	"Title": "Prüfergebniss erfassen",
+	"Info": "Info 1",
+	"Target": "go_recordresults",
+	"__metadata": {
+		"uri": "TileMenuSet('Title%201')",
+		"type": "/WIND/QM_RESULTS_SRV.TileMenu"
+	}
+}, {
+	"Icon": "sap-icon://add-activity",
+	"Number": "2",
+	"Numberunit": "Numberunit 2",
+	"Title": "Title 2",
+	"Info": "Info 2",
+	"Target": "Target 2",
+	"__metadata": {
+		"uri": "TileMenuSet('Title%202')",
+		"type": "/WIND/QM_RESULTS_SRV.TileMenu"
+	}
+}, {
+	"Icon": "sap-icon://add-activity",
+	"Number": "3",
+	"Numberunit": "Numberunit 3",
+	"Title": "Title 3",
+	"Info": "Info 3",
+	"Target": "Target 3",
+	"__metadata": {
+		"uri": "TileMenuSet('Title%203')",
+		"type": "/WIND/QM_RESULTS_SRV.TileMenu"
+	}
+}, {
+	"Icon": "sap-icon://add-activity",
+	"Number": "4",
+	"Numberunit": "Numberunit 4",
+	"Title": "Title 4",
+	"Info": "Info 4",
+	"Target": "Target 4",
+	"__metadata": {
+		"uri": "TileMenuSet('Title%204')",
+		"type": "/WIND/QM_RESULTS_SRV.TileMenu"
+	}
+}, {
+	"Icon": "sap-icon://add-activity",
+	"Number": "5",
+	"Numberunit": "Numberunit 5",
+	"Title": "Title 5",
+	"Info": "Info 5",
+	"Target": "Target 5",
+	"__metadata": {
+		"uri": "TileMenuSet('Title%205')",
+		"type": "/WIND/QM_RESULTS_SRV.TileMenu"
+	}
+}, {
+	"Icon": "sap-icon://add-activity",
+	"Number": "6",
+	"Numberunit": "Numberunit 6",
+	"Title": "Title 6",
+	"Info": "Info 6",
+	"Target": "Target 6",
+	"__metadata": {
+		"uri": "TileMenuSet('Title%206')",
+		"type": "/WIND/QM_RESULTS_SRV.TileMenu"
+	}
+}]

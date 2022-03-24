@@ -1,0 +1,94 @@
+<mvc:View controllerName="de.enercon.usbee.controller.home" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form"
+	xmlns:tnt="sap.tnt" xmlns:core="sap.ui.core">
+	<!--<App class="cApp" id="Menu">-->
+	<!--<pages>-->
+	<Page backgroundDesign="Transparent">
+		<!--<Page title="{i18n>homePageTitleLong} - {glo>/_AppVersion} - ({glo>/_system})" backgroundDesign="Transparent">-->
+		<!--<headerContent>-->
+		<!--	<Button icon="sap-icon://pdf-attachment" press="handleDokuPress" class="sapUiSmallMarginBottom" tooltip="{i18n>dokutitles}"/>-->
+		<!--	<Button icon="sap-icon://user-settings" press="handleSettings" class="sapUiSmallMarginBottom" tooltip="{i18n>usersettings}"/>					-->
+		<!--	<Button icon="sap-icon://refresh" press="handleReload" class="sapUiSmallMarginBottom" tooltip="{i18n>reload}"/>		-->
+		<!--	<ToggleButton icon="sap-icon://full-screen" press="handleFullscreen1" class="sapUiSmallMarginBottom" tooltip="{i18n>fullscreen}" visible="{glo>/_desktop}"/>-->
+		<!--	<Image decorative="false" densityAware="false" press="handleImage3Press" src="{glo>/_imagepath}/en_logo.png" width="8em">-->
+		<!--		<layoutData>-->
+		<!--			<FlexItemData growFactor="1"/>-->
+		<!--		</layoutData>-->
+		<!--	</Image>-->
+		<!--</headerContent>-->
+		<customHeader>
+			<Bar>
+				<contentLeft>
+					<HBox>
+						<ProgressIndicator id="pgt" percentValue="{GLOSET>/_autoreload_pg_percent}" displayValue="{GLOSET>/_autoreload_pg_text}" showValue="true"
+							state="Information" width="200px" visible="{GLOSET>/_autoreload}" displayOnly="false" class="sapUiSmallMarginEnd"/>
+						<Text text="{ path: 'glo>/_clock1', type: 'sap.ui.model.type.Date', formatOptions: { style: 'full' } }" class="sapUiSmallMarginEnd"/>
+						<Label id="oLabelClock" text="{glo>/_clock2}"/>
+					</HBox>
+				</contentLeft>
+				<contentMiddle>
+					<!--<Title text="{i18n>homePageTitleLong} - {glo>/_AppVersion} - ({glo>/_system})" class="TextBold"/>-->
+					<Title text="{i18n>homePageTitleLong} - {glo>/_AppVersion} - ({GLOSET>/_sysid})" class="TextBold"/>
+				</contentMiddle>
+				<contentRight>
+					<Button icon="sap-icon://pdf-attachment" press="handleDokuPress" class="sapUiSmallMarginBottom" tooltip="{i18n>dokutitles}"/>
+					<Button icon="sap-icon://user-settings" press="handleSettings" class="sapUiSmallMarginBottom" tooltip="{i18n>usersettings}"/>
+					<Button icon="sap-icon://refresh" press="handleReload" class="sapUiSmallMarginBottom" tooltip="{i18n>reload}"/>
+					<ToggleButton icon="sap-icon://full-screen" press="handleFullscreen1" class="sapUiSmallMarginBottom" tooltip="{i18n>fullscreen}"
+						visible="{glo>/_desktop}"/>
+					<Image decorative="false" densityAware="false" press="handleImage3Press" src="{glo>/_imagepath}/en_logo.png" width="8em">
+						<layoutData>
+							<FlexItemData growFactor="1"/>
+						</layoutData>
+					</Image>
+				</contentRight>
+			</Bar>
+		</customHeader>
+		<content></content>
+		<!--<IconTabBar id="idIconTabBarMulti" expanded="false"  backgroundDesign="Transparent">-->
+		<!--	<items>-->
+		<!--		<IconTabFilter icon="sap-icon://hint">-->
+		<!--			<Text text="Info content goes here ..."/>-->
+		<!--		</IconTabFilter>-->
+		<!--	</items>-->
+		<!--</IconTabBar>-->
+		<!--<IconTabBar id="idIconTabBarNoIcons" expanded="false" class="sapUiResponsiveContentPadding">-->
+		<!--	<items>-->
+		<!--		<IconTabFilter text="Ergebnisse erfassen">-->
+		<!--			<Text text="Info content goes here ..."/>-->
+		<!--		</IconTabFilter>-->
+		<!--		<IconTabFilter text="Serialnummern anlegen">-->
+		<!--			<Text text="Attachments go here ..."/>-->
+		<!--		</IconTabFilter>-->
+		<!--		<IconTabFilter text="Prüflos anlegen">-->
+		<!--			<Text text="Notes go here ..."/>-->
+		<!--		</IconTabFilter>-->
+		<!--	</items>-->
+		<!--</IconTabBar>-->
+		<!--<Panel expandable="true" expanded="false" width="auto" class="sapUiResponsiveMargin">-->
+		<!--	<headerToolbar>-->
+		<!--		<Toolbar height="3rem">-->
+		<!--			<Title text="{i18n>homePageTitleLong}"/>-->
+		<!--<ToolbarSpacer/>-->
+		<!--<Button icon="sap-icon://settings"/>-->
+		<!--<Button icon="sap-icon://drop-down-list"/>-->
+		<!--		</Toolbar>-->
+		<!--	</headerToolbar>-->
+		<!--	<content>-->
+		<!--		<Text-->
+		<!--			text="{i18n>homePageManual}"/>-->
+		<!--	</content>-->
+		<!--</Panel>-->
+		<!--<core:HTML id="idFrame"/>-->
+		<!--<mvc:XMLView viewName="de.enercon.usbee.view.home_tilemenu" visible="{glo>/_launchpad}"/>-->
+		<!--<mvc:XMLView viewName="de.enercon.usbee.view.no_launchpad" visible="{!glo>/_launchpad}"/>-->
+		<!--src="{parts:['pl>Bewertung','pl>Attribut'], formatter: 'de.enercon.usbee.controller.utils.Formatter.detail3_icon_result_neu' }"-->
+		<!--<mvc:XMLView viewName="de.enercon.usbee.view.home_tilemenu" visible="{GLOSET>/_Only_LPD_Access}"/>-->
+		<!--<mvc:XMLView viewName="de.enercon.usbee.view.no_launchpad" visible="{!GLOSET>/_Only_LPD_Access}"/>-->
+		<mvc:XMLView viewName="de.enercon.usbee.view.home_tilemenu"
+			visible="{parts:['GLOSET>/_settings_read','glo>/_launchpad','GLOSET>/_Super_Access'], formatter: 'de.enercon.usbee.controller.utils.Formatter.app_allowed_tm' }"/>
+		<mvc:XMLView viewName="de.enercon.usbee.view.no_launchpad"
+			visible="{parts:['GLOSET>/_settings_read','glo>/_launchpad','GLOSET>/_Super_Access'], formatter: 'de.enercon.usbee.controller.utils.Formatter.app_allowed_no' }"/>
+	</Page>
+	<!--</pages>-->
+	<!--</App>-->
+</mvc:View>

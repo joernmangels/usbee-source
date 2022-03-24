@@ -1,0 +1,16 @@
+[{
+	"Prueflos": "Prueflos 1",
+	"Prueflos_Key_Modus": "S1",
+	"Prueflos_Key_Object": "Prueflos_Key_Object 1",
+	"Vornr": "Vornr 1",
+	"Merknr": "Merknr 1",
+	"Lfdnr": "Lfdnr 1",
+	"Bewertung1": "Bewertung1 1",
+	"Bewertung2": "Bewertung2 1",
+	"Bewertung_AR": "Bewertung_AR 1",
+	"Key_Qual": "Key_Qual 1",
+	"__metadata": {
+		"uri": "PruefErgBewertungSet(Prueflos='Prueflos%201',Prueflos_Key_Modus='Prueflos_Key_Modus%201',Prueflos_Key_Object='Prueflos_Key_Object%201',Vornr='Vornr%201',Merknr='Merknr%201',Lfdnr='Lfdnr%201',Key_Qual='Key_Qual%201')",
+		"type": "/WIND/QM_RESULTS_SRV.PruefErgBewertung"
+	}
+}]

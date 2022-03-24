@@ -1,0 +1,119 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Table id="idresuTableL" fixedLayout="false" inset="false" items="{pl>TORESU}" visible="{= ${pl>ESTUKZ} === '*' ? false : true }">
+		<columns>
+			<Column>
+				<Text text="{pl>Headline1}"/>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true">
+				<Text text="{pl>Headline2}"/>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true">
+				<Text text="{pl>Headline3}"/>
+			</Column>
+			<!--<Column minScreenWidth="Tablet" demandPopin="true">-->
+			<!--	<Text text="{pl>Headline4}"/>-->
+			<!--</Column>-->
+			<Column minScreenWidth="Tablet" demandPopin="true">
+				<Text text="{pl>Headline5}"/>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true" visible="{= ${pl>SelSet2} === '' ? false : true }">
+				<Text text="{pl>Headline8}"/>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true">
+				<Text text="{pl>Headline6}"/>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true">
+				<Text text="{pl>Headline7}"/>
+			</Column>
+		</columns>
+		<items>
+			<!--<ColumnListItem vAlign="Middle" visible="{= ${pl>visible} === 'X'}">-->
+			<ColumnListItem vAlign="Middle" visible="{pl>visible}">
+				<cells>
+					<!--		/////////////////////////////////////////////////////////////////////////////////////////////-->
+					<FlexBox direction="Column" alignItems="Start">
+						<items>
+							<!--<Button icon="sap-icon://sys-add" press="onLineAdd" type="Transparent"/>-->
+							<!--<Button icon="sap-icon://sys-minus" press="onLineDel" type="Transparent" enabled="{= ${pl>Pruefdatum} !== '' ? false : true }"/>-->
+							<Button icon="sap-icon://sys-add" press="onLineAdd" type="Transparent"
+								enabled="{parts:['pl>Pruefdatum','pl>Scope','pl>ScopeInd','pl>SOLLSTPUMF','pl>ANZWERTG', 'pl>Prueflos_Key_Modus'], formatter: 'de.enercon.usbee.controller.utils.Formatter.button_addline_MK' }"/>
+							<Button icon="sap-icon://sys-minus" press="onLineDel" type="Transparent" visible="{pl>LINE_ADDED}"/>
+							<!--visible="{parts:['pl>Pruefdatum','pl>Scope','pl>ScopeInd','pl>SOLLSTPUMF','pl>ANZWERTG'], formatter: 'de.enercon.usbee.controller.utils.Formatter.button_delline_MK' }"/>-->
+						</items>
+					</FlexBox>
+					<!--		/////////////////////////////////////////////////////////////////////////////////////////////-->
+					<core:Icon src="{parts:['pl>Bewertung','pl>Attribut'], formatter: 'de.enercon.usbee.controller.utils.Formatter.detail3_icon_result_neu' }"
+						size="350%" color="{ path: 'pl>Bewertung', formatter: 'de.enercon.usbee.controller.utils.Formatter.detailL_color_icon' }">
+						<core:layoutData>
+							<FlexItemData growFactor="1"/>
+						</core:layoutData>
+					</core:Icon>
+					<!--		/////////////////////////////////////////////////////////////////////////////////////////////-->
+					<SegmentedButton selectedKey="{pl>Attribut}" enabled="{= ${pl>Pruefdatum} !== '' ? true : false }" selectionChange="onValidChange">
+						<items>
+							<SegmentedButtonItem icon="sap-icon://accept" tooltip="{i18n>detailN-valid}" key="G"/>
+							<SegmentedButtonItem icon="sap-icon://cancel-maintenance" tooltip="{i18n>detailN-invalidY}" key="Y"
+								visible="{= ${pl>ESTUKZ} !== '*' ? true : false }"/>
+							<SegmentedButtonItem icon="sap-icon://sys-cancel-2" tooltip="{i18n>detailN-invalidS}" key="/"/>
+						</items>
+					</SegmentedButton>
+					<!--		/////////////////////////////////////////////////////////////////////////////////////////////-->
+					<!--<Select id="selectPIDNNL" selectedKey="{pl>Bewertung}" showSecondaryValues="false" enabled="{= ${pl>Pruefdatum} !== '' ? false : true }"-->
+					<!--	autoAdjustWidth="true" items="{ path: 'pl>TOBEWERTE', sorter: { path: 'Bewertung2' } }">-->
+					<!--	<core:ListItem key="{pl>Key_Qual}" text="{pl>Bewertung1}" additionalText="{pl>Bewertung2}"/>-->
+					<!--</Select>-->
+					<!--		/////////////////////////////////////////////////////////////////////////////////////////////-->
+					<!--autoAdjustWidth="true" items="{ path: 'pl>TOBEWERTE', sorter: { path: 'Bewertung2' } }">-->
+					<!--<Select id="selectPIDNNL" autoAdjustWidth="true" selectedKey="{pl>Bewertung}" showSecondaryValues="true"-->
+					<!--class="cssGreen1"-->
+					<!--<Select autoAdjustWidth="true" selectedKey="{pl>Bewertung}" showSecondaryValues="true" enabled="{= ${pl>Pruefdatum} !== '' ? false : true }"-->
+					<!--	items="{pl>TOBEWERTE}">-->
+					<!--	<items>-->
+					<!--		<core:ListItem icon="{ path: 'pl>Key_Qual', formatter: 'de.enercon.usbee.controller.utils.Formatter.detail3_icon_mbewertung' }"-->
+					<!--			key="{pl>Key_Qual}" text="{pl>Bewertung1}" additionalText="{pl>Langtext}"/>-->
+							<!--<ext:ListItemExtended icon="{ path: 'pl>Key_Qual', formatter: 'de.enercon.usbee.controller.utils.Formatter.detail3_icon_mbewertung' }"-->
+							<!--	key="{pl>Key_Qual}" text="{pl>Bewertung1}" additionalText="{pl>Langtext}"/>-->
+					<!--	</items>-->
+					<!--</Select>-->
+					<!--		/////////////////////////////////////////////////////////////////////////////////////////////-->
+					<!--		/////////////////////////////////////////////////////////////////////////////////////////////-->
+					<Input id="InputQualCode" type="Text" value="{pl>Bewertung_Text}" enabled="{= ${pl>Pruefdatum} !== '' ? false : true }"
+					    showValueHelp="true" valueHelpOnly="true"
+					    valueState="{ path: 'pl>Bewertung', formatter: 'de.enercon.usbee.controller.utils.Formatter.detailL_color_state' }"
+					    valueStateText=" "
+						valueHelpRequest="handleInputQualCode"/>
+					<!--		/////////////////////////////////////////////////////////////////////////////////////////////-->
+					<!--		/////////////////////////////////////////////////////////////////////////////////////////////-->
+					<!--		/////////////////////////////////////////////////////////////////////////////////////////////-->
+					<!--		/////////////////////////////////////////////////////////////////////////////////////////////-->
+					<!--		/////////////////////////////////////////////////////////////////////////////////////////////-->
+					<!--		/////////////////////////////////////////////////////////////////////////////////////////////-->					
+					<!-- Neues Feld Codes für Annahme/Rückweisung als Text -->
+					<!--<ComboBox showSecondaryValues="true" items="{ path: 'pl>TOBEWERTE', sorter: { path: 'Bewertung_AR', descending: true, group: true } }" class="cssGreen1">-->
+					<!--<ComboBox showSecondaryValues="true" items="{pl>TOBEWERTE}" class="cssGreen1">-->
+					<!--	<core:ListItem icon="{ path: 'pl>Key_Qual', formatter: 'de.enercon.usbee.controller.utils.Formatter.detail3_icon_mbewertung' }"-->
+					<!--		key="{pl>Key_Qual}" text="{pl>Bewertung1}" additionalText="{pl>Langtext}"/>-->
+					<!--</ComboBox>-->
+					<!--		/////////////////////////////////////////////////////////////////////////////////////////////-->
+					<!--		/////////////////////////////////////////////////////////////////////////////////////////////-->
+					<!--		/////////////////////////////////////////////////////////////////////////////////////////////-->
+					<!--		/////////////////////////////////////////////////////////////////////////////////////////////-->
+					<!--<Select id="selectPIDS2L" selectedKey="{pl>Auswahlmenge2}" showSecondaryValues="false" enabled="{= ${pl>Pruefdatum} !== '' ? false : true }"-->
+					<Select selectedKey="{pl>Auswahlmenge2}" showSecondaryValues="false" enabled="{= ${pl>Pruefdatum} !== '' ? false : true }"
+						autoAdjustWidth="true" items="{ path: 'pl>TOCATRME', sorter: { path: 'Bewertung2' } }" visible="{= ${pl>SelSet2} === '' ? false : true }">
+						<core:ListItem key="{pl>Key_Qual}" text="{pl>Bewertung1}" additionalText="{pl>Bewertung2}"/>
+					</Select>
+					<!--		/////////////////////////////////////////////////////////////////////////////////////////////-->
+					<!--		/////////////////////////////////////////////////////////////////////////////////////////////-->
+					<!--		/////////////////////////////////////////////////////////////////////////////////////////////-->
+					<Input value="{ path: 'pl>Pb_text', type : 'sap.ui.model.type.String', constraints : { minLength: 0, maxLength: 40}}"
+						change="onBemerkungChange" editable="{= ${pl>Pruefdatum} !== '' ? false : true }" placeholder="{i18n>detail1-eingabeb}"
+						valueLiveUpdate="true"/>
+					<Input value="{ path: 'pl>Zi_text', type : 'sap.ui.model.type.String', constraints : { minLength: 0, maxLength: 18}}"
+						editable="{= ${pl>Pruefdatum} !== '' ? false : true }" placeholder="{i18n>detail1-eingabez}" valueLiveUpdate="true"/>
+					<!--		/////////////////////////////////////////////////////////////////////////////////////////////-->
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+</core:FragmentDefinition>

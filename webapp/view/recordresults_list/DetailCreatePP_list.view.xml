@@ -1,0 +1,80 @@
+<mvc:View id="DFPPL" controllerName="de.enercon.usbee.controller.recordresults_list.DetailCreatePP_list" xmlns="sap.m"
+	xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:c="sap.ui.core">
+	<Page id="DetailCreatePP_list" backgroundDesign="Transparent">
+		<customHeader>
+			<Bar>
+				<contentLeft>
+					<Button icon="sap-icon://nav-back" press="onNavBack"/>
+					<Text text="{ path: 'glo>/_clock1', type: 'sap.ui.model.type.Date', formatOptions: { style: 'full' } }"/>
+					<Label id="oLabelClock" text="{glo>/_clock2}"/>
+				</contentLeft>
+				<contentMiddle>
+					<Title
+						text="{i18n>detail1-newpp} - {inputdata>/_SLWBEZ_KURZTEXT}: {path: 'inputdata>/_prueflos', type : 'sap.ui.model.odata.type.String', constraints: { isDigitSequence : true }}" class="TextBold"/>
+				</contentMiddle>
+				<contentRight>
+					<!--<Button icon="sap-icon://refresh" press="handleReload" class="sapUiSmallMarginBottom" tooltip="{i18n>reload}"/>-->
+					<!--<ToggleButton icon="sap-icon://synchronize" press="handleAutoreload" class="sapUiSmallMarginBottom" tooltip="{i18n>reloadbutton}"/>-->
+					<Button icon="sap-icon://pdf-attachment" press="handleDokuPress" class="sapUiSmallMarginBottom" tooltip="{i18n>dokutitles}"/>
+					<Button icon="sap-icon://user-settings" press="handleSettings" class="sapUiSmallMarginBottom" tooltip="{i18n>usersettings}"/>
+					<ToggleButton icon="sap-icon://full-screen" press="handleFullscreen2" class="sapUiSmallMarginBottom" tooltip="{i18n>fullscreen}"
+						visible="{glo>/_desktop}"/>
+					<Button icon="sap-icon://home" press="handleHome" class="sapUiSmallMarginBottom" tooltip="{i18n>home}"/>
+					<Image decorative="false" densityAware="false" press="handleImage3Press" src="{glo>/_imagepath}/en_logo.png" width="8em">
+						<layoutData>
+							<FlexItemData growFactor="1"/>
+						</layoutData>
+					</Image>
+				</contentRight>
+			</Bar>
+		</customHeader>
+		<!--/////////////////////////////////////////////////////////////////////////////////////-->
+		<!--/////////////////////////////////////////////////////////////////////////////////////-->
+		<core:Fragment fragmentName="de.enercon.usbee.view.reuse.VG_Detail1PP" type="XML"/>
+		<!--/////////////////////////////////////////////////////////////////////////////////////-->
+		<!--<semantic:customFooterContent>-->
+		<!--	<Button text="{i18n>detail1-newpp}" icon="sap-icon://create" press="onPPCreate" type="Accept"/>-->
+		<!--</semantic:customFooterContent>-->
+		<!--<semantic:messagesIndicator>-->
+		<!--	<semantic:MessagesIndicator press="onMessagePopoverPress"/>-->
+		<!--</semantic:messagesIndicator>-->
+		<!--/////////////////////////////////////////////////////////////////////////////////////-->
+		<footer>
+			<OverflowToolbar>
+				<content>
+					<Button id="messagePopoverBtn" visible="{=!!${message>/}.length}" icon="sap-icon://warning2" type="Emphasized" press="onMessagePopoverPress"/>
+					<ToolbarSpacer/>
+					<Button text="{i18n>detail1-newpp}" icon="sap-icon://create" press="onPPCreate" type="Accept"/>
+				</content>
+			</OverflowToolbar>
+		</footer>
+	</Page>
+</mvc:View>
+<!--<mvc:View id="DFPPL" controllerName="de.enercon.usbee.controller.recordresults_list.DetailCreatePP_list" xmlns="sap.m" xmlns:l="sap.ui.layout"-->
+<!--	xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:c="sap.ui.core" xmlns:semantic="sap.m.semantic">-->
+<!--	<semantic:DetailPage id="DetailCreatePP_list" navButtonPress="onNavBack" showNavButton="true" backgroundDesign="Transparent"-->
+<!--		title="{i18n>detail1-newpp} - {inputdata>/_SLWBEZ_KURZTEXT}: {path: 'inputdata>/_prueflos', type : 'sap.ui.model.odata.type.String', constraints: { isDigitSequence : true }}">-->
+<!--		<semantic:customHeaderContent>-->
+<!--<Button icon="sap-icon://refresh" press="handleReload" class="sapUiSmallMarginBottom" tooltip="{i18n>reload}"/>-->
+<!--<ToggleButton icon="sap-icon://synchronize" press="handleAutoreload" class="sapUiSmallMarginBottom" tooltip="{i18n>reloadbutton}"/>-->
+<!--			<Button icon="sap-icon://pdf-attachment" press="handleDokuPress" class="sapUiSmallMarginBottom" tooltip="{i18n>dokutitles}"/>		-->
+<!--			<Button icon="sap-icon://user-settings" press="handleSettings" class="sapUiSmallMarginBottom" tooltip="{i18n>usersettings}"/>					-->
+<!--			<ToggleButton icon="sap-icon://full-screen" press="handleFullscreen2" class="sapUiSmallMarginBottom" tooltip="{i18n>fullscreen}" visible="{glo>/_desktop}"/>-->
+<!--			<Button icon="sap-icon://home" press="handleHome" class="sapUiSmallMarginBottom" tooltip="{i18n>home}"/>-->
+<!--			<Image decorative="false" densityAware="false" press="handleImage3Press" src="{glo>/_imagepath}/en_logo.png" width="8em">-->
+<!--				<layoutData>-->
+<!--					<FlexItemData growFactor="1"/>-->
+<!--				</layoutData>-->
+<!--			</Image>-->
+<!--		</semantic:customHeaderContent>-->
+<!--/////////////////////////////////////////////////////////////////////////////////////-->
+<!--		<core:Fragment fragmentName="de.enercon.usbee.view.reuse.VG_Detail1PP" type="XML"/>-->
+<!--/////////////////////////////////////////////////////////////////////////////////////-->
+<!--		<semantic:customFooterContent>-->
+<!--			<Button text="{i18n>detail1-newpp}" icon="sap-icon://create" press="onPPCreate" type="Accept"/>-->
+<!--		</semantic:customFooterContent>-->
+<!--		<semantic:messagesIndicator>-->
+<!--			<semantic:MessagesIndicator press="onMessagePopoverPress"/>-->
+<!--		</semantic:messagesIndicator>-->
+<!--	</semantic:DetailPage>-->
+<!--</mvc:View>-->

@@ -1,0 +1,62 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<FlexBox width="100%" alignItems="Start" justifyContent="SpaceBetween" backgroundDesign="Solid">
+		<items>
+			<HBox>
+				<items>
+					<Button text="{pl>Merknr_first}" tooltip="{i18n>detail2-ttfirst}" icon="sap-icon://navigation-up-arrow" press="onMerknrFirst"
+						class="sapUiSmallMarginEnd" enabled="{= ${pl>Merknr_first} !== ${pl>Merknr}}"/>
+					<Button text="{pl>Merknr_last}" tooltip="{i18n>detail2-ttlast}" icon="sap-icon://navigation-down-arrow" press="onMerknrLast"
+						class="sapUiSmallMarginEnd" enabled="{= ${pl>Merknr_last} !== ${pl>Merknr}}"/>
+				</items>
+			</HBox>
+			<HBox>
+				<items>
+					<Button text="{pl>Merknr_down}" tooltip="{i18n>detail2-ttpriv}" icon="sap-icon://navigation-left-arrow" press="onMerknrDown"
+						class="sapUiSmallMarginEnd" visible="{= ${pl>Merknr_down} !== ''}"/>
+					<Button text="{pl>Merknr_up}" tooltip="{i18n>detail2-ttnext}" icon="sap-icon://navigation-right-arrow" press="onMerknrUp"
+						class="sapUiSmallMarginEnd" visible="{= ${pl>Merknr_up} !== ''}"/>
+				</items>
+			</HBox>
+			<HBox>
+				<items>
+					<Button text="{i18n>detail2-FHM}" icon="sap-icon://inventory" press="onFHMPress" visible="{pl>FHM_exist}" class="sapUiSmallMarginEnd"/>
+					<!--<Button text="{i18n>detail2-FHM}" icon="sap-icon://inventory" press="onFHMPress" visible="true" class="sapUiSmallMarginEnd"/>-->
+					<Button visible="{ path: 'pl>Langtext', formatter: 'de.enercon.usbee.controller.utils.Formatter.detail3_visible_langtext' }"
+						class="sapUiSmallMarginEnd" text="{i18n>detail2-Mtext}" icon="sap-icon://request" press="onTextPress"/>
+					<Button type="{ path: 'pl>Anzahl_fotos', formatter: 'de.enercon.usbee.controller.utils.Formatter.detail3_color_fotobutton' }"
+						text="{i18n>detail2-fotos} ( {pl>Anzahl_fotos} )" icon="sap-icon://camera" press="onFotoPress"/>
+				</items>
+			</HBox>
+		</items>
+	</FlexBox>
+	<!--<FlexBox alignItems="Start" justifyContent="End" backgroundDesign="Solid">-->
+	<!--	<items>-->
+	<!--		<HBox>-->
+	<!--			<items>-->
+	<!--				<Button text="{pl>Merknr_down}" tooltip="{i18n>detail2-ttpriv}" icon="sap-icon://navigation-left-arrow" press="onMerknrDown"-->
+	<!--					class="sapUiSmallMarginEnd" visible="{= ${pl>Merknr_down} !== ''}"/>-->
+	<!--				<Button text="{pl>Merknr_up}" tooltip="{i18n>detail2-ttnext}" icon="sap-icon://navigation-right-arrow" press="onMerknrUp"-->
+	<!--					class="sapUiSmallMarginEnd" visible="{= ${pl>Merknr_up} !== ''}"/>-->
+	<!--			</items>-->
+	<!--		</HBox>-->
+	<!--		<HBox>-->
+	<!--			<items>-->
+	<!--				<Button text="{pl>Merknr_first}" tooltip="{i18n>detail2-ttfirst}" icon="sap-icon://navigation-up-arrow" press="onMerknrFirst"-->
+	<!--					class="sapUiSmallMarginEnd" enabled="{= ${pl>Merknr_first} !== ${pl>Merknr}}"/>-->
+	<!--				<Button text="{pl>Merknr_last}" tooltip="{i18n>detail2-ttlast}" icon="sap-icon://navigation-down-arrow" press="onMerknrLast"-->
+	<!--					class="sapUiSmallMarginEnd" enabled="{= ${pl>Merknr_last} !== ${pl>Merknr}}"/>-->
+	<!--			</items>-->
+	<!--		</HBox>-->
+	<!--		<HBox>-->
+	<!--			<items>-->
+	<!--				<Button text="{i18n>detail2-FHM}" icon="sap-icon://inventory" press="onFHMPress" visible="{pl>FHM_exist}" class="sapUiSmallMarginEnd"/>-->
+					<!--<Button text="{i18n>detail2-FHM}" icon="sap-icon://inventory" press="onFHMPress" visible="true" class="sapUiSmallMarginEnd"/>-->
+	<!--				<Button visible="{ path: 'pl>Langtext', formatter: 'de.enercon.usbee.controller.utils.Formatter.detail3_visible_langtext' }"-->
+	<!--					class="sapUiSmallMarginEnd" text="{i18n>detail2-Mtext}" icon="sap-icon://request" press="onTextPress"/>-->
+	<!--				<Button type="{ path: 'pl>Anzahl_fotos', formatter: 'de.enercon.usbee.controller.utils.Formatter.detail3_color_fotobutton' }"-->
+	<!--					text="{i18n>detail2-fotos} ( {pl>Anzahl_fotos} )" icon="sap-icon://camera" press="onFotoPress"/>-->
+	<!--			</items>-->
+	<!--		</HBox>-->
+	<!--	</items>-->
+	<!--</FlexBox>-->
+</core:FragmentDefinition>

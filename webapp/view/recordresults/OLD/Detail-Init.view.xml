@@ -1,0 +1,6 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="de.enercon.usbee.controller.recordresults.Detail-Init">
+	<MessagePage showHeader="false" icon="sap-icon://arrow-left" text="{i18n>init-text}" description="{i18n>init-description}">
+		<!--<buttons>-->
+		<!--</buttons>-->
+	</MessagePage>
+</mvc:View>

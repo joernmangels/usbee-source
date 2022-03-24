@@ -1,0 +1,54 @@
+<mvc:View controllerName="de.enercon.usbee.controller.serial.Serial" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:core="sap.ui.core"
+	xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form">
+	<Page title="{i18n>SerialTitle}" navButtonPress="onNavBack" showNavButton="true">
+		<headerContent>
+			<!--<Button icon="sap-icon://hint" press="onOpenDialog"/>-->
+			<!--<Button text="Screen Mode" press="handleFullscreen" class="sapUiSmallMarginBottom"/>-->
+			<ToggleButton icon="sap-icon://full-screen" press="handleFullscreen" class="sapUiSmallMarginBottom" tooltip="{i18n>fullscreen}"/>
+			<Image decorative="false" densityAware="false" press="handleImage3Press" src="image/en_logo.png" width="8em">
+				<layoutData>
+					<FlexItemData growFactor="1"/>
+				</layoutData>
+			</Image>
+		</headerContent>
+		<content>
+			<f:SimpleForm id="SimpleFormDisplay354" editable="false" layout="ResponsiveGridLayout" columnsM="2">
+				<f:content>
+					<InputListItem label="{i18n>material}">
+						<Select id="selectID" showSecondaryValues="true" items="{ path: 'pl>/MaterialSet', sorter: { path: 'Matnr' } }">
+							<core:ListItem key="{pl>Matnr}" text="{pl>Maktx}" additionalText="{pl>Matnr} {pl>Werks}"/>
+						</Select>
+					</InputListItem>
+					<InputListItem label="{i18n>serialnummer}">
+						<Input id="SerialInput" type="Text" placeholder="{i18n>entersernr}" binding="{/inputdata}" value="{inputdata>/_SERNR}"></Input>
+					</InputListItem>
+				</f:content>
+			</f:SimpleForm>
+		</content>
+		<!--<f:SimpleForm id="SimpleFormDisplay354" minWidth="1024" maxContainerCols="2" editable="false" layout="ResponsiveGridLayout"-->
+		<!--title="{i18n>SerialTitle}" labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4" columnsL="2" columnsM="2">-->
+		<!--	<f:content>-->
+		<!--		<List>-->
+		<!--			<InputListItem label="{i18n>material}">-->
+		<!--				<Select id="selectID" showSecondaryValues="true" items="{ path: 'pl>/MaterialSet', sorter: { path: 'Matnr' } }">-->
+		<!--					<core:ListItem key="{pl>Matnr}" text="{pl>Maktx}" additionalText="{pl>Matnr} {pl>Werks}"/>-->
+		<!--				</Select>-->
+		<!--			</InputListItem>-->
+		<!--			<InputListItem></InputListItem>-->
+		<!--			<InputListItem label="{i18n>serialnummer}">-->
+		<!--				<Input id="SerialInput" type="Text" width="95%" binding="{/inputdata}" value="{inputdata>/_SERNR}"></Input>-->
+		<!--			</InputListItem>-->
+		<!--		</List>-->
+		<!--	</f:content>-->
+		<!--</f:SimpleForm>-->
+		<footer>
+			<Toolbar>
+				<!--<Button icon="sap-icon://message-popup" text="{/messagesLength}" type="Emphasized" press="handleMessagePopoverPress"/>-->
+				<Button icon="sap-icon://alert" text="{=${message>/}.length}" visible="{=${message>/}.length > 0}" type="Emphasized"
+					press="onMessagePopoverPress"></Button>
+				<ToolbarSpacer/>
+				<Button type="Accept" icon="sap-icon://save" text="{i18n>detail2-save}" press="onSave"/>
+			</Toolbar>
+		</footer>
+	</Page>
+</mvc:View>

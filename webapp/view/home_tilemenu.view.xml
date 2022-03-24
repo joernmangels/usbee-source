@@ -1,0 +1,35 @@
+<mvc:View controllerName="de.enercon.usbee.controller.home_tilemenu" height="100%" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Page enableScrolling="false" showHeader="false" backgroundDesign="Transparent">
+		<TileContainer id="container" tiles="{pl>/TileMenuSet}" visible="{= ${glo>/_DisplayTiles} }">
+			<StandardTile icon="{pl>Icon}" info="{pl>Info}" infoState="{pl>Infostate}" number="{pl>Number}" numberUnit="{pl>Numberunit}"
+				title="{pl>Title}" type="{pl>Type}" press="onTilePress"/>
+			<!--Deutsch		-->
+			<!--	<StandardTile icon="{pl>Icon}" info="{pl>Info}" infoState="{pl>Infostate}" number="{pl>Number}" numberUnit="{pl>Numberunit}"-->
+			<!--		title="{pl>Title}" type="{pl>Type}" press="onTilePress" visible="{= ${glo>/_langu} === 'de' ? true : false }"/>-->
+			<!--Englisch	-->
+			<!--	<StandardTile icon="{pl>Icon}" info="{pl>Info}" infoState="{pl>Infostate}" number="{pl>Number}" numberUnit="{pl>Numberunit}"-->
+			<!--		title="{pl>Title}" type="{pl>Type}" press="onTilePress" visible="{= ${glo>/_langu} === 'en' ? true : false }"/>-->
+		</TileContainer>
+		<!--<FlexBox direction="Column" alignItems="Center">-->
+		<!--	<items>-->
+		<!--		<BusyIndicator size="10em"/>-->
+		<!--	</items>-->
+		<!--</FlexBox>-->
+		<FlexBox direction="Column" alignItems="Center" visible="{= ${glo>/_DisplayNoTiles} }">
+			<!--visible="{ path: 'pl>/TileMenuSet', formatter: 'de.enercon.usbee.controller.utils.Formatter.noTiles' }">-->
+			<!--visible="{= ${pl>/TileMenuSet/$count} == '0'}">-->
+			<!--visible="{ path: 'pl>TileMenuSet.length', formatter: 'de.enercon.usbee.controller.utils.Formatter.noTiles' }">-->
+			<!--visible="{= ${pl>TileMenuSet}.length &lt; 1}">-->
+			<!--visible="{= ${pl>TileMenuSet}.length &gt; 0}">-->
+			<!--visible="{ path: 'pl>TileMenuSet/$count', formatter: 'de.enercon.usbee.controller.utils.Formatter.noTiles' }">-->
+			<items>
+				<core:Icon src="sap-icon://alert" class="size3"></core:Icon>
+				<Text text="{i18n>init-tile1}" class="bigLabel TextBold"></Text>
+				<Text text="{i18n>init-tile2}" class="bigLabel_H"></Text>
+				<core:Icon src="sap-icon://alert" class="size3"></core:Icon>
+			</items>
+		</FlexBox>
+		<footer></footer>
+	</Page>
+</mvc:View>

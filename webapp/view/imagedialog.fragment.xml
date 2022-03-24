@@ -1,0 +1,94 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:u="sap.ui.unified" xmlns:l="sap.ui.layout" xmlns:tnt="sap.tnt">
+	<!--<Dialog id="imageDialog" title="{img>/_title}" stretch="true" contentHeight="80%" contentWidth="80%">-->
+	<!--<Dialog id="imageDialog" title="{img>/_title}" stretch="false" contentWidth="1000px">-->
+	<!--	<content>-->
+	<!--		<tnt:ToolHeader>-->
+	<!--			<ToolbarSpacer/>-->
+	<!--			<Slider value="3" liveChange="onSliderMoved" width="80%" step="1" min="1" max="5"/>-->
+	<!--			<ToolbarSpacer/>-->
+	<!--<Text text="Anzahl Fotos: {viewdisp>/_numpics}" wrapping="false"/>-->
+	<!--<ToolbarSpacer/>-->
+	<!--		</tnt:ToolHeader>-->
+	<!--<Slider value="3" liveChange="onSliderMoved2" width="400px" step="1" min="1" max="5"/>-->
+	<!--		<l:VerticalLayout class="sapUiContentPadding" width="100%">-->
+	<!--			<l:content>-->
+	<!--				<Image id="imageD" src="{img>/_url}" densityAware="false" width="100%" height="100%">-->
+	<!--					<layoutData>-->
+	<!--						<FlexItemData growFactor="1"/>-->
+	<!--					</layoutData>-->
+	<!--				</Image>-->
+	<!--			</l:content>-->
+	<!--		</l:VerticalLayout>-->
+	<!--	</content>-->
+	<!--<beginButton>-->
+	<!--		<Button id="CButton" press="handleClose" text="{img>/_buttontext}"/>-->
+	<!--	</beginButton>-->
+	<!--</Dialog>-->
+	<Dialog id="imageDialog" title="{img>/_title}" stretch="false" contentHeight="100%" contentWidth="100%">
+	<!--<Dialog id="imageDialog" title="{img>/_title}" stretch="true">-->
+		<content>
+			<tnt:ToolHeader>
+				<ToolbarSpacer/>
+				<Slider value="4" liveChange="onSliderMoved" width="80%" step="1" min="1" max="10" enableTickmarks="true" class="sapUiSmallMarginTop sapUiSmallMarginBottom"/>
+				<ToolbarSpacer/>
+				<Text id="textD" text="80%" class="bigLabel TextBold" wrapping="false"/>
+			</tnt:ToolHeader>
+			<l:VerticalLayout class="sapUiContentPadding" width="100%">
+				<l:content>
+					<Image id="imageD" src="{img>/_url}" densityAware="false" width="80%">
+						<!--<layoutData>-->
+						<!--	<FlexItemData growFactor="1"/>-->
+						<!--</layoutData>-->
+					</Image>
+				</l:content>
+			</l:VerticalLayout>
+			<!--					<HBox height="100%" alignItems="Center">-->
+			<!--    <Button icon="sap-icon://add" press="onPress" />-->
+			<!--</HBox>-->
+			<!--<l:HorizontalLayout>-->
+			<!--<l:VerticalLayout class="sapUiContentPadding" width="100%">-->
+			<!--	<l:content>-->
+			<!--		<l:Grid position="Center" width="100%" defaultSpan="L12 M12 S12">-->
+			<!--			<l:content>-->
+			<!--				<VBox alignItems="Center">-->
+			<!--					<Image id="imageD" src="{img>/_url}" width="80%">-->
+			<!--					</Image>-->
+			<!--				</VBox>-->
+			<!--			</l:content>-->
+			<!--		</l:Grid>-->
+			<!--	</l:content>-->
+			<!--</l:VerticalLayout>-->
+			<!--<ImageEditorContainer id="editor" enabledButtons="Transform,Filter,Crop">-->
+			<!--	<ImageEditor id="imageED" src="{img>/_url}"/>-->
+				<!--<customToolbarControls>-->
+				<!--	<unified:FileUploader change="onFileChange"/>-->
+				<!--	<m:Button text="Upload" press="onUploadPress" blocked="{/blocked}"/>-->
+				<!--	<m:Button type="Emphasized" text="Save As" press="onSaveAsPress" blocked="{/blocked}"/>-->
+				<!--</customToolbarControls>-->
+			<!--	<customResizeItems>-->
+			<!--		<CustomSizeItem width="1920" height="1200" label="1920 x 1200" relative="false"/>-->
+			<!--		<CustomSizeItem width="1600" height="900" label="1600 x 900" relative="false"/>-->
+			<!--		<CustomSizeItem width="1440" height="900" label="1440 x 900" relative="false"/>-->
+			<!--		<CustomSizeItem width="1024" height="768" label="1024 x 768" relative="false"/>-->
+			<!--		<CustomSizeItem width="2" height="2" label="double size" relative="true"/>-->
+			<!--		<CustomSizeItem width="0.5" height="0.5" label="half size" relative="true"/>-->
+			<!--		<CustomSizeItem width="2" height="1" label="make wider" relative="true"/>-->
+			<!--		<CustomSizeItem width="1" height="2" label="make higher" relative="true"/>-->
+			<!--	</customResizeItems>-->
+			<!--	<customRectangleCropItems>-->
+			<!--		<CustomSizeItem width="16" height="9" label="16:9" relative="true"/>-->
+			<!--		<CustomSizeItem width="16" height="10" label="16:10" relative="true"/>-->
+			<!--		<CustomSizeItem width="1" height="1" label="1:1" relative="true"/>-->
+			<!--		<CustomSizeItem width="4" height="3" label="4:3" relative="true"/>-->
+			<!--	</customRectangleCropItems>-->
+			<!--	<customEllipseCropItems>-->
+			<!--		<CustomSizeItem width="1" height="1" label="1:1" relative="true"/>-->
+			<!--		<CustomSizeItem width="2" height="1" label="2:1" relative="true"/>-->
+			<!--	</customEllipseCropItems>-->
+			<!--</ImageEditorContainer>-->
+		</content>
+		<beginButton>
+			<Button id="CButton" press="handleClose" text="{img>/_buttontext}"/>
+		</beginButton>
+	</Dialog>
+</core:FragmentDefinition>

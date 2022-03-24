@@ -1,0 +1,124 @@
+[{
+	"Aufpl": "Aufpl 1",
+	"Vorglfnr": "Vorglfnr 1",
+	"Prueflos": "Prueflos 1",
+	"Prueflos_Key_Modus": "S1",
+	"Prueflos_Key_Object": "Prueflos_Key_Object 1",
+	"Plnty": "Plnty 1",
+	"Plnnr": "Plnnr 1",
+	"Plnal": "Plnal 1",
+	"Aplfl": "Aplfl 1",
+	"Plnfl": "Plnfl 1",
+	"Vornr": "Vornr 1",
+	"Werks": "Werks 1",
+	"Sumnr": "Sumnr 1",
+	"Vorsteus": "Vorsteus 1",
+	"Ktsch": "Ktsch 1",
+	"Vorktxt": "Vorktxt 1",
+	"Prplatz": "Prplatz 1",
+	"Prplatzwrk": "Prplatzwrk 1",
+	"Prplatztxt": "Prplatztxt 1",
+	"Arbid": "Arbid 1",
+	"Pdest": "Pdest 1",
+	"Objty": "Objty 1",
+	"Sprache": "Sprache 1",
+	"Zaehl": "Zaehl 1",
+	"Vplty": "Vplty 1",
+	"Vplnr": "Vplnr 1",
+	"Vplal": "Vplal 1",
+	"Vplfl": "Vplfl 1",
+	"Vplnkn": "Vplnkn 1",
+	"Pplnkn": "Pplnkn 1",
+	"Erfsicht": "Erfsicht 1",
+	"Subsys": "Subsys 1",
+	"Lar01": "Lar01 1",
+	"Lar02": "Lar02 1",
+	"Lar03": "Lar03 1",
+	"StandPl": "StandPl 1",
+	"Lar04": "Lar04 1",
+	"Lar05": "Lar05 1",
+	"Lar06": "Lar06 1",
+	"Rueck": "Rueck 1",
+	"Results_Gesamt": "Results_Gesamt 1",
+	"Rmzhl": "Rmzhl 1",
+	"Kzrueckmld": "Kzrueckmld 1",
+	"Results_Entered": "Results_Entered 1",
+	"StandVg": "StandVg 1",
+	"__metadata": {
+		"uri": "PrueflosVorgaengeSet(Prueflos='Prueflos%201',Prueflos_Key_Modus='Prueflos_Key_Modus%201',Prueflos_Key_Object='Prueflos_Key_Object%201',Vornr='Vornr%201')",
+		"type": "/WIND/QM_RESULTS_SRV.PrueflosVorgaenge"
+	},
+	"TOMERK": {
+		"__deferred": {
+			"uri": "PrueflosVorgaengeSet(Prueflos='Prueflos%201',Prueflos_Key_Modus='Prueflos_Key_Modus%201',Prueflos_Key_Object='Prueflos_Key_Object%201',Vornr='Vornr%201')/TOMERK"
+		}
+	},
+	"TOPL": {
+		"__deferred": {
+			"uri": "PrueflosVorgaengeSet(Prueflos='Prueflos%201',Prueflos_Key_Modus='Prueflos_Key_Modus%201',Prueflos_Key_Object='Prueflos_Key_Object%201',Vornr='Vornr%201')/TOPL"
+		}
+	}
+}, {
+	"Aufpl": "Aufpl 1",
+	"Vorglfnr": "Vorglfnr 1",
+	"Prueflos": "Prueflos 2",
+	"Prueflos_Key_Modus": "SX",
+	"Prueflos_Key_Object": "Prueflos_Key_Object 1",
+	"Plnty": "Plnty 1",
+	"Plnnr": "Plnnr 1",
+	"Plnal": "Plnal 1",
+	"Aplfl": "Aplfl 1",
+	"Plnfl": "Plnfl 1",
+	"Vornr": "Vornr 1",
+	"Werks": "Werks 1",
+	"Sumnr": "Sumnr 1",
+	"Vorsteus": "Vorsteus 1",
+	"Ktsch": "Ktsch 1",
+	"Vorktxt": "Vorktxt 1",
+	"Prplatz": "Prplatz 1",
+	"Prplatzwrk": "Prplatzwrk 1",
+	"Prplatztxt": "Prplatztxt 1",
+	"Arbid": "Arbid 1",
+	"Pdest": "Pdest 1",
+	"Objty": "Objty 1",
+	"Sprache": "Sprache 1",
+	"Zaehl": "Zaehl 1",
+	"Vplty": "Vplty 1",
+	"Vplnr": "Vplnr 1",
+	"Vplal": "Vplal 1",
+	"Vplfl": "Vplfl 1",
+	"Vplnkn": "Vplnkn 1",
+	"Pplnkn": "Pplnkn 1",
+	"Erfsicht": "Erfsicht 1",
+	"Subsys": "Subsys 1",
+	"Lar01": "Lar01 1",
+	"Lar02": "Lar02 1",
+	"Lar03": "Lar03 1",
+	"StandPl": "StandPl 1",
+	"Lar04": "Lar04 1",
+	"Lar05": "Lar05 1",
+	"Lar06": "Lar06 1",
+	"Rueck": "Rueck 1",
+	"Results_Gesamt": "Results_Gesamt 1",
+	"Rmzhl": "Rmzhl 1",
+	"Kzrueckmld": "Kzrueckmld 1",
+	"Results_Entered": "Results_Entered 1",
+	"StandVg": "StandVg 1",
+	"Results_Entered_P": "Results_Entered_P 1",
+	"Anzahl_QUAL": "Anzahl_QUAL 1",
+	"Anzahl_QUAN": "Anzahl_QUAN 1",
+	"__metadata": {
+		"uri": "PrueflosVorgaengeSet(Prueflos='Prueflos%201',Prueflos_Key_Modus='Prueflos_Key_Modus%201',Prueflos_Key_Object='Prueflos_Key_Object%201',Vornr='Vornr%201')",
+		"type": "/WIND/QM_RESULTS_SRV.PrueflosVorgaenge"
+	},
+	"TOMERK": {
+		"__deferred": {
+			"uri": "PrueflosVorgaengeSet(Prueflos='Prueflos%201',Prueflos_Key_Modus='Prueflos_Key_Modus%201',Prueflos_Key_Object='Prueflos_Key_Object%201',Vornr='Vornr%201')/TOMERK"
+		}
+	},
+	"TOPL": {
+		"__deferred": {
+			"uri": "PrueflosVorgaengeSet(Prueflos='Prueflos%201',Prueflos_Key_Modus='Prueflos_Key_Modus%201',Prueflos_Key_Object='Prueflos_Key_Object%201',Vornr='Vornr%201')/TOPL"
+		}
+	}
+}]

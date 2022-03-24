@@ -1,0 +1,117 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout">
+	<!--<ProgressIndicator percentValue="{ path: 'pl>Results_Entered_P', formatter: 'de.enercon.usbee.controller.utils.Formatter.string_to_float' }"-->
+	<!--	displayValue="{ parts:['pl>Results_Entered_P','pl>Results_Gesamt','pl>Results_Entered'], formatter: 'de.enercon.usbee.controller.utils.Formatter.detail1_percentage_value' }"-->
+	<!--	showValue="true" state="{ path: 'pl>Results_Entered_P', formatter: 'de.enercon.usbee.controller.utils.Formatter.detail1_percentage_color' }"-->
+	<!--	height="3%"/>-->
+	<MessageStrip visible="{= ${pl>SLWBEZ} === '' ? true : false }"
+		text="{i18n>detail1-matnr} {path: 'pl>Matnr', type : 'sap.ui.model.odata.type.String', constraints: { isDigitSequence : true }} {pl>Ktextmat} / {parts:['pl>Prueflos_Key_Modus','pl>Prueflos_Key_Object'], formatter: 'de.enercon.usbee.controller.utils.Formatter.detail1_key_art_header' }"
+		showIcon="false" showCloseButton="false"></MessageStrip>
+	<MessageStrip visible="{= ${pl>SLWBEZ} === '' ? false : true }"
+		text="{i18n>detail1-matnr} {path: 'pl>Matnr', type : 'sap.ui.model.odata.type.String', constraints: { isDigitSequence : true }} {pl>Ktextmat} / {parts:['pl>Prueflos_Key_Modus','pl>Prueflos_Key_Object'], formatter: 'de.enercon.usbee.controller.utils.Formatter.detail1_key_art_header' } - {pl>SLWBEZ_KURZTEXT}"
+		showIcon="false" showCloseButton="false"></MessageStrip>
+	<!--<List id="vorgaengeList" items="{pl>TOVORG}" growing="true" growingThreshold="10" busyIndicatorDelay="100" enableBusyIndicator="true"-->
+	<!--	noDataText="{i18n>detail1-novorg}" updateFinished="onUpdateFinished">-->
+	<!--	<items>-->
+	<!-- **************************************************************************************************************************************** -->
+	<!--		<InputListItem label="{pl>Vornr} - {pl>Vorktxt}" type="Navigation" press="onListItemPressed">-->
+	<!-- **************************************************************************************************************************************** -->
+	<!--			<Text text="{i18n>detail1-ppd}" class="sapUiResponsiveMargin" visible="{= ${pl>SLWBEZ} === '' ? false : true }"/>-->
+	<!--			<Input id="pp" placeholder="{i18n>detail1-ppl}" width="30%" value="{pl>Pruefpunkt}" visible="{= ${pl>SLWBEZ} === '' ? false : true }"-->
+	<!--				editable="false" type="Text"/>-->
+	<!-- **************************************************************************************************************************************** -->
+	<!--			<Button text="{i18n>detail2-Mtext}" icon="sap-icon://request" press="onTextPress"-->
+	<!--				visible="{ path: 'pl>Langtext', formatter: 'de.enercon.usbee.controller.utils.Formatter.detail3_visible_langtext' }"/>-->
+	<!-- **************************************************************************************************************************************** -->
+	<!--<ProgressIndicator percentValue="{ path: 'pl>Results_Entered_P', formatter: 'de.enercon.usbee.controller.utils.Formatter.string_to_float' }"-->
+	<!--	displayValue="{ parts:['pl>Results_Entered_P','pl>Results_Gesamt','pl>Results_Entered'], formatter: 'de.enercon.usbee.controller.utils.Formatter.detail1_percentage_value' }"-->
+	<!--	showValue="true" state="{ path: 'pl>Results_Entered_P', formatter: 'de.enercon.usbee.controller.utils.Formatter.detail1_percentage_color' }"-->
+	<!--	width="20%"/>-->
+	<!--		</InputListItem>-->
+	<!--	</items>-->
+	<!--</List>-->
+	<l:VerticalLayout width="100%">
+		<l:content>
+			<Table id="vorgaengeList" inset="false" mode="None" items="{pl>TOVORG}" itemPress="onTableItemPressed">
+				<!--<columns>-->
+				<!--	<Column width="5em">-->
+				<!--		<Text text="{i18n>detail1-vorn2}"/>-->
+				<!--	</Column>-->
+				<!--	<Column width="14em" minScreenWidth="Tablet" demandPopin="true">-->
+				<!--		<Text text="{i18n>detail1-vortxt}"/>-->
+				<!--	</Column>-->
+				<!--	<Column width="4em" minScreenWidth="Tablet" demandPopin="true">-->
+				<!--		<Text text=""/>-->
+				<!--	</Column>-->
+				<!--	<Column width="4em" minScreenWidth="Tablet" demandPopin="true">-->
+				<!--		<Text text=""/>-->
+				<!--	</Column>-->
+				<!--	<Column width="10em" minScreenWidth="Tablet" demandPopin="true">-->
+				<!--		<Text text="{i18n>detail1-workplace}"/>-->
+				<!--		<Text text=""/>-->
+				<!--	</Column>-->
+				<!--	<Column width="16em" minScreenWidth="Tablet" demandPopin="true">-->
+				<!--		<Text text="{i18n>detail1-progress}"/>-->
+				<!--	</Column>-->
+				<!--	<Column width="10em" minScreenWidth="Tablet" demandPopin="true" visible="{= ${pl>SLWBEZ} === '' ? false : true }">-->
+				<!--		<Text text="{i18n>detail1-pp}"/>-->
+				<!--	</Column>-->
+				<!--</columns>-->
+				<columns>
+					<Column width="5em">
+						<Text text="{i18n>detail1-vorn2}"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true">
+						<Text text="{i18n>detail1-vortxt}"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true">
+						<Text text=""/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true">
+						<Text text=""/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true">
+						<Text text="{i18n>detail1-workplace}"/>
+						<Text text=""/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true">
+						<Text text="{i18n>detail1-progress}"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true" visible="{= ${pl>SLWBEZ} === '' ? false : true }">
+						<Text text="{i18n>detail1-pp}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem type="Navigation" vAlign="Middle"
+						visible="{ parts:['pl>MK_A','pl>MK_R','pl>MK_O', 'gsettings>/_filterzr'], formatter: 'de.enercon.usbee.controller.utils.Formatter.detail1_visible_zr' }">
+						<cells>
+							<!-- **************************************************************************************************************************************** -->
+							<Text text="{path: 'pl>Vornr', type : 'sap.ui.model.odata.type.String', constraints: { isDigitSequence : true }}" class="vorglist"/>
+							<!-- **************************************************************************************************************************************** -->
+							<Text text="{pl>Vorktxt}" class="vorglist"/>
+							<!-- **************************************************************************************************************************************** -->
+							<Button text="{i18n>detail2-FHM}" icon="sap-icon://inventory" press="onFHMPress" visible="{pl>FHM_exist}" class="sapUiSmallMarginEnd"/>
+							<!-- **************************************************************************************************************************************** -->
+							<Button text="{i18n>detail2-Mtext}" icon="sap-icon://request" press="onTextPress" visible="{pl>Langtext_exist}" class="sapUiSmallMarginEnd"/>
+							<!-- **************************************************************************************************************************************** -->
+							<!--<ProgressIndicator percentValue="{ path: 'pl>Results_Entered_P', formatter: 'de.enercon.usbee.controller.utils.Formatter.string_to_float' }"-->
+							<!--	displayValue="{ parts:['pl>Results_Entered_P','pl>Results_Gesamt','pl>Results_Entered'], formatter: 'de.enercon.usbee.controller.utils.Formatter.detail1_percentage_value' }"-->
+							<!--	showValue="true" state="{ path: 'pl>Results_Entered_P', formatter: 'de.enercon.usbee.controller.utils.Formatter.detail1_percentage_color' }"/>-->
+							<!-- **************************************************************************************************************************************** -->
+							<Text text="{pl>Prplatz} ({pl>Prplatztxt})" class="vorglist_15" visible="{= ${pl>Prplatz} === '' ? false : true }"/>
+							<!-- **************************************************************************************************************************************** -->
+							<ProgressIndicator percentValue="{ path: 'pl>MK_P', formatter: 'de.enercon.usbee.controller.utils.Formatter.string_to_float' }"
+								displayValue="{ parts:['pl>MK_A','pl>MK_R','pl>MK_O'], formatter: 'de.enercon.usbee.controller.utils.Formatter.progress_value' }"
+								showValue="true" height="20px"
+								state="{ parts:['pl>MK_A','pl>MK_R','pl>MK_O','pl>MK_G','pl>REC_SERNR', 'pl>Prueflos_Key_Modus', 'pl>Pruefpunkt'], formatter: 'de.enercon.usbee.controller.utils.Formatter.progress_color' }"
+								tooltip="{ parts:['pl>MK_A','pl>MK_R','pl>MK_O'], formatter: 'de.enercon.usbee.controller.utils.Formatter.progress_value' }"/>
+							<!-- **************************************************************************************************************************************** -->
+							<Input id="pp" placeholder="{i18n>detail1-ppl}" value="{pl>Pruefpunkt}" visible="{= ${pl>SLWBEZ} === '' ? false : true }" editable="false"
+								type="Text" class="vorglist"/>
+							<!-- **************************************************************************************************************************************** -->
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</l:content>
+	</l:VerticalLayout>
+</core:FragmentDefinition>

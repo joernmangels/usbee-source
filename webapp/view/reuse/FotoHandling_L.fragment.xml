@@ -1,0 +1,81 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:u="sap.ui.unified" xmlns:tnt="sap.tnt">
+	<!--<FlexBox alignItems="Start" justifyContent="SpaceBetween">-->
+	<!--	<items>-->
+	<!--		<u:FileUploader id="fileUploader1" uploadUrl="{viewdisp>/_uploadurl}" uploadComplete="handleUplComplete" change="handleUplChange"-->
+	<!--			buttonOnly="true" buttonText="{i18n>foto-add}" icon="sap-icon://add-photo" fileType="png,jpg,gif" uploadOnChange="true" sendXHR="true"-->
+	<!--			useMultipart="false" multiple="false" style="Accept" visible="{= !${gsettings>/_picu} }">-->
+	<!--useMultipart="false" multiple="true" style="Accept" visible="{= !${gsettings>/_picu} }" >-->
+	<!--			<u:headerParameters>-->
+	<!--				<u:FileUploaderParameter name="x-csrf-token" value="{viewdisp>/_xcsrftoken}"/>-->
+	<!--			</u:headerParameters>-->
+	<!--		</u:FileUploader>-->
+	<!--		<Button type="Accept" text="{i18n>foto-add}" icon="sap-icon://add-photo" press="onFotoPress" ariaLabelledBy="editButtonLabel"-->
+	<!--			visible="{gsettings>/_picu}"/>-->
+	<!--		<Button type="Reject" text="{i18n>foto-del}" icon="sap-icon://delete" press="onFotoDelete" ariaLabelledBy="editButtonLabel"-->
+	<!--			enabled="{=${viewdisp>/_numpics} > 0}"/>-->
+	<!--	</items>-->
+	<!--</FlexBox>-->
+	<tnt:ToolHeader>
+		<u:FileUploader id="fileUploader1" uploadUrl="{viewdisp>/_uploadurl}" uploadComplete="handleUplComplete" change="handleUplChange"
+			buttonOnly="true" buttonText="{i18n>foto-add}" icon="sap-icon://add-photo" fileType="png,jpg,gif" uploadOnChange="true" sendXHR="true"
+			useMultipart="false" multiple="false" style="Accept" visible="{= !${gsettings>/_picu} }">
+			<u:headerParameters>
+				<u:FileUploaderParameter name="x-csrf-token" value="{viewdisp>/_xcsrftoken}"/>
+			</u:headerParameters>
+		</u:FileUploader>
+		<Button type="Accept" text="{i18n>foto-add}" icon="sap-icon://add-photo" press="onFotoPress" ariaLabelledBy="editButtonLabel"
+			visible="{gsettings>/_picu}"/>
+		<ToolbarSpacer/>
+		<Text text="Anzahl Fotos: {viewdisp>/_numpics}" wrapping="false"/>
+		<!--<ToolbarSpacer/>-->
+	</tnt:ToolHeader>
+	<!--<List id="companyList" items="{path: 'TEST>/companies', templateShareable:false}">-->
+	<!--	<items>-->
+	<!--		<StandardListItem-->
+	<!--			title="{TEST>name}"-->
+	<!--			description="{TEST>city}"-->
+	<!--		/>-->
+	<!--	</items>-->
+	<!--</List>-->
+	<!--<Toolbar height="auto">-->
+	<!--	<ToolbarSpacer/>-->
+	<!--	<Panel id="carouselContainer" height="555px">-->
+	<!--		<Carousel class="sapUiContentPadding" loop="true" id="carouselMK" arrowsPlacement="PageIndicator" pageIndicatorPlacement="Bottom"-->
+	<!--			showPageIndicator="true"/>-->
+	<!--	</Panel>-->
+	<!--	<ToolbarSpacer/>-->
+	<!--</Toolbar>-->
+	<List id="PICLIST" items="{viewpics>/pictures}" itemPress="onTableItemPressed" growing="false" noDataText="{i18n>detail1-nopics}">
+		<CustomListItem type="Navigation">
+			<HBox class="sapUiSmallMarginTop sapUiSmallMarginBottom sapUiSmallMarginBegin">
+				<!--<Image src="{viewpics>_imgSrc}" decorative="false" width="200px" densityAware="false">-->
+				<!--	<detailBox>-->
+				<!--		<LightBox>-->
+				<!--			<LightBoxItem imageSrc="{viewpics>_imgSrcb}" alt="Text1" title="Text2" subtitle="Text3"></LightBoxItem>-->
+				<!--		</LightBox>-->
+				<!--	</detailBox>-->
+				<!-- Fixes Hbox layout on Android Stock Browser for Android 5.0 -->
+				<!--	<layoutData>-->
+				<!--		<FlexItemData growFactor="1" shrinkFactor="0"/>-->
+				<!--	</layoutData>-->
+				<!--</Image>-->
+				<Image src="{viewpics>_imgSrc}" decorative="false" width="200px" densityAware="false">
+					<!--<detailBox>-->
+					<!--	<LightBox>-->
+					<!--		<LightBoxItem imageSrc="{viewpics>_imgSrcb}" alt="" title="{viewpics>_imgAlt}" subtitle=""></LightBoxItem>-->
+					<!--	</LightBox>-->
+					<!--</detailBox>-->
+					<layoutData>
+						<FlexItemData growFactor="1" shrinkFactor="0"/>
+					</layoutData>
+				</Image>
+				<VBox class="sapUiLargeMarginBegin">
+					<Text text="{viewpics>_imgAlt}" class="TextBold"/>
+				</VBox>
+				<VBox  class="sapUiLargeMarginBegin">
+					<Button type="Reject" icon="sap-icon://delete" press="onFotoDelete"/>
+				</VBox>
+			</HBox>
+		</CustomListItem>
+	</List>
+</core:FragmentDefinition>

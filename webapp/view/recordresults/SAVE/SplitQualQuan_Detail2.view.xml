@@ -1,0 +1,153 @@
+<mvc:View controllerName="de.enercon.usbee.controller.recordresults.Detail2" xmlns="sap.m" xmlns:l="sap.ui.layout" class="sapUiSizeCompact"
+	xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:c="sap.ui.core">
+	<!--title="{i18n>detail2-title} {path: 'pl>Prueflos', type : 'sap.ui.model.odata.type.String', constraints: { isDigitSequence : true }} / {pl>Vornr} {pl>Vorktxt}">-->
+	<Page id="Detail2" navButtonPress="onNavBack" showNavButton="true"
+		title="{i18n>detail2-title} {path: 'pl>Prueflos', type : 'sap.ui.model.odata.type.String', constraints: { isDigitSequence : true }} / {pl>Vornr} {pl>Vorktxt}">
+		<!--<customHeader>-->
+		<!--	<Bar>-->
+		<!--		<contentMiddle>-->
+		<!--			<Text-->
+		<!--				text="{i18n>detail2-title} {path: 'pl>Prueflos', type : 'sap.ui.model.odata.type.String', constraints: { isDigitSequence : true }} / {pl>Vornr} {pl>Vorktxt}"-->
+		<!--				class="TextBold bigLabel_H"></Text>-->
+		<!--		</contentMiddle>-->
+		<!--	</Bar>-->
+		<!--</customHeader>-->
+		<!--title="{i18n>detail1-pl2} {= parseFloat(${pl>Prueflos})} / {i18n>detail2-title} - {pl>Vornr} {pl>Vorktxt}">-->
+		<!--<MessageStrip-->
+		<!--	text="{i18n>detail1-matnr} {path: 'pl>TOPL/Matnr', type : 'sap.ui.model.odata.type.String', constraints: { isDigitSequence : true }} {pl>TOPL/Ktextmat} / {parts:['pl>Prueflos_Key_Modus','pl>Prueflos_Key_Object'], formatter: 'de.enercon.usbee.controller.utils.Formatter.detail1_key_art_header' }"-->
+		<!--	showIcon="false" showCloseButton="false"></MessageStrip>-->
+		<!--<ProgressIndicator percentValue="{ path: 'pl>Results_Entered_P', formatter: 'de.enercon.usbee.controller.utils.Formatter.string_to_float' }"-->
+		<!--	displayValue="{ parts:['pl>Results_Entered_P','pl>Results_Gesamt','pl>Results_Entered'], formatter: 'de.enercon.usbee.controller.utils.Formatter.detail1_percentage_value' }"-->
+		<!--	showValue="true" state="{ path: 'pl>Results_Entered_P', formatter: 'de.enercon.usbee.controller.utils.Formatter.detail1_percentage_color' }"-->
+		<!--	class="sapUiMediumMarginBottom" height="5%"/>-->
+		<ProgressIndicator percentValue="{ path: 'pl>Results_Entered_P', formatter: 'de.enercon.usbee.controller.utils.Formatter.string_to_float' }"
+			displayValue="{ parts:['pl>Results_Entered_P','pl>Results_Gesamt','pl>Results_Entered'], formatter: 'de.enercon.usbee.controller.utils.Formatter.detail1_percentage_value' }"
+			showValue="true" state="{ path: 'pl>Results_Entered_P', formatter: 'de.enercon.usbee.controller.utils.Formatter.detail1_percentage_color' }"
+			height="3%"/>
+		<MessageStrip
+			text="{i18n>detail1-matnr} {path: 'pl>TOPL/Matnr', type : 'sap.ui.model.odata.type.String', constraints: { isDigitSequence : true }} {pl>TOPL/Ktextmat} / {parts:['pl>Prueflos_Key_Modus','pl>Prueflos_Key_Object'], formatter: 'de.enercon.usbee.controller.utils.Formatter.detail1_key_art_header' }"
+			showIcon="false" showCloseButton="false"></MessageStrip>
+		<Panel visible="{ path: 'pl>Anzahl_QUAL', formatter: 'de.enercon.usbee.controller.utils.Formatter.detail2_visible_panel' }"
+			expandable="true"
+			expanded="{parts:['pl>Anzahl_QUAL','pl>Anzahl_QUAN'], formatter: 'de.enercon.usbee.controller.utils.Formatter.detail2_expanded_panel' }"
+			headerText="{i18n>detail2-qual} - {= parseFloat(${pl>Prueflos})}/{pl>Vornr}-{pl>Vorktxt}" width="auto" class="sapUiResponsiveMargin">
+			<!--visible="{parts:['pl>Anzahl_QUAL','pl>Anzahl_QUAN'], formatter: 'de.enercon.usbee.controller.utils.Formatter.detail2_visible_panel_qual' }"-->
+			<content>
+				<HBox>
+					<items>
+						<c:Icon src="sap-icon://activities" size="3rem"/>
+					</items>
+				</HBox>
+				<Table id="MerkmaleL" inset="false" mode="None" noDataText="{i18n>detail2-nomerk}" itemPress="onListItemPress"
+					items="{ path: 'pl>TOMERK', sorter: { path: 'Merknr' }, filters: [ { path: 'ART_MERKMAL', operator: 'EQ', value1: 'L' } ] }">
+					<columns>
+						<Column width="5em">
+							<Text text="{i18n>detail3-qmicon}"/>
+						</Column>
+						<!--<Column width="17em">-->
+						<!--	<Text text="{i18n>detail2-merkmal}"/>-->
+						<!--</Column>-->
+						<!--<Column width="15em" minScreenWidth="Desktop" demandPopin="true">-->
+						<!--	<Text text="{i18n>detail2-info}"/>-->
+						<!--</Column>-->
+						<!--<Column minScreenWidth="Tablet" demandPopin="true">-->
+						<!--	<Text text="{i18n>detail2-zupruefen}"/>-->
+						<!--</Column>-->
+						<!--<Column minScreenWidth="Tablet" demandPopin="true">-->
+						<!--	<Text text="{i18n>detail2-geprueft}"/>-->
+						<!--</Column>-->
+						<Column minScreenWidth="Tablet" demandPopin="true">
+							<Text text="{i18n>detail2-merkmal}"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true">
+							<Text text="{i18n>detail2-info}"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true">
+							<Text text="{i18n>detail2-zupruefen}"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true">
+							<Text text="{i18n>detail2-geprueft}"/>
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem type="Navigation">
+							<cells>
+								<c:Icon src="{ path: 'pl>MBewertung', formatter: 'de.enercon.usbee.controller.utils.Formatter.detail3_icon_mbewertung' }" size="200%"
+									color="{ path: 'pl>MBewertung', formatter: 'de.enercon.usbee.controller.utils.Formatter.detail3_color_mbewertung' }">
+									<c:layoutData>
+										<FlexItemData growFactor="1"/>
+									</c:layoutData>
+								</c:Icon>
+								<ObjectIdentifier title="{pl>Merknr} - {pl>CharDescr}" text="{pl>VORGABEN}"/>
+								<Text text="{pl>Infofield3}"/>
+								<ObjectNumber number="{pl>SOLLSTPUMF}" unit="{pl>SmplUnit}"/>
+								<ObjectNumber number="{pl>ANZWERTG}" unit="{pl>SmplUnit}"/>
+								<!--<Text text="{pl>MBewertung}"/>-->
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+			</content>
+		</Panel>
+		<Panel visible="{ path: 'pl>Anzahl_QUAN', formatter: 'de.enercon.usbee.controller.utils.Formatter.detail2_visible_panel' }"
+			expandable="true"
+			expanded="{parts:['pl>Anzahl_QUAN','pl>Anzahl_QUAL'], formatter: 'de.enercon.usbee.controller.utils.Formatter.detail2_expanded_panel' }"
+			headerText="{i18n>detail2-quan} - {= parseFloat(${pl>Prueflos})}/{pl>Vornr}-{pl>Vorktxt}" width="auto" class="sapUiResponsiveMargin">
+			<content>
+				<HBox>
+					<items>
+						<c:Icon src="sap-icon://database" size="3rem"/>
+					</items>
+				</HBox>
+				<Table id="MerkmaleN" inset="false" noDataText="{i18n>detail2-nomerk}" itemPress="onListItemPress"
+					items="{ path: 'pl>TOMERK', sorter: { path: 'Merknr' }, filters: [ { path: 'ART_MERKMAL', operator: 'EQ', value1: 'N' } ] }">
+					<columns>
+						<Column width="5em">
+							<Text text="{i18n>detail3-qmicon}"/>
+						</Column>
+						<!--<Column width="17em">-->
+						<!--	<Text text="{i18n>detail2-merkmal}"/>-->
+						<!--</Column>-->
+						<!--<Column width="15em" minScreenWidth="Desktop" demandPopin="true">-->
+						<!--	<Text text="{i18n>detail2-info}"/>-->
+						<!--</Column>-->
+						<!--<Column minScreenWidth="Tablet" demandPopin="true">-->
+						<!--	<Text text="{i18n>detail2-zupruefen}"/>-->
+						<!--</Column>-->
+						<!--<Column minScreenWidth="Tablet" demandPopin="true">-->
+						<!--	<Text text="{i18n>detail2-geprueft}"/>-->
+						<!--</Column>-->
+						<Column minScreenWidth="Tablet" demandPopin="true">
+							<Text text="{i18n>detail2-merkmal}"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true">
+							<Text text="{i18n>detail2-info}"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true">
+							<Text text="{i18n>detail2-zupruefen}"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true">
+							<Text text="{i18n>detail2-geprueft}"/>
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem type="Navigation">
+							<cells>
+								<c:Icon src="{ path: 'pl>MBewertung', formatter: 'de.enercon.usbee.controller.utils.Formatter.detail3_icon_mbewertung' }" size="200%"
+									color="{ path: 'pl>MBewertung', formatter: 'de.enercon.usbee.controller.utils.Formatter.detail3_color_mbewertung' }">
+									<c:layoutData>
+										<FlexItemData growFactor="1"/>
+									</c:layoutData>
+								</c:Icon>
+								<ObjectIdentifier title="{pl>Merknr} - {pl>CharDescr}" text="{pl>VORGABEN}"/>
+								<Text text="{pl>Infofield3}"/>
+								<ObjectNumber number="{pl>SOLLSTPUMF}" unit="{pl>SmplUnit}"/>
+								<ObjectNumber number="{pl>ANZWERTG}" unit="{pl>SmplUnit}"/>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+			</content>
+		</Panel>
+	</Page>
+</mvc:View>

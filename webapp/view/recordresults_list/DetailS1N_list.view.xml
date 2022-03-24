@@ -1,0 +1,96 @@
+<mvc:View id="DetailS1N" controllerName="de.enercon.usbee.controller.recordresults_list.DetailS1N_list" xmlns="sap.m"
+	xmlns:l="sap.ui.layout" xmlns:t="sap.ui.table" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:c="sap.ui.core">
+	<Page id="Detail3" backgroundDesign="Transparent">
+		<customHeader>
+			<Bar>
+				<contentLeft>
+					<Button icon="sap-icon://nav-back" press="onNavBack"/>
+					<Text text="{ path: 'global>/_clock1', type: 'sap.ui.model.type.Date', formatOptions: { style: 'full' } }"/>
+					<Label id="oLabelClock" text="{global>/_clock2}"/>
+				</contentLeft>
+				<contentMiddle>
+					<Title
+						text="{i18n>detailN-title} {path: 'pl>Prueflos', type : 'sap.ui.model.odata.type.String', constraints: { isDigitSequence : true }} / {pl>Vornr} / {pl>Merknr}" class="TextBold"/>
+				</contentMiddle>
+				<contentRight>
+					<Button icon="sap-icon://pdf-attachment" press="handleDokuPress" class="sapUiSmallMarginBottom" tooltip="{i18n>dokutitles}"/>
+					<Button icon="sap-icon://user-settings" press="handleSettings" class="sapUiSmallMarginBottom" tooltip="{i18n>usersettings}"/>
+					<Button icon="sap-icon://refresh" press="handleReload" class="sapUiSmallMarginBottom" tooltip="{i18n>reload}"/>
+					<!--<ToggleButton icon="sap-icon://synchronize" press="handleAutoreload" class="sapUiSmallMarginBottom" tooltip="{i18n>reloadbutton}"/>-->
+					<!--<ToggleButton icon="sap-icon://group-2" press="handleHideMaster2" class="sapUiSmallMarginBottom" tooltip="{i18n>hidemaster}"/>-->
+					<!--<ToggleButton icon="sap-icon://open-command-field" press="handleRapidNav" class="sapUiSmallMarginBottom" tooltip="{i18n>rapidnav}"/>-->
+					<ToggleButton icon="sap-icon://full-screen" press="handleFullscreen2" class="sapUiSmallMarginBottom" tooltip="{i18n>fullscreen}"
+						visible="{global>/_desktop}"/>
+					<Button icon="sap-icon://home" press="handleHome" class="sapUiSmallMarginBottom" tooltip="{i18n>home}"/>
+					<Image decorative="false" densityAware="false" press="handleImage3Press" src="{global>/_imagepath}/en_logo.png" width="8em">
+						<layoutData>
+							<FlexItemData growFactor="1"/>
+						</layoutData>
+					</Image>
+				</contentRight>
+			</Bar>
+		</customHeader>
+		<!--/////////////////////////////////////////////////////////////////////////////////////-->
+		<MessageStrip type="Warning" visible="{GSETT>/_filterzr}" text="{i18n>filteractive} {i18n>filterzr}" showIcon="true" showCloseButton="false"></MessageStrip>
+		<!--/////////////////////////////////////////////////////////////////////////////////////-->		
+		<!--/////////////////////////////////////////////////////////////////////////////////////-->
+		<!--/////////////////////////////////////////////////////////////////////////////////////-->
+		<!--Messagestrip, Objectheader-->
+		<core:Fragment fragmentName="de.enercon.usbee.view.reuse.MK_Header" type="XML"/>
+		<!--/////////////////////////////////////////////////////////////////////////////////////-->
+		<!--Navigationsbuttons, Langtext, Fotos-->
+		<core:Fragment fragmentName="de.enercon.usbee.view.reuse.MK_NavButtons" type="XML"/>
+		<!--/////////////////////////////////////////////////////////////////////////////////////-->
+		<!--Table -->
+		<core:Fragment fragmentName="de.enercon.usbee.view.reuse.MK_DetailS1N" type="XML"/>
+		<!--/////////////////////////////////////////////////////////////////////////////////////-->
+		<footer>
+			<OverflowToolbar>
+				<content>
+					<Button id="messagePopoverBtn" visible="{=!!${message>/}.length}" icon="sap-icon://warning2" type="Emphasized" press="onMessagePopoverPress"/>
+					<ToolbarSpacer/>
+					<Button type="Accept" icon="sap-icon://save" text="{i18n>detail2-save}" press="onSave" visible="{=${message>/}.length === 0}"/>
+				</content>
+			</OverflowToolbar>
+		</footer>
+	</Page>
+</mvc:View>
+<!--<mvc:View id="DetailS1N" controllerName="de.enercon.usbee.controller.recordresults_list.DetailS1N_list" xmlns="sap.m"-->
+<!--	xmlns:l="sap.ui.layout" xmlns:t="sap.ui.table" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"-->
+<!--	xmlns:c="sap.ui.core" xmlns:semantic="sap.m.semantic">-->
+<!--	<semantic:DetailPage id="Detail3" navButtonPress="onNavBack" showNavButton="true" backgroundDesign="Transparent"-->
+<!--		title="{i18n>detailN-title} {path: 'pl>Prueflos', type : 'sap.ui.model.odata.type.String', constraints: { isDigitSequence : true }} / {pl>Vornr} / {pl>Merknr}">-->
+<!--		<semantic:customHeaderContent>-->
+<!--			<Button icon="sap-icon://pdf-attachment" press="handleDokuPress" class="sapUiSmallMarginBottom" tooltip="{i18n>dokutitles}"/>		-->
+<!--			<Button icon="sap-icon://user-settings" press="handleSettings" class="sapUiSmallMarginBottom" tooltip="{i18n>usersettings}"/>					-->
+<!--			<Button icon="sap-icon://refresh" press="handleReload" class="sapUiSmallMarginBottom" tooltip="{i18n>reload}"/>-->
+<!--<ToggleButton icon="sap-icon://synchronize" press="handleAutoreload" class="sapUiSmallMarginBottom" tooltip="{i18n>reloadbutton}"/>-->
+<!--<ToggleButton icon="sap-icon://group-2" press="handleHideMaster2" class="sapUiSmallMarginBottom" tooltip="{i18n>hidemaster}"/>-->
+<!--<ToggleButton icon="sap-icon://open-command-field" press="handleRapidNav" class="sapUiSmallMarginBottom" tooltip="{i18n>rapidnav}"/>-->
+<!--			<ToggleButton icon="sap-icon://full-screen" press="handleFullscreen2" class="sapUiSmallMarginBottom" tooltip="{i18n>fullscreen}" visible="{global>/_desktop}"/>-->
+<!--			<Button icon="sap-icon://home" press="handleHome" class="sapUiSmallMarginBottom" tooltip="{i18n>home}"/>-->
+<!--			<Image decorative="false" densityAware="false" press="handleImage3Press" src="{global>/_imagepath}/en_logo.png" width="8em">-->
+<!--				<layoutData>-->
+<!--					<FlexItemData growFactor="1"/>-->
+<!--				</layoutData>-->
+<!--			</Image>-->
+<!--		</semantic:customHeaderContent>-->
+<!--/////////////////////////////////////////////////////////////////////////////////////-->
+<!--Messagestrip, Objectheader-->
+<!--		<core:Fragment fragmentName="de.enercon.usbee.view.reuse.MK_Header" type="XML"/>-->
+<!--/////////////////////////////////////////////////////////////////////////////////////-->
+<!--Navigationsbuttons, Langtext, Fotos-->
+<!--		<core:Fragment fragmentName="de.enercon.usbee.view.reuse.MK_NavButtons" type="XML"/>-->
+<!--/////////////////////////////////////////////////////////////////////////////////////-->
+<!--Table -->
+<!--		<core:Fragment fragmentName="de.enercon.usbee.view.reuse.MK_DetailS1N" type="XML"/>-->
+<!--/////////////////////////////////////////////////////////////////////////////////////-->
+<!--		<semantic:customFooterContent>-->
+<!--			<Button type="Accept" icon="sap-icon://save" text="{i18n>detail2-save}" press="onSave" visible="{=${message>/}.length === 0}"/>-->
+<!--		</semantic:customFooterContent>-->
+<!--		<semantic:messagesIndicator>-->
+<!--			<semantic:MessagesIndicator press="onMessagePopoverPress"/>-->
+<!--		</semantic:messagesIndicator>-->
+<!--	</semantic:DetailPage>-->
+<!--</mvc:View>-->

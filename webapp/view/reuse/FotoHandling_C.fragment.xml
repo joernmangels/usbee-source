@@ -1,0 +1,27 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:u="sap.ui.unified">
+	<FlexBox alignItems="Start" justifyContent="SpaceBetween">
+		<items>
+			<u:FileUploader id="fileUploader1" uploadUrl="{viewdisp>/_uploadurl}" uploadComplete="handleUplComplete" change="handleUplChange"
+				buttonOnly="true" buttonText="{i18n>foto-add}" icon="sap-icon://add-photo" fileType="png,jpg,gif" uploadOnChange="true" sendXHR="true"
+				useMultipart="false" multiple="false" style="Accept" visible="{= !${gsettings>/_picu} }">
+				<!--useMultipart="false" multiple="true" style="Accept" visible="{= !${gsettings>/_picu} }" >-->
+				<u:headerParameters>
+					<u:FileUploaderParameter name="x-csrf-token" value="{viewdisp>/_xcsrftoken}"/>
+				</u:headerParameters>
+			</u:FileUploader>
+			<Button type="Accept" text="{i18n>foto-add}" icon="sap-icon://add-photo" press="onFotoPress" ariaLabelledBy="editButtonLabel"
+				visible="{gsettings>/_picu}"/>
+			<Slider value="3" liveChange="onSliderMoved" width="400px" step="1" min="1" max="5" enabled="{=${viewdisp>/_numpics} > 0}"/>
+			<Button type="Reject" text="{i18n>foto-del}" icon="sap-icon://delete" press="onFotoDelete" ariaLabelledBy="editButtonLabel"
+				enabled="{=${viewdisp>/_numpics} > 0}"/>
+		</items>
+	</FlexBox>
+	<Toolbar height="auto">
+		<ToolbarSpacer/>
+		<Panel id="carouselContainer" height="555px">
+			<Carousel class="sapUiContentPadding" loop="true" id="carouselMK" arrowsPlacement="PageIndicator" pageIndicatorPlacement="Bottom"
+				showPageIndicator="true"/>
+		</Panel>
+		<ToolbarSpacer/>
+	</Toolbar>
+</core:FragmentDefinition>

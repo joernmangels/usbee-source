@@ -1,0 +1,35 @@
+<core:FragmentDefinition id="FR1" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:l="sap.ui.layout">
+	<!--<Dialog id="ppDialog" title="{i18n>detail1-newpp}">-->
+	<!--	<content>-->
+	<!--	</content>-->
+	<!--	<beginButton>-->
+	<!--		<Button id="CButton" press="onCloseDialog" text="{i18n>foto-close}"/>-->
+	<!--	</beginButton>-->
+	<!--</Dialog>-->
+	<Dialog id="ppDialog" title="{i18n>detail1-newpp}" afterClose="onAfterClose">
+		<l:VerticalLayout width="500px">
+			<!--<l:HorizontalLayout class="sapUiSmallMarginEnd sapUiSmallMarginBegin">-->
+			<!--	<Label text="Date of need" labelFor="date" width="10em"/>-->
+			<!--	<DatePicker id="DP2" value="28-02-2018" valueFormat="dd-mm-yyyy" displayFormat="long" change="handleChange" width="15em"/>-->
+			<!--</l:HorizontalLayout>-->
+			<!--<l:HorizontalLayout class="sapUiSmallMarginEnd sapUiSmallMarginBegin">-->
+			<!--	<Label text="Time of need" labelFor="time" width="10em"/>-->
+			<!--	<TimePicker id="TP1" value="19:15" valueFormat="HH:mm" displayFormat="HH:mm" change="handleChange" placeholder="Enter meeting start time"-->
+			<!--		width="15em"/>-->
+			<!--</l:HorizontalLayout>-->
+			<l:HorizontalLayout class="sapUiSmallMarginEnd sapUiSmallMarginBegin">
+				<!--<Label text="{i18n>detail1-vornr}" labelFor="priority" width="10em"/>-->
+				<Label text="{pl>Prueflos}" labelFor="priority" width="10em"/>
+				<ComboBox items="{pl>TOVORG}">
+					<core:Item key="{pl>Vornr}" text="{pl>Vornr} - {pl>Vorktxt}"/>
+				</ComboBox>
+			</l:HorizontalLayout>
+		</l:VerticalLayout>
+		<beginButton>
+			<Button text="Save" press="onSave"/>
+		</beginButton>
+		<endButton>
+			<Button id="CButton" press="onCloseDialog" text="{i18n>foto-close}"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

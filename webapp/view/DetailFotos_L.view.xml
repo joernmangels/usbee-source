@@ -1,0 +1,32 @@
+<mvc:View id="DF" controllerName="de.enercon.usbee.controller.DetailFotos_L" xmlns="sap.m" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:c="sap.ui.core">
+	<Page class="sapUiContentPadding" id="DetailFotos" backgroundDesign="Solid">
+		<customHeader>
+			<Bar>
+				<contentLeft>
+					<Button icon="sap-icon://nav-back" press="onNavBack"/>
+					<Text text="{ path: 'glo>/_clock1', type: 'sap.ui.model.type.Date', formatOptions: { style: 'full' } }"/>
+					<Label id="oLabelClock" text="{glo>/_clock2}"/>
+				</contentLeft>
+				<contentMiddle>
+					<Title
+						text="{i18n>foto-titleview} {path: 'pl>Prueflos', type : 'sap.ui.model.odata.type.String', constraints: { isDigitSequence : true }} / {pl>Vornr} / {pl>Pruefpunkt} / {pl>Merknr}" class="TextBold"/>
+				</contentMiddle>
+				<contentRight></contentRight>
+			</Bar>
+		</customHeader>
+		<!--/////////////////////////////////////////////////////////////////////////////////////-->
+		<content>
+			<core:Fragment fragmentName="de.enercon.usbee.view.reuse.FotoHandling_L" type="XML"/>
+		</content>
+	</Page>
+</mvc:View>
+<!--<mvc:View id="DF" controllerName="de.enercon.usbee.controller.DetailFotos_L" xmlns="sap.m" xmlns:l="sap.ui.layout"-->
+<!--	xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:c="sap.ui.core" xmlns:semantic="sap.m.semantic">-->
+<!--	<Page class="sapUiContentPadding" id="DetailFotos" navButtonPress="onNavBack" showNavButton="true" backgroundDesign="Solid"-->
+<!--		title="{i18n>foto-titleview} {path: 'pl>Prueflos', type : 'sap.ui.model.odata.type.String', constraints: { isDigitSequence : true }} / {pl>Vornr} / {pl>Pruefpunkt} / {pl>Merknr}">-->
+<!--		<content>-->
+<!--			<core:Fragment fragmentName="de.enercon.usbee.view.reuse.FotoHandling_L" type="XML"/>-->
+<!--		</content>-->
+<!--	</Page>-->
+<!--</mvc:View>-->

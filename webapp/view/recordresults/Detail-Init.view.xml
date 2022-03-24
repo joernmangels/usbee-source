@@ -1,0 +1,30 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:l="sap.ui.layout"
+	controllerName="de.enercon.usbee.controller.recordresults.Detail-Init">
+	<Page backgroundDesign="Solid" showHeader="false" showFooter="false" showSubHeader="false">
+		<!--<FlexBox height="300px" alignItems="Center" justifyContent="Start">-->
+		<!--	<items>-->
+		<!--<Text text="{i18n>init-description}" class="bigLabel"></Text>-->
+		<!--<Image src="image/enercon_de.png" width="70%">-->
+		<!--</Image>-->
+		<!--	</items>-->
+		<!--</FlexBox>-->
+		<!--<l:VerticalLayout class="sapUiContentPadding" width="100%">-->
+		<!--<l:content>-->
+		<!--	<HBox>-->
+		<!--	<core:Icon src="sap-icon://arrow-left" class="size3"></core:Icon>-->
+		<!--	<Text text="{i18n>init-text}" class="bigLabel TextBold"></Text>-->
+		<!--	<Text text="{i18n>init-description}" class="bigLabel_H"></Text>-->
+		<!--	<core:Icon src="sap-icon://arrow-left" class="size3"></core:Icon>-->
+		<!--	</HBox>-->
+		<!--</l:content>-->
+		<!--</l:VerticalLayout>-->
+		<FlexBox direction="Column" alignItems="Center">
+			<items>
+				<core:Icon src="sap-icon://arrow-left" class="size3"></core:Icon>
+				<Text text="{i18n>init-text}" class="bigLabel TextBold"></Text>
+				<Text text="{i18n>init-description}" class="bigLabel_H"></Text>
+				<core:Icon src="sap-icon://arrow-left" class="size3"></core:Icon>
+			</items>
+		</FlexBox>
+	</Page>
+</mvc:View>

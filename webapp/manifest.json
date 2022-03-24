@@ -1,0 +1,587 @@
+{
+	"_version": "1.1.0",
+	"sap.app": {
+		"_version": "1.1.0",
+		"id": "de.enercon.usbee",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"applicationVersion": {
+			"version": "0.5.0"
+		},
+		"dataSources": {
+			"prueflosdaten": {
+				"uri": "/sap/opu/odata/wind/qm_results_srv/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			}
+		},
+		"sourceTemplate": {
+			"id": "servicecatalog.connectivityComponent",
+			"version": "0.0.0"
+		}
+	},
+	"sap.ui": {
+		"_version": "1.1.0",
+		"technology": "UI5",
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_belize"
+		]
+	},
+	"sap.ui5": {
+		"config": {
+			"fullWidth": false
+		},
+		"_version": "1.1.0",
+		"rootView": {
+			"viewName": "de.enercon.usbee.view.app",
+			"type": "XML",
+			"async": true
+		},
+		"handleValidation": true,
+		"dependencies": {
+			"minUI5Version": "1.54.0",
+			"libs": {
+				"sap.m": {},
+				"sap.ui.core": {},
+				"sap.ui.layout": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "de.enercon.usbee.view",
+				"controlId": "idAppControl",
+				"controlAggregation": "pages",
+				"clearTarget": true,
+				"async": true,
+				"transition": "slide",
+				"bypassed": {
+					"target": "notFound"
+				}
+			},
+			"routes": [
+				{
+					"pattern": "",
+					"name": "appHome",
+					"target": "home"
+				},
+				{
+					"pattern": "go_recordresults",
+					"name": "go_recordresults",
+					"target": [
+						"plMaster",
+						"plDetailInit"
+					]
+				},
+				{
+					"pattern": "prueflos/:pl:,:pl_key_modus:,:pl_key_object:",
+					"name": "prueflos",
+					"target": [
+						"plMaster",
+						"plDetail"
+					]
+				},
+				{
+					"pattern": "prueflosvorgang/:pl:,:pl_key_modus:,:pl_key_object:,:vornr:,:pruefpunkt:",
+					"name": "vorgang",
+					"target": [
+						"plMaster",
+						"plVorgang"
+					]
+				},
+				{
+					"pattern": "prueflosmerkmal_s1_qual/:pl:,:pl_key_modus:,:pl_key_object:,:vornr:,:pruefpunkt:,:merknr:",
+					"name": "Merkmal_S1_Qual",
+					"target": [
+						"plMaster",
+						"plMerkmal_S1_Qual"
+					]
+				},
+				{
+					"pattern": "prueflosmerkmal_s1_quan/:pl:,:pl_key_modus:,:pl_key_object:,:vornr:,:pruefpunkt:,:merknr:",
+					"name": "Merkmal_S1_Quan",
+					"target": [
+						"plMaster",
+						"plMerkmal_S1_Quan"
+					]
+				},
+				{
+					"pattern": "prueflosmerkmal_sx_qual/:pl:,:pl_key_modus:,:pl_key_object:,:vornr:,:pruefpunkt:,:merknr:",
+					"name": "Merkmal_SX_Qual",
+					"target": [
+						"plMaster",
+						"plMerkmal_SX_Qual"
+					]
+				},
+				{
+					"pattern": "prueflosmerkmal_sx_quan/:pl:,:pl_key_modus:,:pl_key_object:,:vornr:,:pruefpunkt:,:merknr:",
+					"name": "Merkmal_SX_Quan",
+					"target": [
+						"plMaster",
+						"plMerkmal_SX_Quan"
+					]
+				},
+				{
+					"pattern": "prueflosmerkmal_ch_qual/:pl:,:pl_key_modus:,:pl_key_object:,:vornr:,:pruefpunkt:,:merknr:",
+					"name": "Merkmal_CH_Qual",
+					"target": [
+						"plMaster",
+						"plMerkmal_CH_Qual"
+					]
+				},
+				{
+					"pattern": "prueflosmerkmal_ch_quan/:pl:,:pl_key_modus:,:pl_key_object:,:vornr:,:pruefpunkt:,:merknr:",
+					"name": "Merkmal_CH_Quan",
+					"target": [
+						"plMaster",
+						"plMerkmal_CH_Quan"
+					]
+				},
+				{
+					"pattern": "prueflosmerkmal_nn_qual/:pl:,:pl_key_modus:,:pl_key_object:,:vornr:,:pruefpunkt:,:merknr:",
+					"name": "Merkmal_NN_Qual",
+					"target": [
+						"plMaster",
+						"plMerkmal_NN_Qual"
+					]
+				},
+				{
+					"pattern": "prueflosmerkmal_nn_quan/:pl:,:pl_key_modus:,:pl_key_object:,:vornr:,:pruefpunkt:,:merknr:",
+					"name": "Merkmal_NN_Quan",
+					"target": [
+						"plMaster",
+						"plMerkmal_NN_Quan"
+					]
+				},
+				{
+					"pattern": "prueflosmerkmal_fotos_c/:pl:,:pl_key_modus:,:pl_key_object:,:vornr:,:pruefpunkt:,:merknr:",
+					"name": "Merkmal_Fotos_C",
+					"target": [
+						"plMaster",
+						"plMerkmal_Fotos_C"
+					]
+				},
+				{
+					"pattern": "prueflosmerkmal_fotos_list_c/:pl:,:pl_key_modus:,:pl_key_object:,:vornr:,:pruefpunkt:,:merknr:",
+					"name": "Merkmal_Fotos_list_C",
+					"target": [
+						"plMerkmal_Fotos_list_C"
+					]
+				},
+				{
+					"pattern": "prueflosmerkmal_fotos_l/:pl:,:pl_key_modus:,:pl_key_object:,:vornr:,:pruefpunkt:,:merknr:",
+					"name": "Merkmal_Fotos_L",
+					"target": [
+						"plMaster",
+						"plMerkmal_Fotos_L"
+					]
+				},
+				{
+					"pattern": "prueflosmerkmal_fotos_list_l/:pl:,:pl_key_modus:,:pl_key_object:,:vornr:,:pruefpunkt:,:merknr:",
+					"name": "Merkmal_Fotos_list_L",
+					"target": [
+						"plMerkmal_Fotos_list_L"
+					]
+				},
+				{
+					"pattern": "prueflos_createp/:pl:,:pl_key_modus:,:pl_key_object:",
+					"name": "Prueflos_CreatePP",
+					"target": [
+						"plMaster",
+						"plVorgang_CreatePP"
+					]
+				},
+				{
+					"pattern": "prueflos_createp_list/:pl:,:pl_key_modus:,:pl_key_object:",
+					"name": "Prueflos_CreatePP_list",
+					"target": [
+						"plVorgang_CreatePP_list"
+					]
+				},
+				{
+					"pattern": "go_createsernr",
+					"name": "go_createsernr",
+					"target": "serial"
+				},
+				{
+					"pattern": "go_createpl",
+					"name": "go_createpl",
+					"target": "insplot"
+				},
+				{
+					"pattern": "go_barcode",
+					"name": "go_barcode",
+					"target": "barcode"
+				},
+				{
+					"pattern": "go_recordresults_list",
+					"name": "go_recordresults_list",
+					"target": "go_recordresults_list"
+				},
+				{
+					"pattern": "prueflos_list/:pl:,:pl_key_modus:,:pl_key_object:",
+					"name": "prueflos_list",
+					"target": [
+						"plVorg_list"
+					]
+				},
+				{
+					"pattern": "prueflosvorgang_list/:pl:,:pl_key_modus:,:pl_key_object:,:vornr:,:pruefpunkt:",
+					"name": "vorgang_list",
+					"target": [
+						"plMerk_list"
+					]
+				},
+				{
+					"pattern": "prueflosmerkmal_s1_qual_list/:pl:,:pl_key_modus:,:pl_key_object:,:vornr:,:pruefpunkt:,:merknr:",
+					"name": "Merkmal_S1_Qual_list",
+					"target": [
+						"plMerkmal_S1_Qual_list"
+					]
+				},
+				{
+					"pattern": "prueflosmerkmal_s1_quan_list/:pl:,:pl_key_modus:,:pl_key_object:,:vornr:,:pruefpunkt:,:merknr:",
+					"name": "Merkmal_S1_Quan_list",
+					"target": [
+						"plMerkmal_S1_Quan_list"
+					]
+				},
+				{
+					"pattern": "prueflosmerkmal_sx_qual_list/:pl:,:pl_key_modus:,:pl_key_object:,:vornr:,:pruefpunkt:,:merknr:",
+					"name": "Merkmal_SX_Qual_list",
+					"target": [
+						"plMerkmal_SX_Qual_list"
+					]
+				},
+				{
+					"pattern": "prueflosmerkmal_sx_quan_list/:pl:,:pl_key_modus:,:pl_key_object:,:vornr:,:pruefpunkt:,:merknr:",
+					"name": "Merkmal_SX_Quan_list",
+					"target": [
+						"plMerkmal_SX_Quan_list"
+					]
+				},
+				{
+					"pattern": "prueflosmerkmal_ch_qual_list/:pl:,:pl_key_modus:,:pl_key_object:,:vornr:,:pruefpunkt:,:merknr:",
+					"name": "Merkmal_CH_Qual_list",
+					"target": [
+						"plMerkmal_CH_Qual_list"
+					]
+				},
+				{
+					"pattern": "prueflosmerkmal_ch_quan_list/:pl:,:pl_key_modus:,:pl_key_object:,:vornr:,:pruefpunkt:,:merknr:",
+					"name": "Merkmal_CH_Quan_list",
+					"target": [
+						"plMerkmal_CH_Quan_list"
+					]
+				},
+				{
+					"pattern": "prueflosmerkmal_nn_qual_list/:pl:,:pl_key_modus:,:pl_key_object:,:vornr:,:pruefpunkt:,:merknr:",
+					"name": "Merkmal_NN_Qual_list",
+					"target": [
+						"plMerkmal_NN_Qual_list"
+					]
+				},
+				{
+					"pattern": "prueflosmerkmal_nn_quan_list/:pl:,:pl_key_modus:,:pl_key_object:,:vornr:,:pruefpunkt:,:merknr:",
+					"name": "Merkmal_NN_Quan_list",
+					"target": [
+						"plMerkmal_NN_Quan_list"
+					]
+				}
+			],
+			"targets": {
+				"home": {
+					"viewName": "home",
+					"transition": "flip"
+				},
+				"go_recordresults": {
+					"viewPath": "de.enercon.usbee.view.recordresults",
+					"viewName": "Masterdetail",
+					"transition": "flip",
+					"viewLevel": 1
+				},
+				"plMaster": {
+					"parent": "go_recordresults",
+					"controlId": "Split1",
+					"viewPath": "de.enercon.usbee.view.recordresults",
+					"viewName": "Master",
+					"controlAggregation": "masterPages"
+				},
+				"plDetailInit": {
+					"parent": "go_recordresults",
+					"viewPath": "de.enercon.usbee.view.recordresults",
+					"viewName": "Detail-Init",
+					"controlId": "Split1",
+					"controlAggregation": "detailPages"
+				},
+				"plDetail": {
+					"parent": "go_recordresults",
+					"viewPath": "de.enercon.usbee.view.recordresults",
+					"viewName": "Detail1",
+					"controlId": "Split1",
+					"viewLevel": 2,
+					"controlAggregation": "detailPages"
+				},
+				"plVorgang": {
+					"parent": "go_recordresults",
+					"viewPath": "de.enercon.usbee.view.recordresults",
+					"viewName": "Detail2",
+					"controlId": "Split1",
+					"viewLevel": 3,
+					"controlAggregation": "detailPages"
+				},
+				"plMerkmal_S1_Qual": {
+					"viewId": "plMerkmal_S1_Qual",
+					"parent": "go_recordresults",
+					"viewPath": "de.enercon.usbee.view.recordresults",
+					"viewName": "DetailS1L",
+					"controlId": "Split1",
+					"viewLevel": 4,
+					"controlAggregation": "detailPages"
+				},
+				"plMerkmal_S1_Quan": {
+					"viewId": "plMerkmal_S1_Quan",
+					"parent": "go_recordresults",
+					"viewPath": "de.enercon.usbee.view.recordresults",
+					"viewName": "DetailS1N",
+					"controlId": "Split1",
+					"viewLevel": 4,
+					"controlAggregation": "detailPages"
+				},
+				"plMerkmal_SX_Qual": {
+					"viewId": "plMerkmal_SX_Qual",
+					"parent": "go_recordresults",
+					"viewPath": "de.enercon.usbee.view.recordresults",
+					"viewName": "DetailSXL",
+					"controlId": "Split1",
+					"viewLevel": 4,
+					"controlAggregation": "detailPages"
+				},
+				"plMerkmal_SX_Quan": {
+					"viewId": "plMerkmal_SX_Quan",
+					"parent": "go_recordresults",
+					"viewPath": "de.enercon.usbee.view.recordresults",
+					"viewName": "DetailSXN",
+					"controlId": "Split1",
+					"viewLevel": 4,
+					"controlAggregation": "detailPages"
+				},
+				"plMerkmal_CH_Qual": {
+					"viewId": "plMerkmal_CH_Qual",
+					"parent": "go_recordresults",
+					"viewPath": "de.enercon.usbee.view.recordresults",
+					"viewName": "DetailCHL",
+					"controlId": "Split1",
+					"viewLevel": 4,
+					"controlAggregation": "detailPages"
+				},
+				"plMerkmal_CH_Quan": {
+					"viewId": "plMerkmal_CH_Quan",
+					"parent": "go_recordresults",
+					"viewPath": "de.enercon.usbee.view.recordresults",
+					"viewName": "DetailCHN",
+					"controlId": "Split1",
+					"viewLevel": 4,
+					"controlAggregation": "detailPages"
+				},
+				"plMerkmal_NN_Qual": {
+					"viewId": "plMerkmal_NN_Qual",
+					"parent": "go_recordresults",
+					"viewPath": "de.enercon.usbee.view.recordresults",
+					"viewName": "DetailNNL",
+					"controlId": "Split1",
+					"viewLevel": 4,
+					"controlAggregation": "detailPages"
+				},
+				"plMerkmal_NN_Quan": {
+					"viewId": "plMerkmal_NN_Quan",
+					"parent": "go_recordresults",
+					"viewPath": "de.enercon.usbee.view.recordresults",
+					"viewName": "DetailNNN",
+					"controlId": "Split1",
+					"viewLevel": 4,
+					"controlAggregation": "detailPages"
+				},
+				"plMerkmal_Fotos_C": {
+					"viewId": "plMerkmal_Fotos_C",
+					"parent": "go_recordresults",
+					"viewPath": "de.enercon.usbee.view",
+					"viewName": "DetailFotos_C",
+					"controlId": "Split1",
+					"viewLevel": 5,
+					"controlAggregation": "detailPages"
+				},
+				"plMerkmal_Fotos_list_C": {
+					"viewId": "plMerkmal_Fotos_list_C",
+					"viewPath": "de.enercon.usbee.view",
+					"viewName": "DetailFotos_C",
+					"transition": "flip"
+				},
+				"plMerkmal_Fotos_L": {
+					"viewId": "plMerkmal_Fotos_L",
+					"parent": "go_recordresults",
+					"viewPath": "de.enercon.usbee.view",
+					"viewName": "DetailFotos_L",
+					"controlId": "Split1",
+					"viewLevel": 5,
+					"controlAggregation": "detailPages"
+				},
+				"plMerkmal_Fotos_list_L": {
+					"viewId": "plMerkmal_Fotos_list_L",
+					"viewPath": "de.enercon.usbee.view",
+					"viewName": "DetailFotos_L",
+					"transition": "flip"
+				},
+				"plVorgang_CreatePP": {
+					"viewId": "plVorgang_CreatePP",
+					"parent": "go_recordresults",
+					"viewPath": "de.enercon.usbee.view.recordresults",
+					"viewName": "DetailCreatePP",
+					"controlId": "Split1",
+					"viewLevel": 5,
+					"controlAggregation": "detailPages"
+				},
+				"plVorgang_CreatePP_list": {
+					"viewId": "plVorgang_CreatePP_list",
+					"viewPath": "de.enercon.usbee.view.recordresults_list",
+					"viewName": "DetailCreatePP_list",
+					"transition": "flip"
+				},
+				"notFound": {
+					"viewPath": "de.enercon.usbee.view.recordresults",
+					"viewName": "NotFound",
+					"transition": "show"
+				},
+				"serial": {
+					"viewPath": "de.enercon.usbee.view.serial",
+					"viewName": "Serial"
+				},
+				"insplot": {
+					"viewPath": "de.enercon.usbee.view.insplot",
+					"viewName": "Insplot"
+				},
+				"barcode": {
+					"viewPath": "de.enercon.usbee.view.barcode",
+					"viewName": "Barcode",
+					"transition": "flip"
+				},
+				"go_recordresults_list": {
+					"viewPath": "de.enercon.usbee.view.recordresults_list",
+					"viewName": "Listentry",
+					"transition": "flip"
+				},
+				"plVorg_list": {
+					"viewPath": "de.enercon.usbee.view.recordresults_list",
+					"viewName": "Detail1_list",
+					"transition": "flip"
+				},
+				"plMerk_list": {
+					"viewPath": "de.enercon.usbee.view.recordresults_list",
+					"viewName": "Detail2_list",
+					"transition": "flip"
+				},
+				"plMerkmal_S1_Qual_list": {
+					"viewId": "plMerkmal_S1_Qual_list",
+					"viewPath": "de.enercon.usbee.view.recordresults_list",
+					"viewName": "DetailS1L_list",
+					"transition": "show"
+				},
+				"plMerkmal_S1_Quan_list": {
+					"viewId": "plMerkmal_S1_Quan_list",
+					"viewPath": "de.enercon.usbee.view.recordresults_list",
+					"viewName": "DetailS1N_list",
+					"transition": "show"
+				},
+				"plMerkmal_SX_Qual_list": {
+					"viewId": "plMerkmal_SX_Qual_list",
+					"viewPath": "de.enercon.usbee.view.recordresults_list",
+					"viewName": "DetailSXL_list",
+					"transition": "show"
+				},
+				"plMerkmal_SX_Quan_list": {
+					"viewId": "plMerkmal_SX_Quan_list",
+					"viewPath": "de.enercon.usbee.view.recordresults_list",
+					"viewName": "DetailSXN_list",
+					"transition": "show"
+				},
+				"plMerkmal_CH_Qual_list": {
+					"viewId": "plMerkmal_CH_Qual_list",
+					"viewPath": "de.enercon.usbee.view.recordresults_list",
+					"viewName": "DetailCHL_list",
+					"transition": "show"
+				},
+				"plMerkmal_CH_Quan_list": {
+					"viewId": "plMerkmal_CH_Quan_list",
+					"viewPath": "de.enercon.usbee.view.recordresults_list",
+					"viewName": "DetailCHN_list",
+					"transition": "show"
+				},
+				"plMerkmal_NN_Qual_list": {
+					"viewId": "plMerkmal_NN_Qual_list",
+					"viewPath": "de.enercon.usbee.view.recordresults_list",
+					"viewName": "DetailNNL_list",
+					"transition": "show"
+				},
+				"plMerkmal_NN_Quan_list": {
+					"viewId": "plMerkmal_NN_Quan_list",
+					"viewPath": "de.enercon.usbee.view.recordresults_list",
+					"viewName": "DetailNNN_list",
+					"transition": "show"
+				}
+			}
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "de.enercon.usbee.i18n.i18n"
+				}
+			},
+			"menu": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "model/TileMenu/TileMenu.json"
+			},
+			"pl": {
+				"dataSource": "prueflosdaten",
+				"settings": {
+					"preliminaryContext": "true",
+					"sequentializeRequests": "true",
+					"refreshAfterChange": "true",
+					"defaultBindingMode": "TwoWay",
+					"metadataUrlParams": {
+						"sap-documentation": "heading"
+					},
+					"useBatch": "true",
+					"defaultCountMode": "None",
+					"preload": "true"
+				}
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		}
+	},
+	"sap.platform.abap": {
+		"uri": "/sap/bc/ui5_ui5/wind/usbee001/webapp",
+		"_version": "1.1.0"
+	}
+}

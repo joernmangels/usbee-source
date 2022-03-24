@@ -1,0 +1,41 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Panel expandable="true" expanded="true" headerText="{i18n>detail1-vorg}" width="auto" class="sapUiResponsiveMargin">
+		<content>
+			<List id="vorgaengeListPP" items="{pl>TOVORGS}" growing="true" busyIndicatorDelay="100" enableBusyIndicator="true"
+				noDataText="{i18n>detail1-novorg}" updateFinished="onUpdateFinishedList">
+				<items>
+					<StandardListItem title="{pl>Vornr} - {pl>Vorktxt}" press="onListVorgSelect" type="Active"></StandardListItem>
+				</items>
+			</List>
+		</content>
+	</Panel>
+	<Panel expandable="true" expanded="true" visible="{inputdata>/_readypp}" headerText="{i18n>detail1-enterpp} - {pl>Vornr} - {pl>Vorktxt}"
+		width="auto" class="sapUiResponsiveMargin">
+		<content>
+			<!-- PP Auswahl Input Datum D1-->
+			<DatePicker id="DA" value="{pl>PP_New}" valueFormat="yyyyMMdd" displayFormat="long" width="30%" class="sapUiSmallMarginEnd"
+				visible="{parts:['pl>SLWBEZ','pl>SLWBEZ_SELECT','pl>SLWBEZ_TYPE'], formatter: 'de.enercon.usbee.controller.utils.Formatter.datePP1_vorgang' }"
+				change="onDateInput"/>
+			<!-- PP Auswahl Input (C1,C2,N1,N2,T1)-->
+			<Input placeholder="{i18n>detail1-enterpp}" width="30%" value="{pl>PP_New}"
+				visible="{parts:['pl>SLWBEZ','pl>SLWBEZ_SELECT','pl>SLWBEZ_TYPE'], formatter: 'de.enercon.usbee.controller.utils.Formatter.inputPP1_vorgang' }"
+				editable="true" type="{ path: 'pl>SLWBEZ_TYPE', formatter: 'de.enercon.usbee.controller.utils.Formatter.typePP1_vorgang' }"
+				class="sapUiSmallMarginEnd"/>
+			<!-- **************************************************************************************************************************************** -->
+			<!-- PP Auswahl Selection -->
+			<HBox class="sapUiMediumMarginBottom">
+				<!--<Label text="{i18n>detail1-ppl}" labelFor="selectPPP" class="sapUiTinyMarginEnd"/>-->
+				<!--<Select id="selectPPP" valueState="Success" selectedKey="{pl>Pruefpunkt}" showSecondaryValues="true" width="50%" enabled="true"-->
+				<!--	items="{ path: 'pl>TOPP', sorter: { path: 'Bewertung2' } }" class="sapUiSmallMarginEnd" visible="{inputdata>/_SLWBEZ_SELECT}">-->
+				<!--	<core:ListItem key=" {pl>Key_Qual}" text="{pl>Bewertung1}" additionalText="{pl>Bewertung2}"/>-->
+				<!--</Select>-->
+				<Select id="selectPPP" selectedKey="{pl>PP_New}" 
+				    showSecondaryValues="{ path: 'pl>SLWBEZ', formatter: 'de.enercon.usbee.controller.utils.Formatter.showsecPP1_vorgang' }"
+					autoAdjustWidth="true" visible="{pl>SLWBEZ_SELECT}"
+					enabled="true" items="{ path: 'pl>TOPPC', sorter: { path: 'Bewertung2' } }" class="sapUiSmallMarginEnd">
+					<core:ListItem key="{pl>Key_Qual}" text="{pl>Bewertung1}" additionalText="{pl>Bewertung2}"/>
+				</Select>
+			</HBox>
+		</content>
+	</Panel>
+</core:FragmentDefinition>

@@ -1,0 +1,109 @@
+[{
+	"Prueflos": "Prueflos 1",
+	"Prueflos_Key_Modus": "S1",
+	"Prueflos_Key_Object": "Prueflos_Key_Object 1",
+	"Vornr": "Vornr 1",
+	"Merknr": "Merknr 1",
+	"Lfdnr": "Lfdnr 1",
+	"Messwert": "Messwert 1",
+	"Attribut_valid": true,
+	"Serialnr": "Serialnr 1",
+	"Pb_text": "Pb_text 1",
+	"Zi_text": "Zi_text 1",
+	"Art_merkmal": "Art_merkmal 1",
+	"Bewertung": "Bewertung 1",
+	"Pruefer": "Pruefer 1",
+	"Pruefdatum": "Pruefdatum 1",
+	"Pruefzeit": "Pruefzeit 1",
+	"Art_ergebnis": "Art_ergebnis 1",
+	"__metadata": {
+		"uri": "PruefErgebnisseSet(Prueflos='Prueflos%201',Prueflos_Key_Modus='Prueflos_Key_Modus%201',Prueflos_Key_Object='Prueflos_Key_Object%201',Vornr='Vornr%201',Merknr='Merknr%201',Lfdnr='Lfdnr%201')",
+		"type": "/WIND/QM_RESULTS_SRV.PruefErgebnisse"
+	},
+	"TOBEWERTE": {
+		"__deferred": {
+			"uri": "PruefErgebnisseSet(Prueflos='Prueflos%201',Prueflos_Key_Modus='Prueflos_Key_Modus%201',Prueflos_Key_Object='Prueflos_Key_Object%201',Vornr='Vornr%201',Merknr='Merknr%201',Lfdnr='Lfdnr%201')/TOBEWERTE"
+		}
+	}
+}, {
+	"Prueflos": "Prueflos 1",
+	"Prueflos_Key_Modus": "S1",
+	"Prueflos_Key_Object": "Prueflos_Key_Object 1",
+	"Vornr": "Vornr 1",
+	"Merknr": "Merknr 1",
+	"Lfdnr": "Lfdnr 1",
+	"Messwert": "Messwert 1",
+	"Attribut_valid": true,
+	"Serialnr": "Serialnr 1",
+	"Pb_text": "Pb_text 1",
+	"Zi_text": "Zi_text 1",
+	"Art_merkmal": "Art_merkmal 1",
+	"Bewertung": "Bewertung 1",
+	"Pruefer": "Pruefer 1",
+	"Pruefdatum": "Pruefdatum 1",
+	"Pruefzeit": "Pruefzeit 1",
+	"Art_ergebnis": "Art_ergebnis 1",
+	"__metadata": {
+		"uri": "PruefErgebnisseSet(Prueflos='Prueflos%201',Prueflos_Key_Modus='Prueflos_Key_Modus%201',Prueflos_Key_Object='Prueflos_Key_Object%201',Vornr='Vornr%201',Merknr='Merknr%201',Lfdnr='Lfdnr%201')",
+		"type": "/WIND/QM_RESULTS_SRV.PruefErgebnisse"
+	},
+	"TOBEWERTE": {
+		"__deferred": {
+			"uri": "PruefErgebnisseSet(Prueflos='Prueflos%201',Prueflos_Key_Modus='Prueflos_Key_Modus%201',Prueflos_Key_Object='Prueflos_Key_Object%201',Vornr='Vornr%201',Merknr='Merknr%201',Lfdnr='Lfdnr%201')/TOBEWERTE"
+		}
+	}
+}, {
+	"Prueflos": "Prueflos 2",
+	"Prueflos_Key_Modus": "SX",
+	"Prueflos_Key_Object": "Prueflos_Key_Object 1",
+	"Vornr": "Vornr 1",
+	"Merknr": "Merknr 1",
+	"Lfdnr": "Lfdnr 1",
+	"Messwert": "Messwert 1",
+	"Attribut_valid": true,
+	"Serialnr": "Serialnr 1",
+	"Pb_text": "Pb_text 1",
+	"Zi_text": "Zi_text 1",
+	"Art_merkmal": "Art_merkmal 1",
+	"Bewertung": "Bewertung 1",
+	"Pruefer": "Pruefer 1",
+	"Pruefdatum": "Pruefdatum 1",
+	"Pruefzeit": "Pruefzeit 1",
+	"Art_ergebnis": "Art_ergebnis 1",
+	"__metadata": {
+		"uri": "PruefErgebnisseSet(Prueflos='Prueflos%201',Prueflos_Key_Modus='Prueflos_Key_Modus%201',Prueflos_Key_Object='Prueflos_Key_Object%201',Vornr='Vornr%201',Merknr='Merknr%201',Lfdnr='Lfdnr%201')",
+		"type": "/WIND/QM_RESULTS_SRV.PruefErgebnisse"
+	},
+	"TOBEWERTE": {
+		"__deferred": {
+			"uri": "PruefErgebnisseSet(Prueflos='Prueflos%201',Prueflos_Key_Modus='Prueflos_Key_Modus%201',Prueflos_Key_Object='Prueflos_Key_Object%201',Vornr='Vornr%201',Merknr='Merknr%201',Lfdnr='Lfdnr%201')/TOBEWERTE"
+		}
+	}
+}, {
+	"Prueflos": "Prueflos 2",
+	"Prueflos_Key_Modus": "SX",
+	"Prueflos_Key_Object": "Prueflos_Key_Object 2",
+	"Vornr": "Vornr 2",
+	"Merknr": "Merknr 2",
+	"Lfdnr": "Lfdnr 2",
+	"Messwert": "Messwert 2",
+	"Attribut_valid": true,
+	"Serialnr": "Serialnr 2",
+	"Pb_text": "Pb_text 2",
+	"Zi_text": "Zi_text 2",
+	"Art_merkmal": "Art_merkmal 2",
+	"Bewertung": "Bewertung 2",
+	"Pruefer": "Pruefer 2",
+	"Pruefdatum": "Pruefdatum 2",
+	"Pruefzeit": "Pruefzeit 2",
+	"Art_ergebnis": "Art_ergebnis 2",
+	"__metadata": {
+		"uri": "PruefErgebnisseSet(Prueflos='Prueflos%202',Prueflos_Key_Modus='Prueflos_Key_Modus%202',Prueflos_Key_Object='Prueflos_Key_Object%202',Vornr='Vornr%202',Merknr='Merknr%202',Lfdnr='Lfdnr%202')",
+		"type": "/WIND/QM_RESULTS_SRV.PruefErgebnisse"
+	},
+	"TOBEWERTE": {
+		"__deferred": {
+			"uri": "PruefErgebnisseSet(Prueflos='Prueflos%202',Prueflos_Key_Modus='Prueflos_Key_Modus%202',Prueflos_Key_Object='Prueflos_Key_Object%202',Vornr='Vornr%202',Merknr='Merknr%202',Lfdnr='Lfdnr%202')/TOBEWERTE"
+		}
+	}
+}]

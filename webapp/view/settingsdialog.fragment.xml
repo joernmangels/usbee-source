@@ -1,0 +1,97 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:u="sap.ui.unified" xmlns:l="sap.ui.layout">
+	<!--<Dialog id="SettingsDialog" title="{i18n>settingstitle}" stretch="false" contentWidth="50%" contentHeight="50%">-->
+	<!--	<content>-->
+	<!--<l:VerticalLayout class="sapUiContentPadding" width="100%">-->
+	<!--	<l:content>-->
+	<!--		<Image src="{img>/_url}" densityAware="false" width="100%">-->
+	<!--			<layoutData>-->
+	<!--				<FlexItemData growFactor="1"/>-->
+	<!--			</layoutData>-->
+	<!--		</Image>-->
+	<!--	</l:content>-->
+	<!--</l:VerticalLayout>-->
+	<!--	</content>-->
+	<!--	<beginButton>-->
+	<!--		<Button id="CButton" press="handleClose" icon="sap-icon://save" text = "{i18n>settingssave}"/>-->
+	<!--	</beginButton>-->
+	<!--</Dialog>-->
+	<ViewSettingsDialog id="SettingsDialog" title="{i18n>settingstitle} - {gsettings>/_Username}" confirm="handleConfirm" cancel="handleClose">
+		<customTabs>
+			<ViewSettingsCustomTab icon="sap-icon://settings" title="{i18n>settings1}" tooltip="{i18n>settings1}">
+				<content>
+					<Panel height="330px">
+						<content>
+							<Label text="{i18n>rapidnav2}" design="Bold" id="RAPID_LABEL"/>
+							<!--<SegmentedButton selectedButton="{ path: 'gsettings>/_rapid', formatter: 'de.enercon.usbee.controller.utils.Formatter.gsettings_rapid' }"-->
+							<!--	id="RAPID" width="100%">-->
+							<!--<SegmentedButton id="RAPID" width="100%">-->
+							<!--	<Button text="{i18n>active}" key="rapid_on"/>-->
+							<!--	<Button text="{i18n>deactive}" key="rapid_off"/>-->
+							<!--</SegmentedButton>-->
+							<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+							<SegmentedButton selectedKey="{ path: 'gsettings>/_rapid', formatter: 'de.enercon.usbee.controller.utils.Formatter.gsettings_rapid' }"
+								width="100%" id="RAPID" selectionChange="onRapidChange">
+								<items>
+									<SegmentedButtonItem text="{i18n>active}" id="r1" key="rapid_on"/>
+									<SegmentedButtonItem text="{i18n>deactive}" id="r2" key="rapid_off"/>
+								</items>
+							</SegmentedButton>
+							<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+							<Label text="{i18n>picuploaderdirect}" design="Bold" id="PICU_LABEL"/>
+							<SegmentedButton selectedKey="{ path: 'gsettings>/_picu', formatter: 'de.enercon.usbee.controller.utils.Formatter.gsettings_picu' }"
+								width="100%" id="PICU" selectionChange="onPicuChange">
+								<items>
+									<SegmentedButtonItem text="{i18n>active}" id="p1" key="picu_on"/>
+									<SegmentedButtonItem text="{i18n>deactive}" id="p2" key="picu_off"/>
+								</items>
+							</SegmentedButton>
+							<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+							<Label text="{i18n>piclist}" design="Bold" id="PICULIST_LABEL"/>
+							<SegmentedButton selectedKey="{ path: 'gsettings>/_piclist', formatter: 'de.enercon.usbee.controller.utils.Formatter.gsettings_piclist' }"
+								width="100%" id="PICLIST" selectionChange="onPicListChange">
+								<items>
+									<SegmentedButtonItem text="{i18n>piclist_l}" id="pl1" key="piclist_on"/>
+									<SegmentedButtonItem text="{i18n>piclist_c}" id="pl2" key="piclist_off"/>
+								</items>
+							</SegmentedButton>
+							<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+							<Label text="{i18n>filterzr}" design="Bold" id="FILTERZR_LABEL"/>
+							<SegmentedButton selectedKey="{ path: 'gsettings>/_filterzr', formatter: 'de.enercon.usbee.controller.utils.Formatter.gsettings_filterzr' }"
+								width="100%" id="FILTERZR" selectionChange="onFilterzrChange">
+								<items>
+									<SegmentedButtonItem text="{i18n>active}" id="zr1" key="zr_on"/>
+									<SegmentedButtonItem text="{i18n>deactive}" id="zr2" key="zr_off"/>
+								</items>
+							</SegmentedButton>
+						</content>
+					</Panel>
+				</content>
+			</ViewSettingsCustomTab>
+			<ViewSettingsCustomTab icon="sap-icon://database" title="{i18n>settings2}" tooltip="{i18n>settings2}">
+				<content>
+					<Panel height="330px">
+						<content>
+							<Label text="{i18n>settautoreload}" design="Bold" id="AUTOR_LABEL"/>
+							<SegmentedButton
+								selectedKey="{ path: 'gsettings>/_autoreload', formatter: 'de.enercon.usbee.controller.utils.Formatter.gsettings_autoreload' }" width="100%"
+								id="AUTOR" selectionChange="onAutoreloadChange">
+								<items>
+									<SegmentedButtonItem text="{i18n>active}" id="a1" key="autoreload_on"/>
+									<SegmentedButtonItem text="{i18n>deactive}" id="a2" key="autoreload_off"/>
+								</items>
+							</SegmentedButton>
+							<Label text="{i18n>settautoreload_min}" design="Bold" id="AUTOR_LABEL_MIN"/>
+							<Slider value="{gsettings>/_autoreload_min}" enableTickmarks="true" width="90%" min="2" max="10" enabled="{gsettings>/_autoreload}">
+								<ResponsiveScale tickmarksBetweenLabels="4"/>
+							</Slider>
+							<Label text="{i18n>growingThreshold}" design="Bold" id="GROW" class="sapUiMediumMarginTop"/>
+							<Slider value="{gsettings>/_growingThreshold}" enableTickmarks="true" step="5" width="90%" min="5" max="50">
+								<ResponsiveScale tickmarksBetweenLabels="10"/>
+							</Slider>
+						</content>
+					</Panel>
+				</content>
+			</ViewSettingsCustomTab>
+		</customTabs>
+	</ViewSettingsDialog>
+</core:FragmentDefinition>

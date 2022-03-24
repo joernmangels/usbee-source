@@ -1,0 +1,60 @@
+<core:FragmentDefinition id="FR1" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:u="sap.ui.unified" xmlns:l="sap.ui.layout">
+	<!--<Dialog id="fotoDialog" title="{i18n>foto-title}">-->
+	<Dialog id="fotoDialog" title="{i18n>foto-titleMK} {path: 'data>/Prueflos', type : 'sap.ui.model.odata.type.String', constraints: { isDigitSequence : true }} / {data>/Vornr} / {data>/Pruefpunkt} / {data>/Merknr}"
+			contentWidth="550px" contentHeight="400px">		
+		<content>
+			<!--<ObjectHeader-->
+			<!--	title="{i18n>foto-titleMK} {path: 'data>/Prueflos', type : 'sap.ui.model.odata.type.String', constraints: { isDigitSequence : true }} / {data>/Vornr} / {data>/Merknr}">-->
+			<!--	<attributes>-->
+			<!--		<ObjectAttribute text="{data>/CharDescr}"/>-->
+			<!--	</attributes>-->
+			<!--</ObjectHeader>-->
+			<FlexBox height="100px" alignItems="Start" justifyContent="Center">
+				<items>
+					<!--// For testing-->
+					<!--<u:FileUploader id="fileUploader1" name="myFileUpload" uploadUrl="upload/" tooltip="{i18n>foto-uploadtooltip}"-->
+					<!--	uploadComplete="handleFotoUploadComplete" change="handleFotoValueChange" typeMissmatch="handleFotoTypeMissmatch" style="Emphasized"-->
+					<!--	fileType="txt,jpg" placeholder="{i18n>foto-select}" class="sapUiSmallMarginEnd"></u:FileUploader>-->
+					<!--////////////////////////////////////////////////////////////////////-->
+					<!--<u:FileUploader id="fileUploader1" name="myFileUpload" uploadUrl="{upl>/uploadurl}" tooltip="{i18n>foto-uploadtooltip}"-->
+					<!--	uploadComplete="handleFotoUploadComplete" change="handleFotoValueChange" typeMissmatch="handleFotoTypeMissmatch" style="Emphasized"-->
+					<!--	fileType="png,jpg,gif" placeholder="{i18n>foto-select}" uploadOnChange="false" sendXHR="true" useMultipart="false" class="sapUiSmallMarginEnd">-->
+					<!--	<u:headerParameters>-->
+					<!--		<u:FileUploaderParameter name="x-csrf-token" value="{upl>/xcsrftoken}"/>-->
+					<!--	</u:headerParameters>-->
+					<!--</u:FileUploader>-->
+					<!--////////////////////////////////////////////////////////////////////-->
+					<u:FileUploader id="fileUploader1" name="myFileUpload" uploadUrl="{upl>/uploadurl}" tooltip="{i18n>foto-uploadtooltip}"
+						uploadComplete="handleFotoUploadComplete" change="handleFotoValueChange" typeMissmatch="handleFotoTypeMissmatch" style="Emphasized"
+						buttonOnly="true" buttonText="{i18n>foto-select}" icon="sap-icon://add-photo"
+						fileType="png,jpg,gif" uploadOnChange="false" sendXHR="true" useMultipart="false" class="sapUiSmallMarginEnd">
+						<u:headerParameters>
+							<u:FileUploaderParameter name="x-csrf-token" value="{upl>/xcsrftoken}"/>
+						</u:headerParameters>
+					</u:FileUploader>
+					<!--////////////////////////////////////////////////////////////////////-->
+					<Button id="UButton" type="Accept" text="{i18n>foto-upload}" press="handleUploadPress" visible="{= ${img>/visible} === true}"/>
+					<!--////////////////////////////////////////////////////////////////////-->
+					<!--<u:FileUploader id="fileUploader1" name="myFileUpload" uploadUrl="upload/" tooltip="{i18n>foto-uploadtooltip}"-->
+					<!--	uploadComplete="handleUploadComplete" class="sapUiSmallMarginEnd"/>-->
+					<!--<Button type="Accept" text="{i18n>foto-upload}" press="handleUploadPress"/>-->
+					<!--<u:FileUploader iconOnly="true" multiple="false" buttonOnly="true" icon="sap-icon://add-photo" uploadOnChange="false" sendXHR="true"-->
+					<!--	useMultipart="false" fileType="JPG,JPEG,jpeg,jpg,PNG,png" sameFilenamerueAllowed="true" typeMissmatch="onTypeMissmatch" change="onChangeCamera"/>-->
+				</items>
+			</FlexBox>
+			<FlexBox alignItems="Start" justifyContent="Center">
+				<items>
+					<Image id="image1" densityAware="false" width="{img>/imageWidth}" src="{img>/source}" decorative="true"/>
+				</items>
+			</FlexBox>
+			<!--<FlexBox alignItems="Start" justifyContent="Center">-->
+			<!--	<items>-->
+			<!--		<Button id="UButton" type="Accept" text="{i18n>foto-upload}" press="handleUploadPress" visible="{= ${img>/visible} === true}"/>-->
+			<!--	</items>-->
+			<!--</FlexBox>-->
+		</content>
+		<beginButton>
+			<Button id="CButton" press="onCloseDialog" text="{i18n>foto-close}"/>
+		</beginButton>
+	</Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,90 @@
+<mvc:View id="Master" controllerName="de.enercon.usbee.controller.recordresults.Master" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:ndc="sap.ndc" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout">
+	<!--<Page title="{i18n>prueflose}">-->
+	<Page title="{i18n>prueflose}">
+		<PullToRefresh id="pullToRefresh1" refresh="handlePullRefresh"/>
+		<customHeader>
+			<Bar>
+				<contentLeft>
+					<Text text="{i18n>prueflose}" class="TextBold bigLabel_H"></Text>
+				</contentLeft>
+				<contentRight>
+					<Button text="{i18n>barcode-barcode}" type="Accept" icon="sap-icon://bar-code" press="onBarcode" visible="{glo>/_launchpad}"/>
+					<!--<ndc:BarcodeScannerButton id="bc2" provideFallback="false" scanSuccess="onBarcodeNew" />-->
+				</contentRight>
+			</Bar>
+		</customHeader>
+		<subHeader>
+			<Bar>
+				<contentLeft>
+					<SearchField id="SearchFieldMaster" placeholder="{i18n>search-pholder}" refreshButtonTooltip="{i18n>search-tooltip}" search="handleSearch"/>
+				</contentLeft>
+			</Bar>
+		</subHeader>
+		<content>
+			<!--<List id="List" items="{pl>/PruefloseSet}">-->
+			<!--	<items>-->
+			<!--		<ObjectListItem icon="{ path: 'pl>StandPl', formatter: 'de.enercon.usbee.controller.utils.Formatter.mastericon' }"-->
+			<!--			title="{path: 'pl>Prueflos', type : 'sap.ui.model.odata.type.String', constraints: { isDigitSequence : true }} - {pl>Ktextmat}"-->
+			<!--			type="Active" press="onListItemPress">-->
+			<!--			<attributes>-->
+			<!--				<ObjectAttribute text="{pl>Masterstring1}"/>-->
+			<!--				<ObjectAttribute text="{pl>Masterstring2}"/>-->
+			<!--				<ObjectAttribute text="{pl>Masterstring3}"/>-->
+			<!--				<ObjectAttribute text="{pl>LockedByUser}"/>-->
+			<!--			</attributes>-->
+			<!--		</ObjectListItem>-->
+			<!--	</items>-->
+			<!--</List>-->
+			<!--///////////////////////-->
+			<!--<List id="List" items="{pl>/PruefloseSet}" mode="SingleSelectMaster" selectionChange="onListItemPress">-->
+			<!--	<StandardListItem icon="{ path: 'pl>StandPl', formatter: 'de.enercon.usbee.controller.utils.Formatter.mastericon' }" iconDensityAware="true"-->
+			<!--		iconInset="false"-->
+			<!--		title="{path: 'pl>Prueflos', type : 'sap.ui.model.odata.type.String', constraints: { isDigitSequence : true }} - {pl>Ktextmat}"-->
+			<!--		description="{pl>Masterstring1}" type="Navigation"/>-->
+			<!--</List>-->
+			<!--///////////////////////-->
+			<List id="MasterList" items="{pl>/PruefloseSet}" mode="SingleSelectMaster" selectionChange="onListItemPress" growing="true"
+				growingThreshold="{GLOSET>/_growingThreshold}" growingTriggerText="{i18n>detail1-grow}" growingScrollToLoad="true">
+				<!--growingScrollToLoad="true"-->
+				<CustomListItem type="Navigation"
+					visible="{ parts:['pl>MK_A','pl>MK_R','pl>MK_O', 'GLOSET>/_filterzr'], formatter: 'de.enercon.usbee.controller.utils.Formatter.detail1_visible_zr' }">
+					<HBox>
+						<core:Icon size="3rem" src="{ path: 'pl>StandPl', formatter: 'de.enercon.usbee.controller.utils.Formatter.mastericon' }"
+							class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom"/>
+						<!--<VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom">-->
+						<!--	<Title text="{path: 'pl>Prueflos', type : 'sap.ui.model.odata.type.String', constraints: { isDigitSequence : true }}"/>-->
+						<!--	<Title text="{pl>Ktextmat}"/>-->
+						<!--</VBox>-->
+						<layout:VerticalLayout class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom">
+							<Label text="{path: 'pl>Prueflos', type : 'sap.ui.model.odata.type.String', constraints: { isDigitSequence : true }}" class="bigLabel"
+								design="Bold"/>
+							<!--<ProgressIndicator percentValue="{ path: 'pl>Results_Entered_P', formatter: 'de.enercon.usbee.controller.utils.Formatter.string_to_float' }"-->
+							<!--	displayValue="{ parts:['pl>Results_Entered_P','pl>Results_Gesamt','pl>Results_Entered'], formatter: 'de.enercon.usbee.controller.utils.Formatter.master_percentage_value' }"-->
+							<!--	showValue="true" state="{ path: 'pl>Results_Entered_P', formatter: 'de.enercon.usbee.controller.utils.Formatter.detail1_percentage_color' }"-->
+							<!--	textDirection="LTR" height="15px"/>-->
+							<!-- ################################################################################################################################################### -->
+							<ProgressIndicator percentValue="{ path: 'pl>MK_P', formatter: 'de.enercon.usbee.controller.utils.Formatter.string_to_float' }"
+								showValue="false"
+								state="{ parts:['pl>MK_A','pl>MK_R','pl>MK_O','pl>MK_G','pl>REC_SERNR', 'pl>Prueflos_Key_Modus'], formatter: 'de.enercon.usbee.controller.utils.Formatter.progress_color1' }"
+								height="15px" tooltip="{ parts:['pl>MK_A','pl>MK_R','pl>MK_O'], formatter: 'de.enercon.usbee.controller.utils.Formatter.progress_value' }"/>
+							<!-- ################################################################################################################################################### -->
+							<Text text="{pl>Ktextmat}" class="TextBold bigLabel2"/>
+							<Text text="{pl>Masterstring1}"/>
+							<!--<Text text="{pl>Masterstring2}"/>-->
+							<Text text="{pl>Masterstring3}"/>
+							<Text text="{pl>Masterstring4}"/>
+							<!--<Text text="{pl>LockedByUser}"/>-->
+						</layout:VerticalLayout>
+					</HBox>
+					<layout:VerticalLayout class="sapUiSmallMarginBegin">
+						<!--<Text text="{pl>Masterstring1}"/>-->
+						<Text text="{pl>Masterstring2}" class="TextBold"/>
+						<!--<Text text="{pl>Masterstring3}" class="TextBold"/>-->
+						<Text text="{pl>LockedByUser}" class="TextBold"/>
+					</layout:VerticalLayout>
+				</CustomListItem>
+			</List>
+		</content>
+	</Page>
+</mvc:View>
